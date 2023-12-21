@@ -1,0 +1,35 @@
+*, *::before, *::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 16px;
+  margin: 0 auto;
+  max-width: 1180px;
+  width: 100%;
+}
+
+#canvas_svg path[data-region-id] {
+  transition: fill 0.2s;
+}
+#canvas_svg path[data-region-id].highlighted {
+  fill: #FFB320;
+}
+
+.canvas__inner-popup {
+  display: none;
+  background: white;
+  color: #333333;
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=style.css.map */
