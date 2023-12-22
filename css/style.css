@@ -8,17 +8,51 @@ main {
 }
 
 .container {
-  padding: 0 16px;
   margin: 0 auto;
-  max-width: 1180px;
   width: 100%;
+}
+.container_1920 {
+  padding: 0;
+  max-width: 1920px;
+}
+.container_1780 {
+  padding: 0 20px;
+  max-width: 1820px;
+}
+
+.geography {
+  background-color: #F6F6F6;
+}
+.geography__wrapper {
+  display: flex;
+}
+.geography__text {
+  max-width: 520px;
+}
+.geography__text h2 {
+  color: #32333D;
+  font-family: Raleway, sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 110%;
+}
+.geography__text h2 span {
+  color: #184EB8;
+}
+.geography__text p {
+  font-family: Wix Madefor Display, sans-serif;
+  color: #8C8C8D;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 160%;
 }
 
 #canvas_svg path[data-region-id] {
+  fill: #A4B1CA;
   transition: fill 0.2s;
 }
 #canvas_svg path[data-region-id].highlighted {
-  fill: #FFB320;
+  fill: #184EB8;
 }
 
 .canvas__inner-popup {
@@ -30,6 +64,26 @@ main {
   font-size: 13px;
   border-radius: 4px;
   pointer-events: none;
+}
+
+.map__popup {
+  padding: 30px 10px;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: 1fr;
+  gap: 14px 20px;
+  font-family: Wix Madefor Display, sans-serif;
+  font-size: 15px;
+}
+.map__popup__title {
+  color: #8C8C8D;
+  font-weight: 500;
+}
+.map__popup__text {
+  font-weight: 700;
+  font-size: 15px;
+  color: #32333D;
 }
 
 /*# sourceMappingURL=style.css.map */
