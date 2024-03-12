@@ -19,6 +19,56 @@ main {
   padding: 0 20px;
   max-width: 1820px;
 }
+.container_body {
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  bottom: 68px;
+  right: 0;
+  left: 0;
+  z-index: 50;
+}
+.header__top {
+  display: flex;
+}
+.header__aside {
+  position: absolute;
+  right: 0;
+  top: 68px;
+  bottom: 0;
+  width: 68px;
+}
+
+.nav__list {
+  display: flex;
+  flex-flow: wrap;
+  gap: 12px;
+}
+.nav__item {
+  display: block;
+}
+.nav__link {
+  padding: 4px;
+  display: block;
+  white-space: nowrap;
+  font-size: 18px;
+  font-weight: 700;
+  transition: color 200ms ease-in-out;
+}
+
+.hero {
+  display: flex;
+  flex-flow: column-reverse;
+  min-height: 920px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  z-index: 10;
+}
 
 .geography {
   padding: 20px 0 80px;
@@ -55,48 +105,6 @@ main {
 }
 .geography .canvas {
   margin-left: auto;
-}
-
-#canvas_svg {
-  max-width: 100%;
-}
-#canvas_svg path[data-region-id] {
-  fill: #A4B1CA;
-  transition: fill 0.2s;
-}
-#canvas_svg path[data-region-id].highlighted {
-  fill: #184EB8;
-}
-
-.canvas__inner-popup {
-  display: none;
-  background: white;
-  color: #333333;
-  font-weight: bold;
-  padding: 4px 8px;
-  font-size: 13px;
-  border-radius: 4px;
-  pointer-events: none;
-}
-
-.map__popup {
-  padding: 30px 10px;
-  max-width: 500px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-auto-rows: 1fr;
-  gap: 14px 20px;
-  font-family: Wix Madefor Display, sans-serif;
-  font-size: 15px;
-}
-.map__popup__title {
-  color: #8C8C8D;
-  font-weight: 500;
-}
-.map__popup__text {
-  font-weight: 700;
-  font-size: 15px;
-  color: #32333D;
 }
 
 /*# sourceMappingURL=style.css.map */

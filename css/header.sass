@@ -1,0 +1,30 @@
+.header
+  position: fixed
+  top: 0
+  bottom: 68px
+  right: 0
+  left: 0
+  z-index: 50
+  &__top
+    display: flex
+  &__aside
+    position: absolute
+    right: 0
+    top: 68px
+    bottom: 0
+    width: 68px
+
+.nav
+  &__list
+    display: flex
+    flex-flow: wrap
+    gap: 12px
+  &__item
+    display: block
+  &__link
+    padding: 4px
+    display: block
+    white-space: nowrap
+    font-size: 18px
+    font-weight: 700
+    transition: color 200ms ease-in-out
