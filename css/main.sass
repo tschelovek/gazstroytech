@@ -1,13 +1,82 @@
 .hero
   display: flex
-  flex-flow: column-reverse
+  //flex-flow: column-reverse
   min-height: 920px
   position: relative
   background-repeat: no-repeat
   background-size: cover
   background-position: top center
   z-index: 10
+  &__content
+    width: 48%
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    &__text
+      position: relative
+      text-align: center
+      .img_1
+        position: absolute
+        top: 32px
+        left: -256px
+        width: 116px
+        z-index: 10
+      .img_2
+        position: absolute
+        top: -72px
+        left: -182px
+        height: 320px
+        z-index: 10
+    .blue
+      color: #1086e0
+      font-size: 92px
+      font-weight: 700
+      font-family: BebasNeue, sans-serif
 
+  .title_h1
+    color: white
+    font-size: 36px
+    font-weight: 700
+    font-family: Roboro, sans-serif
+    text-align: right
+    position: relative
+    z-index: 20
+  &__img-wrapper
+    position: absolute
+    display: flex
+    img
+      width: 100%
+    &_1
+      bottom: 0
+      right: 0
+      height: 75%
+      width: 50%
+      align-items: end
+
+.benefits
+  background-color: #051b3f
+  &__list
+    display: flex
+  &__item
+    position: relative
+    flex: 1
+    &__text
+      padding: 26px 40px
+      color: white
+      font-size: 18px
+      font-weight: 700
+      font-family: Roboro, sans-serif
+      position: relative
+      z-index: 15
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      aspect-ratio: 4/3
+      clip-path: polygon(0 0, 0% 100%, 100% 100%)
+      background-color: #113f8b
+      z-index: 5
 
 .geography
   padding: 20px 0 80px

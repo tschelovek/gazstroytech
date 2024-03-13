@@ -8,8 +8,8 @@
     <title>Title</title>
     <link rel="stylesheet" href="./css/style.css">
     <script defer src="js/popper_2.11.8.js"></script>
-<!--    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>-->
-<!--    <script src="https://unpkg.com/@popperjs/core@2"></script>-->
+    <!--    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>-->
+    <!--    <script src="https://unpkg.com/@popperjs/core@2"></script>-->
     <script defer src="./js/main.js"></script>
     <style>
         .dummy p {
@@ -22,82 +22,149 @@
 <div class="container_body">
     <header class="header">
         <div class="header__top">
-            <div class="header__logo logo logo_header">
-                <a href="/" class="logo__link">
-                    <img src="./images/logo@2x.png" alt="" title="">
-<!--                    <img -->
-<!--                            srcset="./images/logo.webp, ./images/logo_x2.webp x2" -->
-<!--                            src="./images/logo.jpg" alt="" title="">-->
-                </a>
+            <div class="container container_1780">
+                <div class="header__logo logo logo_header">
+                    <a href="/" class="logo__link">
+                        <img src="./images/logo@2x.png" alt="" title="">
+                        <!--                    <img -->
+                        <!--                            srcset="./images/logo.webp, ./images/logo_x2.webp x2" -->
+                        <!--                            src="./images/logo.jpg" alt="" title="">-->
+                    </a>
+                </div>
+                <nav class="nav nav_header">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#s_functions" class="nav__link header__link">Главная</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#s_functions" class="nav__link header__link">О компании</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#s_functions" class="nav__link header__link">Проекты</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#s_functions" class="nav__link header__link">Услуги</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#s_dignity" class="nav__link header__link">Наши клиенты</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#s_demo" class="nav__link header__link">Новости</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#s_contacts" class="nav__link header__link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="nav nav_header">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#s_functions" class="nav__link header__link">Главная</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#s_functions" class="nav__link header__link">О компании</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#s_functions" class="nav__link header__link">Проекты</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#s_functions" class="nav__link header__link">Услуги</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#s_dignity" class="nav__link header__link">Наши клиенты</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#s_demo" class="nav__link header__link">Новости</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#s_contacts" class="nav__link header__link">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
-            <button type="button" id="burgerButton" class="btn_burger header__btn__burger">
+            <button type="button" id="burgerButton" class="btn_burger header__btn_burger">
                 <span>menu</span>
             </button>
         </div>
         <div class="header__aside">
-            <div class="header-aside-inner-wrapper">
-                <div class="header-aside-item header-aside-item-search">
-                    <a href="#" data-toggle="modal" data-target="#searchModal">
-                        <div class="header-aside-item-inner-wrapper">
-                            <div class="header-aside-item-ico"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none" class="svg-inline replaced-svg">
-                                <path d="M12.3951 1C6.10614 1 1 6.10611 1 12.3951C1 18.6841 6.10614 23.7902 12.3951 23.7902C15.4106 23.7902 18.1557 22.6271 20.1948 20.7117L25.364 25.8924C25.5075 26.0359 25.7488 26.0359 25.8923 25.8924C26.0359 25.7488 26.0359 25.519 25.8923 25.3754L20.7002 20.1833C22.6111 18.145 23.7902 15.4066 23.7902 12.3951C23.7902 6.10611 18.6841 1 12.3951 1ZM12.3951 1.73516C18.2867 1.73516 23.0551 6.50344 23.0551 12.3951C23.0551 18.2868 18.2867 23.0551 12.3951 23.0551C6.50346 23.0551 1.73515 18.2868 1.73515 12.3951C1.73515 6.50344 6.50346 1.73516 12.3951 1.73516Z" fill="#9EA9B6" stroke="#9EA9B6" stroke-width="0.5"></path>
-                            </svg></div>
-                        </div>
-                    </a>					</div>
-                <div class="header-aside-item header-aside-item-phone">
+<!--            <div class="header__aside-inner-wrapper">-->
+                <div class="header__aside__item header__aside__item_phone">
                     <div class="header-aside-item-inner-wrapper">
                         <div class="header-aside-item-ico">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none" class="svg-inline replaced-svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5582 12.3069C7.22352 10.6322 9.12002 9.73907 10.3472 8.95755C11.0165 8.51096 11.1281 7.84108 10.905 7.1712C10.2356 5.27321 9.00846 3.59851 8.22755 1.70052C8.11599 1.36558 7.78132 1.14229 7.44664 1.03065C4.21144 0.695706 1.86871 3.15193 1.19936 6.16638C-0.80869 15.0981 12.8014 28.719 21.8377 26.821C24.8498 26.1511 27.3041 23.8065 26.9694 20.5688C26.8578 20.2338 26.6347 19.8989 26.3 19.7873C24.4035 19.0057 22.7302 17.7776 20.8337 17.1077C20.1643 16.8844 19.495 16.9961 19.0487 17.666C18.2678 18.8941 17.3753 20.7921 15.702 20.4571C12.8014 19.8989 8.00443 15.0981 7.5582 12.3069Z" stroke="#9EA9B6"></path>
-                            </svg>							</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8mm" height="8mm"
+                                 version="1.1"
+                                 style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                 viewBox="0 0 800 800"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   .fil0 {
+       fill: #E6E6E6
+   }
+  </style>
+ </defs>
+                                <g id="Layer_x0020_1">
+        <metadata id="CorelCorpID_0Corel-Layer"/>
+                                    <g id="_3078883695680">
+           <path class="fil0"
+                 d="M185.7 24.22c-10.03,-10.03 -23.64,-15.68 -37.84,-15.68 -14.2,0 -27.81,5.65 -37.83,15.68 -18.61,18.61 -44.55,44.54 -67.31,67.31 -38.91,38.91 -55.19,95.02 -43.14,148.71 0.02,0.07 0.03,0.15 0.05,0.23 19.95,83.74 71.58,219.21 206.98,354.61 135.4,135.4 270.91,187.03 354.68,206.84 0.05,0.02 0.12,0.02 0.2,0.04 53.62,12.04 109.71,-4.21 148.58,-43.08 22.82,-22.64 48.77,-48.59 67.4,-67.22 10.04,-10.02 15.67,-23.64 15.67,-37.83 0,-14.2 -5.65,-27.82 -15.67,-37.84 -33.95,-33.95 -94,-94 -127.95,-127.95 -10.02,-10.02 -23.64,-15.68 -37.83,-15.68 -14.2,0 -27.82,5.64 -37.84,15.68l-63.42 63.4c-5.15,5.18 -12.93,6.66 -19.61,3.8 -25.47,-15.46 -71.6,-47.75 -134.11,-110.26 -62.46,-62.46 -94.73,-108.55 -109.94,-133.99 -2.93,-6.73 -1.49,-14.45 3.64,-19.57 0.03,-0.05 0.06,-0.09 0.12,-0.13 17.28,-17.62 43.69,-44.03 63.11,-63.45 10.05,-10.03 15.69,-23.64 15.69,-37.84 0,-14.2 -5.66,-27.81 -15.69,-37.84l-127.94 -127.94zm-25.22 25.22l127.94 127.94c3.34,3.34 5.23,7.89 5.23,12.62 0,4.73 -1.89,9.28 -5.23,12.62 -19.5,19.49 -46.01,45.99 -63.37,63.68 -15.89,15.9 -20.03,40.3 -10.2,60.71 0.23,0.46 0.48,0.91 0.73,1.35 15.77,26.55 49.54,75.48 115.9,141.84 66.31,66.31 115.19,100.07 141.61,116.05 0.48,0.29 0.98,0.55 1.48,0.8 20.5,9.88 45.01,5.73 61.1,-10.39 0,0 63.4,-63.39 63.4,-63.39 3.34,-3.34 7.89,-5.23 12.62,-5.23 4.72,0 9.27,1.89 12.61,5.23l127.94 127.94c3.34,3.34 5.23,7.89 5.23,12.62 0,4.72 -1.89,9.27 -5.23,12.6 0,0 0,0 0,0 -18.6,18.59 -44.51,44.52 -67.34,67.17 -0.02,0.02 -0.04,0.04 -0.05,0.06 -30.22,30.19 -73.79,42.84 -115.46,33.51 -79.82,-18.89 -208.63,-68.39 -337.56,-197.32 -128.92,-128.92 -178.42,-257.74 -197.46,-337.53 -9.33,-41.73 3.33,-85.33 33.57,-115.57l67.31 -67.31c3.33,-3.33 7.88,-5.22 12.61,-5.22 4.73,0 9.28,1.89 12.62,5.22z"/>
+                                        <path class="fil0"
+                                              d="M397.61 100.8c167.39,0 303.27,135.88 303.27,303.27 0,9.85 8,17.84 17.84,17.84 9.85,0 17.84,-7.99 17.84,-17.84 0,-187.06 -151.88,-338.95 -338.95,-338.95 -9.84,0 -17.84,7.99 -17.84,17.84 0,9.85 8,17.84 17.84,17.84z"/>
+                                        <path class="fil0"
+                                              d="M397.61 207.84c108.31,0 196.23,87.93 196.23,196.23 0,9.85 8,17.84 17.85,17.84 9.85,0 17.84,-7.99 17.84,-17.84 0,-128 -103.92,-231.91 -231.92,-231.91 -9.84,0 -17.84,7.99 -17.84,17.84 0,9.84 8,17.84 17.84,17.84z"/>
+    </g>
+ </g>
+</svg>
+                        </div>
                         <div class="header-aside-item-cont">
-                            <a href="tel:+78126650808">
+                            <a href="tel:+781266">
                                 <div class="header-aside-item-cont-inner-wrapper">
-                                    <p>+7 (812) 665-08-08</p>
+                                    <p>+7 (812) 111111111</p>
                                 </div>
-                            </a>							</div>
+                            </a></div>
                     </div>
                 </div>
-                <div class="header-aside-item header-aside-item-email">
+                <div class="header__aside__item header__aside__item_email">
                     <div class="header-aside-item-inner-wrapper">
                         <div class="header-aside-item-ico">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 26 20" fill="none" class="svg-inline replaced-svg">
-                                <path d="M0.5 19.5V5.22423L12.9749 0.534042L25.5 5.22471V19.5H0.5Z" stroke="#9EA9B6"></path>
-                                <path d="M12.4817 11.3142L23.304 7.19689" stroke="#9EA9B6"></path>
-                                <path d="M12.9995 11.3147L2.74503 7.19731" stroke="#9EA9B6"></path>
-                            </svg>							</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8mm" height="6mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                 viewBox="0 0 800 600" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                <style type="text/css">
+                                .fil0 {fill:#E6E6E6;fill-rule:nonzero}
+                                </style>
+                                </defs>
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"/>
+                                    <path class="fil0"
+                                          d="M679.95 14.41l-572.69 0c0,0 0,0 0,0 -48.18,0 -87.27,39.02 -87.36,87.2l-0.01 409.59c0.1,48.18 39.19,87.19 87.37,87.19 0,0 0,0 0,0l572.69 0.01c0,-0.01 0,-0.01 0,-0.01 48.18,0 87.28,-39.01 87.36,-87.18l0 -409.6c-0.08,-48.18 -39.18,-87.2 -87.36,-87.2 0,0 0,0 0,0zm0 31.73c0.05,-0.01 0.11,-0.01 0.16,-0.01 8.3,0 16.51,1.94 23.92,5.65l-274.88 248.32c-9.74,8.72 -22.38,13.56 -35.46,13.56 -13.08,0 -25.72,-4.84 -35.46,-13.56l-275.06 -248.32c7.52,-3.65 15.75,-5.59 24.09,-5.64l572.69 0zm55.64 465.06c-0.08,30.66 -24.97,55.47 -55.64,55.47 0,0 0,0 0,0l-572.69 0c0,0 0,0 0,0 -30.66,0 -55.55,-24.81 -55.64,-55.47l-0.01 -409.59c0.15,-9.8 2.97,-19.41 8.15,-27.73l277.21 249.14c15.53,14.09 35.75,21.9 56.72,21.9 20.97,0 41.19,-7.81 56.71,-21.9l277.05 -249.15c5.32,8.51 8.14,18.33 8.14,28.36 0,0.02 0,0.03 0,0.04l0 408.93z"/>
+                                </g>
+                            </svg>
+                        </div>
                         <div class="header-aside-item-cont">
                             <a href="mailto:info@gsprom.ru">
                                 <div class="header-aside-item-cont-inner-wrapper">
-                                    <p>info@gsprom.ru</p>
+                                    <p>info@g4m.ru</p>
                                 </div>
-                            </a>							</div>
+                            </a></div>
                     </div>
+                </div>
+                <div class="header__aside__item header__aside__item_search">
+                    <a href="#" data-toggle="modal" data-target="#searchModal">
+                        <div class="header-aside-item-inner-wrapper">
+                            <div class="header-aside-item-ico">
+                                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="8mm" height="8mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                     viewBox="0 0 800 800"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                    <style type="text/css">
+                                    .fil0 {fill:#E6E6E6;fill-rule:nonzero}
+                                    </style>
+                                    </defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"/>
+                                        <path class="fil0" d="M300.76 18.49c-80.78,1.41 -153.88,34.78 -207.05,87.97 -54.36,54.39 -88.04,129.51 -88.04,212.33 0,82.82 33.68,157.93 88.02,212.25 54.34,54.36 129.45,88.04 212.27,88.04 35.85,0 70.17,-6.3 101.89,-17.77 33.07,-11.98 63.47,-29.63 89.99,-51.69l7.54 -6.29 245.83 245.8c1.71,1.71 3.68,3.03 5.74,3.88 2.12,0.86 4.46,1.3 6.83,1.3 2.38,0 4.72,-0.44 6.79,-1.3 2.04,-0.85 4.05,-2.17 5.76,-3.88 3.44,-3.42 5.2,-8.01 5.2,-12.55 0,-4.56 -1.76,-9.1 -5.17,-12.51l-245.86 -245.86 6.32 -7.57c22.03,-26.47 39.71,-56.89 51.69,-89.94 11.47,-31.77 17.77,-66.09 17.77,-101.91 0,-82.82 -33.68,-157.94 -88.02,-212.28 -54.34,-54.33 -129.45,-88.02 -212.27,-88.02l-5.23 0zm5.25 565.12c-72.97,0 -139.24,-29.73 -187.18,-77.66 -47.94,-47.94 -77.67,-114.16 -77.67,-187.16 0,-72.98 29.73,-139.25 77.67,-187.19 47.96,-47.96 114.21,-77.69 187.18,-77.69 73,0 139.22,29.73 187.16,77.67 47.94,47.94 77.67,114.21 77.67,187.18 0,72.95 -29.73,139.22 -77.67,187.16 -45.56,45.57 -107.63,74.66 -176.35,77.44l-10.81 0.25z"/>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="header__aside__item header__aside__item_geo">
+                    <a href="#" data-toggle="modal" data-target="#searchModal">
+                        <div class="header-aside-item-inner-wrapper">
+                            <div class="header-aside-item-ico">
+                                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="7mm" height="9mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                                     viewBox="0 0 700 900"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <defs>
+                                    <style type="text/css">
+                                    .fil0 {fill:#E6E6E6;fill-rule:nonzero}
+                                    </style>
+                                    </defs>
+                                    <g id="Layer_x0020_1">
+                                        <metadata id="CorelCorpID_0Corel-Layer"/>
+                                        <path class="fil0" d="M470.56 40.67c39.98,16.56 76.7,41 108.19,72.49 58.82,58.82 91.42,135.38 96.65,213.75 5.22,78.33 -16.87,158.54 -67.38,224.68l-265.22 347.4 -265.22 -347.4c-50.51,-66.14 -72.6,-146.35 -67.38,-224.68 5.23,-78.37 37.83,-154.93 96.65,-213.75 31.49,-31.49 68.22,-55.93 108.21,-72.49 39.97,-16.56 83.22,-25.25 127.74,-25.25 44.52,0 87.76,8.69 127.76,25.25zm-255.2 183.75c32.64,-32.64 77.74,-52.88 127.44,-52.88 49.71,0 94.81,20.24 127.46,52.88 32.64,32.64 52.88,77.74 52.88,127.46 0,49.7 -20.24,94.8 -52.88,127.44 -32.66,32.63 -77.75,52.87 -127.46,52.87 -49.7,0 -94.81,-20.23 -127.46,-52.87 -32.63,-32.65 -52.87,-77.74 -52.87,-127.44 0,-49.71 20.24,-94.82 52.89,-127.46zm17.99 236.89c28.02,28.04 66.74,45.41 109.45,45.41 42.7,0 81.43,-17.37 109.46,-45.4 28.03,-28.02 45.4,-66.75 45.4,-109.44 0,-42.7 -17.37,-81.44 -45.4,-109.46 -28.03,-28.03 -66.76,-45.4 -109.46,-45.4 -42.71,0 -81.43,17.37 -109.46,45.4 -28.03,28.02 -45.4,66.75 -45.4,109.44 0,42.71 17.37,81.44 45.41,109.45zm109.45 395.73l244.99 -320.9c46.63,-61.07 67.05,-135.16 62.22,-207.55 -4.83,-72.38 -34.93,-143.11 -89.26,-197.44 -29.11,-29.11 -63.05,-51.7 -99.91,-66.97 -36.9,-15.27 -76.86,-23.29 -118.04,-23.29 -41.18,0 -81.13,8.02 -118.02,23.29 -36.87,15.27 -70.81,37.86 -99.92,66.97 -54.34,54.34 -84.43,125.06 -89.27,197.44 -4.83,72.39 15.59,146.48 62.22,207.55l244.99 320.9z"/>
+                                    </g>
+                                    </svg>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
                 <!--            <ul class="header-aside-soc-list">-->
@@ -127,7 +194,7 @@
                 <!--                    </a>-->
                 <!--                </li>-->
                 <!--            </ul>-->
-            </div>
+<!--            </div>-->
         </div>
     </header>
 
@@ -135,15 +202,68 @@
         <section class="hero"
                  style="background-image: url('./images/hero_bg.jpg')"
         >
-            <div class="container_1780">
-                <div class="hero__list">
-                    <div class="hero__list__item">Надежный работодатель</div>
-                    <div class="hero__list__item">Большие карьерные возможности</div>
-                    <div class="hero__list__item">Проектирование и строительство</div>
-                    <div class="hero__list__item">Постоянное развитие и совершенствование</div>
+            <div class="hero__content">
+<!--                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="10mm" height="16mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"-->
+<!--                     viewBox="0 0 1000 1600"-->
+<!--                     xmlns:xlink="http://www.w3.org/1999/xlink"-->
+<!--                     xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">-->
+<!-- <defs>-->
+<!--  <style type="text/css">-->
+<!--   .fil0 {fill:#1086E0;fill-rule:nonzero}-->
+<!--  </style>-->
+<!-- </defs>-->
+<!--                    <g id="Layer_x0020_1">-->
+<!--  <metadata id="CorelCorpID_0Corel-Layer"/>-->
+<!--                        <polygon class="fil0" points="-2.01,40.59 995.88,812.33 -2.03,1565.8 -2.03,1279.47 619.83,809.93 -2.03,328.99 -2.03,40.62 "/>-->
+<!-- </g>-->
+<!--</svg>-->
+<!--                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="23mm" height="28mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"-->
+<!--                     viewBox="0 0 2300 2800"-->
+<!--                     xmlns:xlink="http://www.w3.org/1999/xlink"-->
+<!--                     xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">-->
+<!-- <defs>-->
+<!--  <style type="text/css">-->
+<!--   .fil0 {fill:#1086E0;fill-rule:nonzero}-->
+<!--  </style>-->
+<!-- </defs>-->
+<!--                    <g id="Layer_x0020_1">-->
+<!--  <metadata id="CorelCorpID_0Corel-Layer"/>-->
+<!--                        <path class="fil0" d="M27.44 391.7c82.61,0 150.38,-9.04 203.3,-27.11 52.93,-18.07 96.17,-42.6 129.73,-73.58 33.56,-30.98 60.67,-67.12 81.33,-108.43 20.65,-41.3 38.72,-85.19 54.21,-131.66l286.57 0 0 2032.46 -425.98 -335.02 0 -1054.61 -329.16 0 0 -302.05zm1374.73 1746.5c0,98.1 20.01,167.16 60.03,207.18 40.01,40.01 93.58,60.02 160.71,60.02 67.12,0 120.69,-20.01 160.7,-60.02 40.02,-40.02 60.03,-109.08 60.03,-207.18l0 -1463.81c0,-98.1 -20.01,-167.16 -60.03,-207.18 -40.01,-40.01 -93.58,-60.02 -160.7,-60.02 -67.13,0 -120.7,20.01 -160.71,60.02 -40.02,40.02 -60.03,109.08 -60.03,207.18l0 1463.81zm-425.97 -1436.7c0,-219.44 55.5,-387.9 166.52,-505.36 111.01,-117.47 271.07,-176.2 480.19,-176.2 209.11,0 369.17,58.73 480.19,176.2 111.01,117.46 166.51,285.92 166.51,505.36l0 1409.59c0,219.44 -55.5,387.9 -166.51,505.36 -100.27,106.09 -240.54,164.26 -420.82,174.54l-698.87 -549.66c-4.8,-41.22 -7.21,-84.62 -7.21,-130.24l0 -1409.59z"/>-->
+<!-- </g>-->
+<!--</svg>-->
+
+                <div class="hero__content__text">
+                    <img src="./images/svg/arrow.svg" class="img img_1" alt="">
+                    <img src="./images/svg/10.svg" class="img img_2" alt="">
+                    <div class="blue">лет</div>
+                    <h1 class="title_h1">строим и развиваем<br>вместе с Вами!</h1>
+
                 </div>
             </div>
+            <div class="hero__img-wrapper hero__img-wrapper_1">
+                <img src="./images/svg/building.svg" alt="">
+            </div>
         </section>
+        <div class="benefits">
+            <div class="container container_1780">
+                <div class="benefits__list">
+                    <div class="benefits__item">
+                        <div class="benefits__item__text">Надежный<br>работодатель</div>
+                    </div>
+                    <div class="benefits__item">
+                        <div class="benefits__item__text">Большие карьерные<br>возможности</div>
+                    </div>
+                    <div class="benefits__item">
+                        <div class="benefits__item__text">Проектирование<br>и строительство</div>
+                    </div>
+                    <div class="benefits__item">
+                        <div class="benefits__item__text">Постоянное развитие<br>и совершенствование</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <!--    <div class="container container_1920">-->
         <div class="geography">
             <div class="container container_1780">
@@ -151,7 +271,8 @@
                     <div class="geography__text">
                         <h2 class="title_h2">География <span>проектов</span></h2>
                         <p>Успешно реализованные на крупнейших строительных площадках проекты подтверждают квалификацию
-                            специалистов нашей компании. Мы решаем задачи высокой сложности, чем зарабатываем авторитет у
+                            специалистов нашей компании. Мы решаем задачи высокой сложности, чем зарабатываем авторитет
+                            у
                             своих Заказчиков.
                         </p>
                     </div>
@@ -174,7 +295,7 @@
                                         height="806"
                                         fill="black"
                                 >
-                                    <rect fill="white" x="-1" width="1358" height="806" />
+                                    <rect fill="white" x="-1" width="1358" height="806"/>
                                     <path
                                             d="M86.957 565.513C86.3746 564.847 85.4595 560.187 84.9603 555.195C84.4611 550.119 83.6292 545.709 83.2132 545.293C82.7141 544.877 80.551 543.879 78.388 543.047C75.0603 541.882 73.8124 540.717 71.3997 536.972C68.6544 532.646 68.5712 532.229 69.4863 529.151C69.9855 527.403 70.9006 525.739 71.4829 525.573C73.1468 524.907 79.2199 527.487 83.3796 530.565C85.9586 532.562 88.1217 533.561 89.9519 533.561C92.1982 533.561 93.1965 534.226 95.6091 537.139C98.3545 540.467 98.6041 541.216 98.6041 546.125C98.5209 554.113 97.5225 557.275 93.5293 561.768C89.2032 566.594 88.2049 567.094 86.957 565.513Z"
                                     />
@@ -1244,41 +1365,62 @@
 
         <div class="dummy">
             <div class="container">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem error excepturi illum impedit
-                    ipsam, iste libero nemo non officia porro praesentium quae, quia rem reprehenderit, rerum sed vero vitae
-                    voluptate voluptatum. Accusamus aliquam aliquid atque beatae cumque exercitationem hic quaerat qui! Ab
-                    ad aliquid atque, aut culpa ducimus eaque ex, explicabo fuga, laborum maiores minus non officia placeat
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem error excepturi illum
+                    impedit
+                    ipsam, iste libero nemo non officia porro praesentium quae, quia rem reprehenderit, rerum sed vero
+                    vitae
+                    voluptate voluptatum. Accusamus aliquam aliquid atque beatae cumque exercitationem hic quaerat qui!
+                    Ab
+                    ad aliquid atque, aut culpa ducimus eaque ex, explicabo fuga, laborum maiores minus non officia
+                    placeat
                     porro.aepe sit! Est temporibus ut vel. Cupiditate dolor eveniet ipsa. Adipisci
-                    architecto assumenda culpa error, fugit inventore nam nostrum numquam, odit quibusdam quod reiciendis
+                    architecto assumenda culpa error, fugit inventore nam nostrum numquam, odit quibusdam quod
+                    reiciendis
                     rem soluta vel velit veritatis voluptatum. Amet aperiam architecto blanditiis cupiditate distinctio
-                    dolores doloribus ea eaque eos eum fuga fugit id iure minus modi mollitia nam numquam odio reiciendis
+                    dolores doloribus ea eaque eos eum fuga fugit id iure minus modi mollitia nam numquam odio
+                    reiciendis
                     rem saepe sed sit sunt ut, voluptates voluptatibus voluptatum. Ab amet architecto atque aut autem
                     consequatur cupiditate deserunt dolor laudantium minus nemo odit optio perferendis provident, quidem
-                    ratione tempora unde vero. Dicta ducimus error labore quos reprehenderit. Consequuntur dolor eius esse
+                    ratione tempora unde vero. Dicta ducimus error labore quos reprehenderit. Consequuntur dolor eius
+                    esse
                     illo laborum magni maxime quasi quisquam quo.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem error excepturi illum impedit
-                    ipsam, iste libero nemo non officia porro praesentium quae, quia rem reprehenderit, rerum sed vero vitae
-                    voluptate voluptatum. Accusamus aliquam aliquid atque beatae cumque exercitationem hic quaerat qui! Ab
-                    ad aliquid atque, aut culpa ducimus eaque ex, explicabo fuga, laborum maiores minus non officia placeat
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem error excepturi illum
+                    impedit
+                    ipsam, iste libero nemo non officia porro praesentium quae, quia rem reprehenderit, rerum sed vero
+                    vitae
+                    voluptate voluptatum. Accusamus aliquam aliquid atque beatae cumque exercitationem hic quaerat qui!
+                    Ab
+                    ad aliquid atque, aut culpa ducimus eaque ex, explicabo fuga, laborum maiores minus non officia
+                    placeat
                     porro.aepe sit! Est temporibus ut vel. Cupiditate dolor eveniet ipsa. Adipisci
-                    architecto assumenda culpa error, fugit inventore nam nostrum numquam, odit quibusdam quod reiciendis
+                    architecto assumenda culpa error, fugit inventore nam nostrum numquam, odit quibusdam quod
+                    reiciendis
                     rem soluta vel velit veritatis voluptatum. Amet aperiam architecto blanditiis cupiditate distinctio
-                    dolores doloribus ea eaque eos eum fuga fugit id iure minus modi mollitia nam numquam odio reiciendis
+                    dolores doloribus ea eaque eos eum fuga fugit id iure minus modi mollitia nam numquam odio
+                    reiciendis
                     rem saepe sed sit sunt ut, voluptates voluptatibus voluptatum. Ab amet architecto atque aut autem
                     consequatur cupiditate deserunt dolor laudantium minus nemo odit optio perferendis provident, quidem
-                    ratione tempora unde vero. Dicta ducimus error labore quos reprehenderit. Consequuntur dolor eius esse
+                    ratione tempora unde vero. Dicta ducimus error labore quos reprehenderit. Consequuntur dolor eius
+                    esse
                     illo laborum magni maxime quasi quisquam quo.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem error excepturi illum impedit
-                    ipsam, iste libero nemo non officia porro praesentium quae, quia rem reprehenderit, rerum sed vero vitae
-                    voluptate voluptatum. Accusamus aliquam aliquid atque beatae cumque exercitationem hic quaerat qui! Ab
-                    ad aliquid atque, aut culpa ducimus eaque ex, explicabo fuga, laborum maiores minus non officia placeat
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem error excepturi illum
+                    impedit
+                    ipsam, iste libero nemo non officia porro praesentium quae, quia rem reprehenderit, rerum sed vero
+                    vitae
+                    voluptate voluptatum. Accusamus aliquam aliquid atque beatae cumque exercitationem hic quaerat qui!
+                    Ab
+                    ad aliquid atque, aut culpa ducimus eaque ex, explicabo fuga, laborum maiores minus non officia
+                    placeat
                     porro.aepe sit! Est temporibus ut vel. Cupiditate dolor eveniet ipsa. Adipisci
-                    architecto assumenda culpa error, fugit inventore nam nostrum numquam, odit quibusdam quod reiciendis
+                    architecto assumenda culpa error, fugit inventore nam nostrum numquam, odit quibusdam quod
+                    reiciendis
                     rem soluta vel velit veritatis voluptatum. Amet aperiam architecto blanditiis cupiditate distinctio
-                    dolores doloribus ea eaque eos eum fuga fugit id iure minus modi mollitia nam numquam odio reiciendis
+                    dolores doloribus ea eaque eos eum fuga fugit id iure minus modi mollitia nam numquam odio
+                    reiciendis
                     rem saepe sed sit sunt ut, voluptates voluptatibus voluptatum. Ab amet architecto atque aut autem
                     consequatur cupiditate deserunt dolor laudantium minus nemo odit optio perferendis provident, quidem
-                    ratione tempora unde vero. Dicta ducimus error labore quos reprehenderit. Consequuntur dolor eius esse
+                    ratione tempora unde vero. Dicta ducimus error labore quos reprehenderit. Consequuntur dolor eius
+                    esse
                     illo laborum magni maxime quasi quisquam quo.</p>
             </div>
         </div>

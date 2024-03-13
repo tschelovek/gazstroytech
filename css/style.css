@@ -26,26 +26,82 @@ main {
 .header {
   position: fixed;
   top: 0;
-  bottom: 68px;
   right: 0;
   left: 0;
+  height: 68px;
   z-index: 50;
 }
 .header__top {
   display: flex;
+  align-items: center;
+}
+.header__top .container {
+  display: flex;
+  align-items: center;
+}
+.header__logo .logo__link {
+  max-height: 32px;
+}
+.header__logo .logo__link img {
+  max-height: 32px;
 }
 .header__aside {
+  padding-top: 40px;
   position: absolute;
   right: 0;
   top: 68px;
-  bottom: 0;
   width: 68px;
+  height: calc(100vh - 68px);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 32px;
+  background-color: #0e86d9;
+}
+.header__aside__item {
+  font-size: 0;
+  cursor: pointer;
+}
+.header__btn_burger {
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 68px;
+  height: 68px;
+  font-size: 0;
+  background-color: #08275a;
+  border: none;
+  z-index: 107;
+  cursor: pointer;
+}
+.header__btn_burger span {
+  position: relative;
+  width: 38px;
+  height: 2px;
+  background-color: white;
+}
+.header__btn_burger span::before, .header__btn_burger span::after {
+  content: "";
+  position: absolute;
+  width: 38px;
+  height: 2px;
+  background-color: white;
+  right: 0;
+}
+.header__btn_burger span::before {
+  top: -12px;
+}
+.header__btn_burger span::after {
+  top: 12px;
 }
 
 .nav__list {
   display: flex;
   flex-flow: wrap;
-  gap: 12px;
+  gap: 40px;
 }
 .nav__item {
   display: block;
@@ -54,20 +110,108 @@ main {
   padding: 4px;
   display: block;
   white-space: nowrap;
+  color: white;
   font-size: 18px;
   font-weight: 700;
+  font-family: Roboro, sans-serif;
   transition: color 200ms ease-in-out;
+  text-decoration: none;
+}
+.nav_header {
+  margin-left: auto;
 }
 
 .hero {
   display: flex;
-  flex-flow: column-reverse;
   min-height: 920px;
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
   z-index: 10;
+}
+.hero__content {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.hero__content__text {
+  position: relative;
+  text-align: center;
+}
+.hero__content__text .img_1 {
+  position: absolute;
+  top: 32px;
+  left: -256px;
+  width: 116px;
+  z-index: 10;
+}
+.hero__content__text .img_2 {
+  position: absolute;
+  top: -72px;
+  left: -182px;
+  height: 320px;
+  z-index: 10;
+}
+.hero__content .blue {
+  color: #1086e0;
+  font-size: 92px;
+  font-weight: 700;
+  font-family: BebasNeue, sans-serif;
+}
+.hero .title_h1 {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Roboro, sans-serif;
+  text-align: right;
+  position: relative;
+  z-index: 20;
+}
+.hero__img-wrapper {
+  position: absolute;
+  display: flex;
+}
+.hero__img-wrapper img {
+  width: 100%;
+}
+.hero__img-wrapper_1 {
+  bottom: 0;
+  right: 0;
+  height: 75%;
+  width: 50%;
+  align-items: end;
+}
+
+.benefits {
+  background-color: #051b3f;
+}
+.benefits__list {
+  display: flex;
+}
+.benefits__item {
+  position: relative;
+  flex: 1;
+}
+.benefits__item__text {
+  padding: 26px 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Roboro, sans-serif;
+  position: relative;
+  z-index: 15;
+}
+.benefits__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  aspect-ratio: 4/3;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  background-color: #113f8b;
+  z-index: 5;
 }
 
 .geography {
@@ -105,6 +249,48 @@ main {
 }
 .geography .canvas {
   margin-left: auto;
+}
+
+#canvas_svg {
+  max-width: 100%;
+}
+#canvas_svg path[data-region-id] {
+  fill: #A4B1CA;
+  transition: fill 0.2s;
+}
+#canvas_svg path[data-region-id].highlighted {
+  fill: #184EB8;
+}
+
+.canvas__inner-popup {
+  display: none;
+  background: white;
+  color: #333333;
+  font-weight: bold;
+  padding: 4px 8px;
+  font-size: 13px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.map__popup {
+  padding: 30px 10px;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: 1fr;
+  gap: 14px 20px;
+  font-family: Wix Madefor Display, sans-serif;
+  font-size: 15px;
+}
+.map__popup__title {
+  color: #8C8C8D;
+  font-weight: 500;
+}
+.map__popup__text {
+  font-weight: 700;
+  font-size: 15px;
+  color: #32333D;
 }
 
 /*# sourceMappingURL=style.css.map */
