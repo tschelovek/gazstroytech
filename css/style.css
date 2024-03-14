@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "BebasNeue";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/BebasNeue-Bold.ttf") format("truetype");
+}
 *, *::before, *::after {
   margin: 0;
   box-sizing: border-box;
@@ -133,7 +139,7 @@ main {
 
 .hero {
   display: flex;
-  min-height: 920px;
+  min-height: calc(100vh - 80px);
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
@@ -172,17 +178,29 @@ main {
   z-index: 10;
 }
 .hero__content .blue {
+  position: relative;
+  z-index: 30;
   color: #1086e0;
-  font-size: 92px;
+  font-size: 94px;
   font-weight: 700;
   font-family: BebasNeue, sans-serif;
+  opacity: 0;
+  translate: -120px;
+  transition: opacity 0.3s, translate 0.4s ease-in-out;
+}
+.hero__content .blue.show {
+  opacity: 1;
+  translate: 0;
 }
 .hero .title_h1 {
+  width: 372px;
+  min-height: 84px;
   color: white;
   font-size: 36px;
   font-weight: 700;
   font-family: Roboro, sans-serif;
   text-align: right;
+  text-wrap: balance;
   position: relative;
   z-index: 20;
 }
@@ -192,14 +210,69 @@ main {
 }
 .hero__img-wrapper img {
   width: 100%;
+  max-height: 100%;
 }
 .hero__img-wrapper_1 {
   bottom: 0;
-  right: 0;
-  height: 75%;
+  right: 68px;
+  max-height: 75%;
+  height: 100%;
+  width: calc(50% - 68px);
+  align-items: end;
+  z-index: 10;
+}
+.hero__img-wrapper_2 {
+  bottom: 0;
+  left: 0;
+  max-height: 80%;
+  height: 100%;
   width: 50%;
   align-items: end;
   z-index: 10;
+}
+.hero__img-wrapper_2 svg {
+  max-height: 100%;
+  height: auto;
+  width: 100%;
+  aspect-ratio: 283/181;
+}
+.hero__img-wrapper_3 {
+  bottom: 0;
+  top: 0;
+  right: 68px;
+  height: 100%;
+  width: calc(50% - 68px);
+  align-items: end;
+  z-index: 10;
+}
+.hero__img__pattern {
+  border: none;
+  position: absolute;
+}
+.hero__img__pattern_1 {
+  top: 0;
+  left: 14%;
+  clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56%);
+  background-color: rgba(17, 63, 169, 0.7);
+  width: 30%;
+  aspect-ratio: 310/540;
+}
+.hero__img__pattern_2 {
+  bottom: -300px;
+  right: 0;
+  clip-path: polygon(0 0, 100% 33%, 100% 100%, 0 57%);
+  opacity: 0.3;
+  background-color: #1086e0;
+  width: 56%;
+  aspect-ratio: 460/840;
+}
+.hero__img__pattern_3 {
+  bottom: 6%;
+  left: 44%;
+  clip-path: polygon(0 0, 100% 42%, 100% 100%, 0 58%);
+  background-color: #1086e0;
+  width: 20%;
+  aspect-ratio: 460/840;
 }
 .hero video {
   position: fixed;
@@ -223,6 +296,15 @@ main {
   right: 0;
   bottom: 0;
   z-index: 2;
+}
+
+#svg_bg10 .fil0 {
+  fill: transparent;
+  fill-rule: nonzero;
+  transition: fill 0.3s ease-in-out;
+}
+#svg_bg10 .fil0.show {
+  fill: #1086E0;
 }
 
 .benefits {

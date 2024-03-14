@@ -1,7 +1,7 @@
 .hero
   display: flex
   //flex-flow: column-reverse
-  min-height: 920px
+  min-height: calc(100vh - 80px)
   position: relative
   background-repeat: no-repeat
   background-size: cover
@@ -34,31 +34,108 @@
         height: 320px
         z-index: 10
     .blue
+      position: relative
+      z-index: 30
       color: #1086e0
-      font-size: 92px
+      font-size: 94px
       font-weight: 700
       font-family: BebasNeue, sans-serif
+      opacity: 0
+      translate: -120px
+      transition: opacity 0.3s, translate 0.4s ease-in-out
+      &.show
+        opacity: 1
+        translate: 0
 
   .title_h1
+    //max-width: 372px
+    //min-width: 340px
+    width: 372px
+    min-height: 84px
     color: white
     font-size: 36px
     font-weight: 700
     font-family: Roboro, sans-serif
     text-align: right
+    text-wrap: balance
     position: relative
     z-index: 20
-  &__img-wrapper
-    position: absolute
-    display: flex
-    img
-      width: 100%
-    &_1
-      bottom: 0
-      right: 0
-      height: 75%
-      width: 50%
-      align-items: end
-      z-index: 10
+  &__img
+    &-wrapper
+      position: absolute
+      display: flex
+      img
+        width: 100%
+        max-height: 100%
+      &_1
+        bottom: 0
+        //top: 0
+        right: 68px
+        max-height: 75%
+        height: 100%
+        width: calc(50% - 68px)
+        align-items: end
+        z-index: 10
+      &_2
+        bottom: 0
+        //top: 0
+        left: 0
+        max-height: 80%
+        height: 100%
+        width: 50%
+        align-items: end
+        z-index: 10
+        svg
+          //width: 100%
+          max-height: 100%
+          height: auto
+          //max-width: 100%
+          width: 100%
+          aspect-ratio: 283/181
+          //position: absolute
+          //top: 0
+          //bottom: 0
+          //left: 0
+          //right: 0
+      &_3
+        bottom: 0
+        top: 0
+        right: 68px
+        height: 100%
+        width: calc(50% - 68px)
+        align-items: end
+        z-index: 10
+
+    &__pattern
+      border: none
+      position: absolute
+      &_1
+        top: 0
+        left: 14%
+        clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56%)
+        //opacity: 0.7
+        //background-color: #1086e0
+        //background-color: rgba(8, 39, 90, 0.6)
+        background-color: rgba(17, 63, 169, 0.7)
+        width: 30%
+        aspect-ratio: 310/540
+      &_2
+        bottom: -300px
+        right: 0
+        clip-path: polygon(0 0, 100% 33%, 100% 100%, 0 57%)
+        opacity: 0.3
+        background-color: #1086e0
+        width: 56%
+        aspect-ratio: 460 / 840
+      &_3
+        bottom: 6%
+        left: 44%
+        clip-path: polygon(0 0, 100% 42%, 100% 100%, 0 58%)
+        //opacity: 0.5
+        background-color: #1086e0
+        width: 20%
+        aspect-ratio: 460 / 840
+
   video
     position: fixed
     top: 0
@@ -80,6 +157,19 @@
     right: 0
     bottom: 0
     z-index: 2
+
+#svg_bg10
+  //.fil1
+  //  fill: #1086E0
+  //  fill-rule: nonzero
+
+  .fil0
+    fill: transparent
+    fill-rule: nonzero
+    transition: fill 0.3s ease-in-out
+    &.show
+      fill: #1086E0
+
 
 .benefits
   position: relative

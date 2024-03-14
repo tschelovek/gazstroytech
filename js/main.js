@@ -1,4 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    /**
+     *
+     */
+
+    const heroBgSvg = document.getElementById('svg_bg10');
+    const heroText = document.getElementById('hero_content');
+    const textEl1 = heroText.querySelector('.el_1');
+    const textEl2 = heroText.querySelector('.el_2');
+
+    gsap.registerPlugin(TextPlugin);
+
+    setTimeout(() => heroBgSvg.querySelector('.el_l3').classList.add('show'), 200);
+    setTimeout(() => heroBgSvg.querySelector('.el_l2').classList.add('show'), 500);
+    setTimeout(() => heroBgSvg.querySelector('.el_l1').classList.add('show'), 900);
+    setTimeout(() => heroBgSvg.querySelector('.el_10').classList.add('show'), 1300);
+    setTimeout(() => heroBgSvg.querySelector('.el_gt').classList.add('show'), 1500);
+    setTimeout(() => heroText.querySelector('.years').classList.add('show'), 1400);
+    setTimeout(() => gsap.to(textEl1, {duration: 1.5, text: "строим и развиваем"}), 1500);
+    setTimeout(() => gsap.to(textEl2, {duration: 1, text: "вместе с Вами!"}), 2500);
+
+
+
+
+    /**
+     * Карта проектов
+     *
+     * @type {HTMLElement}
+     */
     const canvasSvg = document.getElementById("canvas_svg");
     if(canvasSvg) {
         const dataContainer = document.querySelector('.canvas__data-container');
