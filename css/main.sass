@@ -27,6 +27,12 @@
         left: -182px
         height: 320px
         z-index: 10
+      .img_3
+        position: absolute
+        top: -72px
+        left: -182px
+        height: 320px
+        z-index: 10
     .blue
       color: #1086e0
       font-size: 92px
@@ -52,8 +58,32 @@
       height: 75%
       width: 50%
       align-items: end
+      z-index: 10
+  video
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    -o-object-fit: cover
+    object-fit: cover
+    /* filter: grayscale(50%); */
+    filter: grayscale(80%) contrast(150%)
+  &::after
+    background: rgba(8, 39, 90, 0.7)
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 2
 
 .benefits
+  position: relative
+  z-index: 20
   background-color: #051b3f
   &__list
     display: flex
@@ -80,6 +110,8 @@
 
 .geography
   padding: 20px 0 80px
+  position: relative
+  z-index: 20
   background-color: #F6F6F6
   &__wrapper
     display: flex
