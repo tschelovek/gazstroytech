@@ -46,6 +46,7 @@ main {
   left: 0;
   height: 68px;
   z-index: 50;
+  transition: background-color 0.3s ease-in-out;
 }
 .header__top {
   display: flex;
@@ -112,6 +113,9 @@ main {
 }
 .header__btn_burger span::after {
   top: 12px;
+}
+.header.shrink {
+  background-color: #333333;
 }
 
 .nav__list {
@@ -245,6 +249,15 @@ main {
   align-items: end;
   z-index: 10;
 }
+.hero__img-wrapper.hide .hero__img__pattern_1 {
+  translate: 0 1200px;
+}
+.hero__img-wrapper.hide .hero__img__pattern_2 {
+  translate: 0 -1200px;
+}
+.hero__img-wrapper.hide .hero__img__pattern_3 {
+  translate: 0 -1200px;
+}
 .hero__img__pattern {
   border: none;
   position: absolute;
@@ -256,23 +269,26 @@ main {
   background-color: rgba(17, 63, 169, 0.7);
   width: 30%;
   aspect-ratio: 310/540;
+  transition: translate 0.6s ease-in-out;
 }
 .hero__img__pattern_2 {
-  bottom: -300px;
+  bottom: -180px;
   right: 0;
   clip-path: polygon(0 0, 100% 33%, 100% 100%, 0 57%);
   opacity: 0.3;
   background-color: #1086e0;
   width: 56%;
   aspect-ratio: 460/840;
+  transition: translate 0.6s ease-in-out;
 }
 .hero__img__pattern_3 {
-  bottom: 6%;
+  bottom: 8%;
   left: 44%;
   clip-path: polygon(0 0, 100% 42%, 100% 100%, 0 58%);
   background-color: #1086e0;
   width: 20%;
   aspect-ratio: 460/840;
+  transition: translate 0.8s ease-in-out;
 }
 .hero video {
   position: fixed;
@@ -376,6 +392,12 @@ main {
 }
 .geography .canvas {
   margin-left: auto;
+}
+
+.inner_img {
+  position: relative;
+  z-index: 30;
+  background-color: white;
 }
 
 #canvas_svg {
