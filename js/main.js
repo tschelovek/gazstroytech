@@ -42,6 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
     //*На случай перезагрузки страницы проверяем положение и если надо вешаем скукоживатель на шапку
     if (window.scrollY > 0) document.body.querySelector('header')?.classList.add('shrink')
 
+    /**
+     * Scroll
+     */
+    const scroll = new LocomotiveScroll();
+    scroll.on('scroll', (args) => {
+        console.log(args)
+    });
 
     /**
      * Карта проектов

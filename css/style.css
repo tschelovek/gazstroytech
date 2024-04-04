@@ -1,8 +1,113 @@
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction=horizontal] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+[data-scroll-direction=horizontal] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
+
 @font-face {
-  font-family: "BebasNeue";
+  font-family: "Bebas Neue";
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/BebasNeue-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/Roboto-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 *, *::before, *::after {
   margin: 0;
@@ -27,6 +132,13 @@ main {
 }
 .container_body {
   position: relative;
+}
+
+.title_h2 {
+  margin: 0;
+  font-size: 120px;
+  font-family: "Bebas Neue", sans-serif;
+  color: #123e7c;
 }
 
 .video-slide__video-wrap {
@@ -355,6 +467,63 @@ main {
   z-index: 5;
 }
 
+.services {
+  padding-top: 48px;
+}
+.services__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+.services__item {
+  position: relative;
+  overflow: hidden;
+}
+.services__item__info {
+  padding: 100px 256px 40px 40px;
+  position: relative;
+  width: 90%;
+  height: 100%;
+  clip-path: polygon(0 0, 38% 0, 100% 100%, 0% 100%);
+  background-color: #0087DD;
+  color: white;
+  z-index: 30;
+}
+.services__item__number {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 120px;
+  color: #59bbff;
+}
+.services__item__title {
+  margin-bottom: 14px;
+  font-family: Roboto, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+.services__item__text {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.services__item img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 15;
+  filter: grayscale(1);
+  transition: filter 0.5s, scale 0.4s;
+}
+.services__item:hover img {
+  filter: grayscale(0);
+  scale: 1.05;
+}
+.services .title_h2 {
+  line-height: 84px;
+}
+
 .geography {
   padding: 20px 0 80px;
   position: relative;
@@ -392,6 +561,13 @@ main {
 }
 .geography .canvas {
   margin-left: auto;
+}
+
+.projects {
+  background-color: #113f8b;
+}
+.projects__wrapper {
+  display: flex;
 }
 
 .inner_img {

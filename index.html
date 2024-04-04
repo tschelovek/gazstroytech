@@ -7,14 +7,15 @@
     <meta name="theme-color" content="#E6E8EC">
     <title>Title</title>
     <link rel="stylesheet" href="./css/style.css">
-<!--    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>-->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="js/TextPlugin.min.js"></script>
-    <script defer src="js/popper_2.11.8.js"></script>
+    <script src="js/libs/TextPlugin.min.js"></script>
+    <script src="js/libs/locomotive-scroll.min.js"></script>
+    <script defer src="js/libs/popper_2.11.8.js"></script>
     <script defer src="./js/main.js"></script>
 </head>
 <body>
-<div class="container_body">
+<div class="container_body" data-scroll-container>
     <header class="header">
         <div class="header__top">
             <div class="container container_1780">
@@ -215,13 +216,13 @@
             <!--        <section class="hero"-->
             <!--                 style="background-image: url('./images/hero_bg.jpg')"-->
             <!--        >-->
-            <div class="video-slide__video-wrap">
-                <video autoplay="autoplay" playsinline="" loop="loop" muted="muted" id="myVideo"
-                       class="video-slide__video" poster="/images/poster.jpg">
-                    <source src="/over.mp4" type="video/mp4">
-                </video>
-                <!--        <img src="/images/poster.jpg">-->
-            </div>
+            <!--            <div class="video-slide__video-wrap">-->
+            <!--                <video autoplay="autoplay" playsinline="" loop="loop" muted="muted" id="myVideo"-->
+            <!--                       class="video-slide__video" poster="/images/poster.jpg">-->
+            <!--                    <source src="/over.mp4" type="video/mp4">-->
+            <!--                </video>-->
+            <!--                &lt;!&ndash;        <img src="/images/poster.jpg">&ndash;&gt;-->
+            <!--            </div>-->
             <div class="hero__content">
 
                 <div id="hero_content" class="hero__content__text">
@@ -237,14 +238,15 @@
                 </div>
             </div>
             <div class="hero__img-wrapper hero__img-wrapper_1">
-<!--                <div class="hero__img__pattern hero__img__pattern_1"></div>-->
-<!--                <div class="hero__img__pattern hero__img__pattern_2">-->
-<!--                    <div class="hero__img__pattern hero__img__pattern_3"></div>-->
-<!--                </div>-->
+                <!--                <div class="hero__img__pattern hero__img__pattern_1"></div>-->
+                <!--                <div class="hero__img__pattern hero__img__pattern_2">-->
+                <!--                    <div class="hero__img__pattern hero__img__pattern_3"></div>-->
+                <!--                </div>-->
                 <img src="./images/svg/building.svg" alt="">
             </div>
             <div class="hero__img-wrapper hero__img-wrapper_2">
-                <svg id="svg_bg10" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="75mm" height="48mm" version="1.1"
+                <svg id="svg_bg10" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="75mm" height="48mm"
+                     version="1.1"
                      style="shape-rendering:geometricPrecision;
                       text-rendering:geometricPrecision;
                        image-rendering:optimizeQuality;
@@ -264,7 +266,7 @@
                                      points="3513.28,4795.5 8.97,2096.27 8.97,2053.65 3551.26,4782.14 3540.94,4795.5 "/>
                             <g>
                                 <path class="fil0 el_10"
-                                  d="M3181.8 391.87c82.61,0 150.38,-9.04 203.3,-27.11 52.93,-18.07 96.17,-42.6 129.73,-73.58 33.56,-30.98 60.67,-67.12 81.33,-108.43 20.65,-41.3 38.72,-85.19 54.21,-131.66l286.57 0 0 2032.45 -425.98 -335.02 0 -1054.6 -329.16 0 0 -302.05zm1374.72 1746.49c0,98.1 20.01,167.16 60.03,207.18 40.01,40.01 93.58,60.02 160.71,60.02 67.12,0 120.69,-20.01 160.7,-60.02 40.02,-40.02 60.03,-109.08 60.03,-207.18l0 -1463.8c0,-98.1 -20.01,-167.16 -60.03,-207.18 -40.01,-40.01 -93.58,-60.02 -160.7,-60.02 -67.13,0 -120.7,20.01 -160.71,60.02 -40.02,40.02 -60.03,109.08 -60.03,207.18l0 1463.8zm-425.96 -1436.69c0,-219.44 55.5,-387.9 166.52,-505.36 111,-117.47 271.06,-176.2 480.18,-176.2 209.11,0 369.17,58.73 480.19,176.2 111.01,117.46 166.51,285.92 166.51,505.36l0 1409.58c0,219.44 -55.5,387.9 -166.51,505.36 -100.27,106.09 -240.54,164.26 -420.82,174.54l-698.86 -549.66c-4.8,-41.22 -7.21,-84.62 -7.21,-130.24l0 -1409.58z"
+                                      d="M3181.8 391.87c82.61,0 150.38,-9.04 203.3,-27.11 52.93,-18.07 96.17,-42.6 129.73,-73.58 33.56,-30.98 60.67,-67.12 81.33,-108.43 20.65,-41.3 38.72,-85.19 54.21,-131.66l286.57 0 0 2032.45 -425.98 -335.02 0 -1054.6 -329.16 0 0 -302.05zm1374.72 1746.49c0,98.1 20.01,167.16 60.03,207.18 40.01,40.01 93.58,60.02 160.71,60.02 67.12,0 120.69,-20.01 160.7,-60.02 40.02,-40.02 60.03,-109.08 60.03,-207.18l0 -1463.8c0,-98.1 -20.01,-167.16 -60.03,-207.18 -40.01,-40.01 -93.58,-60.02 -160.7,-60.02 -67.13,0 -120.7,20.01 -160.71,60.02 -40.02,40.02 -60.03,109.08 -60.03,207.18l0 1463.8zm-425.96 -1436.69c0,-219.44 55.5,-387.9 166.52,-505.36 111,-117.47 271.06,-176.2 480.18,-176.2 209.11,0 369.17,58.73 480.19,176.2 111.01,117.46 166.51,285.92 166.51,505.36l0 1409.58c0,219.44 -55.5,387.9 -166.51,505.36 -100.27,106.09 -240.54,164.26 -420.82,174.54l-698.86 -549.66c-4.8,-41.22 -7.21,-84.62 -7.21,-130.24l0 -1409.58z"
 
                                 />
                             </g>
@@ -298,6 +300,54 @@
             </div>
         </div>
 
+        <section class="services">
+            <div class="container_1780 container">
+                <h2 class="title_h2">услуги</h2>
+                <div class="services__list">
+                    <div class="services__item">
+                        <div class="services__item__info">
+                            <div class="services__item__number">01</div>
+                            <div class="services__item__title">Строительство</div>
+                            <p class="services__item__text">Весь спектр услуг от строительства «с нуля» и капитального
+                                ремонта зданий и сооружений «под ключ» до диагностического обслуживания и устранения
+                                неполадок в работе систем</p>
+                        </div>
+                        <img src="./images/services_1.jpg" alt="">
+                    </div>
+                    <div class="services__item">
+                        <div class="services__item__info">
+                            <div class="services__item__number">02</div>
+                            <div class="services__item__title">ПИР</div>
+                            <p class="services__item__text">Проведение инженерных изысканий, разработка
+                                технико-экономических обоснований, подготовка проектов и документации для осуществления
+                                строительства</p>
+                        </div>
+                        <img src="./images/services_2.jpg" alt="">
+                    </div>
+                    <div class="services__item">
+                        <div class="services__item__info">
+                            <div class="services__item__number">03</div>
+                            <div class="services__item__title">Поставки</div>
+                            <p class="services__item__text">Широкий ассортимент материалов и оборудования для
+                                возведения промышленного объекта — от инертных материалов и металлопроката до кабельной
+                                продукции и отделочных материалов</p>
+                        </div>
+                        <img src="./images/services_3.jpg" alt="">
+                    </div>
+                    <div class="services__item">
+                        <div class="services__item__info">
+                            <div class="services__item__number">04</div>
+                            <div class="services__item__title">Аренда техники</div>
+                            <p class="services__item__text">Собственный парк строительной техники, автотранспорта,
+                                специализированное оборудование для сварочных работ и доставка арендованной техники
+                                заказчику в любой регион оптимальным</p>
+                        </div>
+                        <img src="./images/services_4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="inner_img">
             <div class="container container_1780">
                 <img src="./images/Gazstroytech-2_21.jpg" alt="">
@@ -305,15 +355,47 @@
         </div>
 
         <!--    <div class="container container_1920">-->
-        <div class="geography">
+        <section class="projects">
+            <div class="container container_1780">
+                <div class="projects__wrapper">
+                    <div class="projects__left">
+                        <div class="projects__list">
+                            <div class="projects__item">
+                                <img src="./images/project_1.png" alt="">
+                                <p>Договоры с основными крупными производителями стройматериалов в</p>
+                            </div>
+                            <div class="projects__item">
+                                <img src="./images/project_2.png" alt="">
+                                <p>Договоры с основными крупными производителями стройматериалов в</p>
+                            </div>
+                            <div class="projects__item">
+                                <img src="./images/project_3.png" alt="">
+                                <p>Договоры с основными крупными производителями стройматериалов в</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__right">
+                        <div class="projects__right__top"><h2 class="title_h2">ПРОЕКТЫ</h2></div>
+                        <div class="projects__right__bottom">
+                            <div class="projects__counter">
+                                <span class="projects__counter__number">230</span>+
+                            </div>
+                            <p>успешно реализованных проектов</p>
+                            <a href="#" class="projects__link">смотреть все</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="geography" data-scroll-section>
             <div class="container container_1780">
                 <div class="geography__wrapper">
-                    <div class="geography__text">
-                        <h2 class="title_h2">География <span>проектов</span></h2>
-                        <p>Успешно реализованные на крупнейших строительных площадках проекты подтверждают квалификацию
-                            специалистов нашей компании. Мы решаем задачи высокой сложности, чем зарабатываем авторитет
-                            у
-                            своих Заказчиков.
+                    <div class="geography__text" data-scroll>
+                        <h2 data-scroll data-scroll-speed="1" class="title_h2">География <span>проектов</span></h2>
+                        <p data-scroll data-scroll-speed="2">Успешно реализованные на крупнейших строительных площадках
+                            проекты подтверждают квалификацию специалистов нашей компании. Мы решаем задачи высокой
+                            сложности, чем зарабатываем авторитет у своих Заказчиков.
                         </p>
                     </div>
                     <div class="canvas">
@@ -1400,7 +1482,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!--    </div>-->
 
         <div class="inner_img">

@@ -210,6 +210,55 @@
       background-color: #113f8b
       z-index: 5
 
+
+.services
+  padding-top: 48px
+  &__list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 2px
+  &__item
+    position: relative
+    overflow: hidden
+    &__info
+      padding: 100px 256px 40px 40px
+      position: relative
+      width: 90%
+      height: 100%
+      clip-path: polygon(0 0, 38% 0, 100% 100%, 0% 100%)
+      background-color: #0087DD
+      color: white
+      z-index: 30
+    &__number
+      font-family: "Bebas Neue", sans-serif
+      font-size: 120px
+      color: #59bbff
+    &__title
+      margin-bottom: 14px
+      font-family: Roboto, sans-serif
+      font-size: 36px
+      font-weight: 700
+      line-height: 1
+    &__text
+      font-family: Roboto, sans-serif
+      font-size: 16px
+      font-weight: 400
+      line-height: 1.5
+    img
+      position: absolute
+      top: 0
+      right: 0
+      height: 100%
+      z-index: 15
+      filter: grayscale(1)
+      transition: filter 0.5s, scale 0.4s
+    &:hover
+      img
+        filter: grayscale(0)
+        scale: 1.05
+  .title_h2
+    line-height: 84px
+
 .geography
   padding: 20px 0 80px
   position: relative
@@ -242,7 +291,12 @@
   .canvas
     margin-left: auto
 
+.projects
+  background-color: #113f8b
+  &__wrapper
+    display: flex
 .inner_img
   position: relative
   z-index: 30
   background-color: white
+
