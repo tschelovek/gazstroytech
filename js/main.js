@@ -45,10 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Scroll
      */
-    const scroll = new LocomotiveScroll();
-    scroll.on('scroll', (args) => {
-        console.log(args)
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true
     });
+    // scroll.on('scroll', (args) => {
+    //     console.log(args)
+    // });
 
     /**
      * Карта проектов

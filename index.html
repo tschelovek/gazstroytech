@@ -6,6 +6,7 @@
     <!--    <link rel="icon" href="./favicon.ico">-->
     <meta name="theme-color" content="#E6E8EC">
     <title>Title</title>
+    <link rel="stylesheet" href="./css/libs/locomotive-scroll.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <!--    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -212,47 +213,49 @@
     </header>
 
     <main>
-        <section class="hero">
-            <!--        <section class="hero"-->
-            <!--                 style="background-image: url('./images/hero_bg.jpg')"-->
-            <!--        >-->
-            <!--            <div class="video-slide__video-wrap">-->
-            <!--                <video autoplay="autoplay" playsinline="" loop="loop" muted="muted" id="myVideo"-->
-            <!--                       class="video-slide__video" poster="/images/poster.jpg">-->
-            <!--                    <source src="/over.mp4" type="video/mp4">-->
-            <!--                </video>-->
-            <!--                &lt;!&ndash;        <img src="/images/poster.jpg">&ndash;&gt;-->
-            <!--            </div>-->
-            <div class="hero__content">
+        <div class="scroll-wrapper_0" data-scroll-section>
+            <section class="hero">
+                <!--        <section class="hero"-->
+                <!--                 style="background-image: url('./images/hero_bg.jpg')"-->
+                <!--        >-->
+                <!--            <div class="video-slide__video-wrap">-->
+                <!--                <video autoplay="autoplay" playsinline="" loop="loop" muted="muted" id="myVideo"-->
+                <!--                       class="video-slide__video" poster="/images/poster.jpg">-->
+                <!--                    <source src="/over.mp4" type="video/mp4">-->
+                <!--                </video>-->
+                <!--                &lt;!&ndash;        <img src="/images/poster.jpg">&ndash;&gt;-->
+                <!--            </div>-->
+                <div class="hero__content">
 
-                <div id="hero_content" class="hero__content__text">
-                    <!--                    <img src="./images/svg/arrow.svg" class="img img_1" alt="">-->
-                    <!--                    <img src="./images/svg/10.svg" class="img img_2" alt="">-->
-                    <!--                    <img src="./images/svg/10_1.svg" class="img img_3" alt="">-->
-                    <div class="blue years">лет</div>
-                    <div class="title_h1">
-                        <div class="el_1"></div>
-                        <div class="el_2"></div>
+                    <div id="hero_content" class="hero__content__text">
+                        <!--                    <img src="./images/svg/arrow.svg" class="img img_1" alt="">-->
+                        <!--                    <img src="./images/svg/10.svg" class="img img_2" alt="">-->
+                        <!--                    <img src="./images/svg/10_1.svg" class="img img_3" alt="">-->
+                        <div class="blue years">лет</div>
+                        <div class="title_h1">
+                            <div class="el_1"></div>
+                            <div class="el_2"></div>
+                        </div>
+
                     </div>
-
                 </div>
-            </div>
-            <div class="hero__img-wrapper hero__img-wrapper_1">
-                <!--                <div class="hero__img__pattern hero__img__pattern_1"></div>-->
-                <!--                <div class="hero__img__pattern hero__img__pattern_2">-->
-                <!--                    <div class="hero__img__pattern hero__img__pattern_3"></div>-->
-                <!--                </div>-->
-                <img src="./images/svg/building.svg" alt="">
-            </div>
-            <div class="hero__img-wrapper hero__img-wrapper_2">
-                <svg id="svg_bg10" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="75mm" height="48mm"
-                     version="1.1"
-                     style="shape-rendering:geometricPrecision;
+                <div class="hero__img-wrapper hero__img-wrapper_1">
+                    <!--                <div class="hero__img__pattern hero__img__pattern_1"></div>-->
+                    <!--                <div class="hero__img__pattern hero__img__pattern_2">-->
+                    <!--                    <div class="hero__img__pattern hero__img__pattern_3"></div>-->
+                    <!--                </div>-->
+                    <img src="./images/svg/building.svg" alt="">
+                </div>
+                <div class="hero__img-wrapper hero__img-wrapper_2">
+                    <svg id="svg_bg10" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="75mm"
+                         height="48mm"
+                         version="1.1"
+                         style="shape-rendering:geometricPrecision;
                       text-rendering:geometricPrecision;
                        image-rendering:optimizeQuality;
                         fill-rule:evenodd;
                          clip-rule:evenodd"
-                     viewBox="0 0 7500 4800" xmlns:xlink="http://www.w3.org/1999/xlink">
+                         viewBox="0 0 7500 4800" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <g id="Layer_x0020_1">
                         <metadata id="CorelCorpID_0Corel-Layer"/>
                         <g id="_1875365100128">
@@ -273,89 +276,117 @@
                         </g>
                     </g>
                 </svg>
-            </div>
-            <div class="hero__img-wrapper hero__img-wrapper_3 hide">
-                <div class="hero__img__pattern hero__img__pattern_1"></div>
-                <div class="hero__img__pattern hero__img__pattern_2">
                 </div>
-                <div class="hero__img__pattern hero__img__pattern_3"></div>
-            </div>
-        </section>
-        <div class="benefits">
-            <div class="container container_1780">
-                <div class="benefits__list">
-                    <div class="benefits__item">
-                        <div class="benefits__item__text">Надежный<br>работодатель</div>
+                <div class="hero__img-wrapper hero__img-wrapper_3 hide">
+                    <div class="hero__img__pattern hero__img__pattern_1"></div>
+                    <div class="hero__img__pattern hero__img__pattern_2">
                     </div>
-                    <div class="benefits__item">
-                        <div class="benefits__item__text">Большие карьерные<br>возможности</div>
-                    </div>
-                    <div class="benefits__item">
-                        <div class="benefits__item__text">Проектирование<br>и строительство</div>
-                    </div>
-                    <div class="benefits__item">
-                        <div class="benefits__item__text">Постоянное развитие<br>и совершенствование</div>
+                    <div class="hero__img__pattern hero__img__pattern_3"></div>
+                </div>
+            </section>
+            <div class="benefits">
+                <div class="container container_1780">
+                    <div class="benefits__list">
+                        <div class="benefits__item">
+                            <div class="benefits__item__text">Надежный<br>работодатель</div>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefits__item__text">Большие карьерные<br>возможности</div>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefits__item__text">Проектирование<br>и строительство</div>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefits__item__text">Постоянное развитие<br>и совершенствование</div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-        <section class="services">
-            <div class="container_1780 container">
-                <h2 class="title_h2">услуги</h2>
-                <div class="services__list">
-                    <div class="services__item">
-                        <div class="services__item__info">
-                            <div class="services__item__number">01</div>
-                            <div class="services__item__title">Строительство</div>
-                            <p class="services__item__text">Весь спектр услуг от строительства «с нуля» и капитального
-                                ремонта зданий и сооружений «под ключ» до диагностического обслуживания и устранения
-                                неполадок в работе систем</p>
+        <div class="scroll-wrapper_1"
+             data-scroll-section
+             data-persistent
+             id="stick"
+        >
+            <div class="career__static-bg"
+                 data-scroll data-scroll-sticky
+                 data-scroll-target="#stick"></div>
+            <section class="services" data-scroll>
+                <div class="container_1780 container">
+                    <h2 class="title_h2">услуги</h2>
+                    <div class="services__list">
+                        <div class="services__item">
+                            <div class="services__item__info">
+                                <div class="services__item__number">01</div>
+                                <div class="services__item__title">Строительство</div>
+                                <p class="services__item__text">Весь спектр услуг от строительства «с нуля» и
+                                    капитального
+                                    ремонта зданий и сооружений «под ключ» до диагностического обслуживания и устранения
+                                    неполадок в работе систем</p>
+                            </div>
+                            <img src="./images/services_1.jpg" alt="">
                         </div>
-                        <img src="./images/services_1.jpg" alt="">
-                    </div>
-                    <div class="services__item">
-                        <div class="services__item__info">
-                            <div class="services__item__number">02</div>
-                            <div class="services__item__title">ПИР</div>
-                            <p class="services__item__text">Проведение инженерных изысканий, разработка
-                                технико-экономических обоснований, подготовка проектов и документации для осуществления
-                                строительства</p>
+                        <div class="services__item">
+                            <div class="services__item__info">
+                                <div class="services__item__number">02</div>
+                                <div class="services__item__title">ПИР</div>
+                                <p class="services__item__text">Проведение инженерных изысканий, разработка
+                                    технико-экономических обоснований, подготовка проектов и документации для
+                                    осуществления
+                                    строительства</p>
+                            </div>
+                            <img src="./images/services_2.jpg" alt="">
                         </div>
-                        <img src="./images/services_2.jpg" alt="">
-                    </div>
-                    <div class="services__item">
-                        <div class="services__item__info">
-                            <div class="services__item__number">03</div>
-                            <div class="services__item__title">Поставки</div>
-                            <p class="services__item__text">Широкий ассортимент материалов и оборудования для
-                                возведения промышленного объекта — от инертных материалов и металлопроката до кабельной
-                                продукции и отделочных материалов</p>
+                        <div class="services__item">
+                            <div class="services__item__info">
+                                <div class="services__item__number">03</div>
+                                <div class="services__item__title">Поставки</div>
+                                <p class="services__item__text">Широкий ассортимент материалов и оборудования для
+                                    возведения промышленного объекта — от инертных материалов и металлопроката до
+                                    кабельной
+                                    продукции и отделочных материалов</p>
+                            </div>
+                            <img src="./images/services_3.jpg" alt="">
                         </div>
-                        <img src="./images/services_3.jpg" alt="">
-                    </div>
-                    <div class="services__item">
-                        <div class="services__item__info">
-                            <div class="services__item__number">04</div>
-                            <div class="services__item__title">Аренда техники</div>
-                            <p class="services__item__text">Собственный парк строительной техники, автотранспорта,
-                                специализированное оборудование для сварочных работ и доставка арендованной техники
-                                заказчику в любой регион оптимальным</p>
+                        <div class="services__item">
+                            <div class="services__item__info">
+                                <div class="services__item__number">04</div>
+                                <div class="services__item__title">Аренда техники</div>
+                                <p class="services__item__text">Собственный парк строительной техники, автотранспорта,
+                                    специализированное оборудование для сварочных работ и доставка арендованной техники
+                                    заказчику в любой регион оптимальным</p>
+                            </div>
+                            <img src="./images/services_4.jpg" alt="">
                         </div>
-                        <img src="./images/services_4.jpg" alt="">
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section class="career" data-scroll>
+                <div class="container">
+                    <div class="career__text-block">
+                        <h2 class="title_h2">КАРЬЕРА</h2>
+                        <p class="colored">В основе наших принципов неукоснительное соблюдение требований,
+                            норм и правил безопасности.</p>
+                        <p>Непрерывно развиваем внутреннюю культуру и профессионализм сотрудников. Повышаем
+                            эффективность за счет применения инноваций и передовых технологий!</p>
+                    </div>
+                    <img src="./images/career_1.png" alt="">
+                    <img src="./images/career_2.png" alt="">
+                </div>
+            </section>
 
-        <div class="inner_img">
-            <div class="container container_1780">
-                <img src="./images/Gazstroytech-2_21.jpg" alt="">
-            </div>
         </div>
+        
+<!--        <div class="inner_img" data-scroll-section>-->
+<!--            <div class="container container_1780">-->
+<!--                <img src="./images/Gazstroytech-2_21.jpg" alt="">-->
+<!--            </div>-->
+<!--        </div>-->
 
         <!--    <div class="container container_1920">-->
-        <section class="projects">
+        <section class="projects" data-scroll-section>
             <div class="container container_1780">
                 <div class="projects__wrapper">
                     <div class="projects__left">
@@ -1485,7 +1516,7 @@
         </section>
         <!--    </div>-->
 
-        <div class="inner_img">
+        <div class="inner_img" data-scroll-section>
             <div class="container container_1780">
                 <img src="./images/Gazstroytech-2_22.jpg" alt="">
             </div>

@@ -257,7 +257,23 @@
         filter: grayscale(0)
         scale: 1.05
   .title_h2
-    line-height: 84px
+    position: relative
+    line-height: 88px
+
+.career
+  //padding-bottom: 30vh
+  .container
+    display: flex
+  &__text-block
+    margin-top: -30vh
+    display: flex
+    flex-flow: column
+    justify-content: end
+  &__static-bg
+    width: 80vw
+    height: 100vh
+    background: url("./images/background-dude.png") left top 20vh no-repeat
+    background-size: contain
 
 .geography
   padding: 20px 0 80px
