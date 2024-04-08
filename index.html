@@ -7,16 +7,18 @@
     <meta name="theme-color" content="#E6E8EC">
     <title>Title</title>
     <link rel="stylesheet" href="./css/libs/locomotive-scroll.min.css">
+<!--    <link rel="stylesheet" href="./css/libs/locomotive-scroll_v5.css">-->
     <link rel="stylesheet" href="./css/style.css">
     <!--    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="js/libs/TextPlugin.min.js"></script>
     <script src="js/libs/locomotive-scroll.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>-->
     <script defer src="js/libs/popper_2.11.8.js"></script>
     <script defer src="./js/main.js"></script>
 </head>
 <body>
-<div class="container_body" data-scroll-container>
+<div data-scroll-container class="container_body">
     <header class="header">
         <div class="header__top">
             <div class="container container_1780">
@@ -218,13 +220,17 @@
                 <!--        <section class="hero"-->
                 <!--                 style="background-image: url('./images/hero_bg.jpg')"-->
                 <!--        >-->
-                <!--            <div class="video-slide__video-wrap">-->
-                <!--                <video autoplay="autoplay" playsinline="" loop="loop" muted="muted" id="myVideo"-->
-                <!--                       class="video-slide__video" poster="/images/poster.jpg">-->
-                <!--                    <source src="/over.mp4" type="video/mp4">-->
-                <!--                </video>-->
-                <!--                &lt;!&ndash;        <img src="/images/poster.jpg">&ndash;&gt;-->
-                <!--            </div>-->
+<!--                            <div class="video-slide__video-wrap">-->
+                <div class="hero__bg-wrapper"  data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                    <div class="c-fixed_target" id="fixed-target"></div>
+                    <div class="c-fixed" data-scroll data-scroll-sticky data-scroll-target="#fixed-target">
+                        <video autoplay="autoplay" playsinline="" loop="loop" muted="muted" id="myVideo"
+                               class="video-slide__video" poster="/images/poster.jpg">
+                            <source src="/over.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!--        <img src="/images/poster.jpg">-->
+                </div>
                 <div class="hero__content">
 
                     <div id="hero_content" class="hero__content__text">
@@ -307,76 +313,89 @@
 
         <div class="scroll-wrapper_1"
              data-scroll-section
-             data-persistent
-             id="stick"
         >
-            <div class="career__static-bg"
-                 data-scroll data-scroll-sticky
-                 data-scroll-target="#stick"></div>
-            <section class="services" data-scroll>
-                <div class="container_1780 container">
-                    <h2 class="title_h2">услуги</h2>
-                    <div class="services__list">
-                        <div class="services__item">
-                            <div class="services__item__info">
-                                <div class="services__item__number">01</div>
-                                <div class="services__item__title">Строительство</div>
-                                <p class="services__item__text">Весь спектр услуг от строительства «с нуля» и
-                                    капитального
-                                    ремонта зданий и сооружений «под ключ» до диагностического обслуживания и устранения
-                                    неполадок в работе систем</p>
-                            </div>
-                            <img src="./images/services_1.jpg" alt="">
-                        </div>
-                        <div class="services__item">
-                            <div class="services__item__info">
-                                <div class="services__item__number">02</div>
-                                <div class="services__item__title">ПИР</div>
-                                <p class="services__item__text">Проведение инженерных изысканий, разработка
-                                    технико-экономических обоснований, подготовка проектов и документации для
-                                    осуществления
-                                    строительства</p>
-                            </div>
-                            <img src="./images/services_2.jpg" alt="">
-                        </div>
-                        <div class="services__item">
-                            <div class="services__item__info">
-                                <div class="services__item__number">03</div>
-                                <div class="services__item__title">Поставки</div>
-                                <p class="services__item__text">Широкий ассортимент материалов и оборудования для
-                                    возведения промышленного объекта — от инертных материалов и металлопроката до
-                                    кабельной
-                                    продукции и отделочных материалов</p>
-                            </div>
-                            <img src="./images/services_3.jpg" alt="">
-                        </div>
-                        <div class="services__item">
-                            <div class="services__item__info">
-                                <div class="services__item__number">04</div>
-                                <div class="services__item__title">Аренда техники</div>
-                                <p class="services__item__text">Собственный парк строительной техники, автотранспорта,
-                                    специализированное оборудование для сварочных работ и доставка арендованной техники
-                                    заказчику в любой регион оптимальным</p>
-                            </div>
-                            <img src="./images/services_4.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="career" data-scroll>
-                <div class="container">
-                    <div class="career__text-block">
-                        <h2 class="title_h2">КАРЬЕРА</h2>
-                        <p class="colored">В основе наших принципов неукоснительное соблюдение требований,
-                            норм и правил безопасности.</p>
-                        <p>Непрерывно развиваем внутреннюю культуру и профессионализм сотрудников. Повышаем
-                            эффективность за счет применения инноваций и передовых технологий!</p>
-                    </div>
-                    <img src="./images/career_1.png" alt="">
-                    <img src="./images/career_2.png" alt="">
-                </div>
-            </section>
+            <div id="stick">
+                <div class="career__static-bg"
+                     data-scroll data-scroll-sticky
+                     data-scroll-target="#stick"></div>
 
+                <section class="services" data-scroll data-scroll-offset="100,50%">
+                    <div class="container_1920 container">
+                        <h2 class="title_h2">услуги</h2>
+                        <div class="services__list">
+                            <div class="services__item">
+                                <div class="services__item__info">
+                                    <div class="services__item__number">01</div>
+                                    <div class="services__item__title">Строительство</div>
+                                    <p class="services__item__text">Весь спектр услуг от строительства «с нуля» и
+                                        капитального
+                                        ремонта зданий и сооружений «под ключ» до диагностического обслуживания и устранения
+                                        неполадок в работе систем</p>
+                                </div>
+                                <img src="./images/services_1.jpg" alt="">
+                            </div>
+                            <div class="services__item">
+                                <div class="services__item__info">
+                                    <div class="services__item__number">02</div>
+                                    <div class="services__item__title">ПИР</div>
+                                    <p class="services__item__text">Проведение инженерных изысканий, разработка
+                                        технико-экономических обоснований, подготовка проектов и документации для
+                                        осуществления
+                                        строительства</p>
+                                </div>
+                                <img src="./images/services_2.jpg" alt="">
+                            </div>
+                            <div class="services__item">
+                                <div class="services__item__info">
+                                    <div class="services__item__number">03</div>
+                                    <div class="services__item__title">Поставки</div>
+                                    <p class="services__item__text">Широкий ассортимент материалов и оборудования для
+                                        возведения промышленного объекта — от инертных материалов и металлопроката до
+                                        кабельной
+                                        продукции и отделочных материалов</p>
+                                </div>
+                                <img src="./images/services_3.jpg" alt="">
+                            </div>
+                            <div class="services__item">
+                                <div class="services__item__info">
+                                    <div class="services__item__number">04</div>
+                                    <div class="services__item__title">Аренда техники</div>
+                                    <p class="services__item__text">Собственный парк строительной техники, автотранспорта,
+                                        специализированное оборудование для сварочных работ и доставка арендованной техники
+                                        заказчику в любой регион оптимальным</p>
+                                </div>
+                                <img src="./images/services_4.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </section >
+                <section class="career" data-scroll>
+                    <div class="container container_1920">
+                        <div class="career__text-block-wrapper">
+                            <div class="career__text-block">
+                                <h2 class="title_h2">КАРЬЕРА</h2>
+                                <p class="text_1">В основе наших принципов неукоснительное соблюдение требований,
+                                    норм и правил безопасности.</p>
+                                <p class="text_2">Непрерывно развиваем внутреннюю культуру и профессионализм сотрудников. Повышаем
+                                    эффективность за счет применения инноваций и передовых технологий!</p>
+                            </div>
+                        </div>
+                        <img src="./images/career_1.png"
+                             data-scroll data-scroll-speed="1"
+                             class="career__img_1" alt="">
+                        <img src="./images/career_2.png"
+                             data-scroll data-scroll-speed="-2"
+                             class="career__img_2" alt="">
+                        <div class="career__statistics">
+                            <div class="career__statistics__left">></div>
+                            <div class="career__statistics__right">
+                                <div class="career__statistics__number">120</div>
+                                <div class="career__statistics__text">сотрудников</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
         
 <!--        <div class="inner_img" data-scroll-section>-->
@@ -387,32 +406,54 @@
 
         <!--    <div class="container container_1920">-->
         <section class="projects" data-scroll-section>
-            <div class="container container_1780">
+            <div class="container container_1920">
                 <div class="projects__wrapper">
-                    <div class="projects__left">
-                        <div class="projects__list">
-                            <div class="projects__item">
+                    <div class="projects__left-block">
+                        <div class="projects__top__list">
+                            <div class="projects__top__item">
                                 <img src="./images/project_1.png" alt="">
                                 <p>Договоры с основными крупными производителями стройматериалов в</p>
                             </div>
-                            <div class="projects__item">
+                            <div class="projects__top__item">
                                 <img src="./images/project_2.png" alt="">
                                 <p>Договоры с основными крупными производителями стройматериалов в</p>
                             </div>
-                            <div class="projects__item">
+                            <div class="projects__top__item">
                                 <img src="./images/project_3.png" alt="">
                                 <p>Договоры с основными крупными производителями стройматериалов в</p>
                             </div>
                         </div>
+                        <div class="projects__bottom__list">
+                            <div class="projects__bottom__item">
+                                <div class="projects__bottom__item__text">
+                                    <div>Сосновское ЛПУ МГ</div>
+                                    <img src="./images/project_11.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="projects__bottom__item">
+                                <div class="projects__bottom__item__text">
+                                    <div>Склад на базе УМТСиК</div>
+                                    <img src="./images/project_12.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="projects__bottom__item">
+                                <div class="projects__bottom__item__text">
+                                    <div>Казымское ЛПУ МГ</div>
+                                    <img src="./images/project_13.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="projects__right">
+                    <div class="projects__right-block">
                         <div class="projects__right__top"><h2 class="title_h2">ПРОЕКТЫ</h2></div>
                         <div class="projects__right__bottom">
-                            <div class="projects__counter">
-                                <span class="projects__counter__number">230</span>+
+                            <div class="projects__description">
+                                <div class="projects__counter">
+                                    <span class="projects__counter__number">230</span>+
+                                </div>
+                                <div class="projects__description__text">успешно реализованных проектов</div>
+                                <a href="#" class="projects__link">смотреть все</a>
                             </div>
-                            <p>успешно реализованных проектов</p>
-                            <a href="#" class="projects__link">смотреть все</a>
                         </div>
                     </div>
                 </div>

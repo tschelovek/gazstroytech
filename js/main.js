@@ -45,13 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Scroll
      */
-    const scroll = new LocomotiveScroll({
+    const locoScroll = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true
     });
-    // scroll.on('scroll', (args) => {
-    //     console.log(args)
-    // });
+    // Обновляем скролл в случае ресайза
+    new ResizeObserver(() => locoScroll.update()).observe(
+        document.querySelector("[data-scroll-container]")
+    );
+    // window.addEventListener('resize', resetLocomotive)
+    //
+    // function resetLocomotive() {
+    //     setTimeout(() => {
+    //         scroll.scrollTo('top');
+    //         scroll.update();
+    //         scroll.init();
+    //     },
+    //         0)
+    // }
 
     /**
      * Карта проектов

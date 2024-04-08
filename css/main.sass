@@ -45,7 +45,7 @@
       transition: opacity 0.3s, translate 0.4s ease-in-out
       &.show
         opacity: 1
-        translate: 0
+        translate: 80px
 
   .title_h1
     //max-width: 372px
@@ -147,18 +147,25 @@
         aspect-ratio: 460 / 840
         transition: translate 0.8s ease-in-out
 
-
-  video
-    position: fixed
+  &__bg-wrapper
+    position: absolute
     top: 0
     left: 0
-    width: 100%
-    height: 100%
+    right: 0
+    bottom: 0
+    overflow: hidden
+
+  video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
     z-index: 1
     -o-object-fit: cover
     object-fit: cover
-    /* filter: grayscale(50%); */
-    filter: grayscale(80%) contrast(150%)
+  //  /* filter: grayscale(50%); */
+  //  filter: grayscale(80%) contrast(150%)
   &::after
     background: rgba(8, 39, 90, 0.7)
     content: ''
@@ -169,6 +176,25 @@
     right: 0
     bottom: 0
     z-index: 2
+
+.c-fixed
+  background-position: 50%
+  background-size: cover
+  height: 100%
+  width: 100vw
+  mix-blend-mode: multiply
+  opacity: .75
+  left: 0
+  position: absolute
+  right: 0
+  top: -100vh
+  &_target
+    left: 0
+    position: absolute
+    right: 0
+    top: -100vh
+    bottom: -100vh
+    width: 100vw
 
 #svg_bg10
   //.fil1
@@ -261,19 +287,107 @@
     line-height: 88px
 
 .career
-  //padding-bottom: 30vh
   .container
     display: flex
+    justify-content: flex-end
+    position: relative
   &__text-block
-    margin-top: -30vh
     display: flex
     flex-flow: column
     justify-content: end
+    font-size: 24px
+    position: absolute
+    bottom: 70px
+    left: 0
+    width: 680px
+    &-wrapper
+      position: relative
+      width: 30%
+      align-self: flex-end
+
+    .text
+      &_1
+        margin-bottom: 20px
+        color: #0e86d9
+        font-weight: 700
+        max-width: 490px
+      &_2
+        color: #123e7c
+        max-width: 680px
+  &__img
+    &_1
+      width: 45%
+    &_2
+      width: 25%
   &__static-bg
     width: 80vw
-    height: 100vh
-    background: url("./images/background-dude.png") left top 20vh no-repeat
+    //height: 100vh
+    aspect-ratio: 1405/1080
+    background: url("./images/background-dude.png") left top 10vh no-repeat
     background-size: contain
+  &__statistics
+    display: flex
+    position: absolute
+    top: 4%
+    right: 24%
+    color: #d1ecff
+    &__left, &__number
+      font-family: "Bebas Neue", sans-serif
+      font-size: 13vw
+      line-height: 0.7
+    &__text
+      margin-left: 1.6em
+      font-size: 1.5vw
+      font-weight: 700
+
+
+.projects
+  padding-top: 70px
+  color: white
+  background-color: #113f8b
+  .title_h2
+    color: white
+  &__wrapper
+    display: flex
+    gap: 40px
+  &__left-block
+    flex: 31
+  &__right-block
+    flex: 1
+    display: flex
+    flex-flow: column
+  &__top
+    margin-bottom: 110px
+    &__list
+      display: flex
+      img
+        max-height: 120px
+  &__bottom
+    &__list
+      display: flex
+    &__item
+      overflow: hidden
+      aspect-ratio: 1
+      img
+        max-width: 100%
+  &__right
+    &__bottom
+      margin: auto 0 64px 0
+  &__description
+    &__text
+      margin: 1.5em 0 2em
+      font-size: 30px
+      font-weight: bold
+  &__counter
+    font-family: 'Bebas Neue', sans-serif
+    font-size: 20vh
+    color: #1a8ada
+  &__link
+    padding: 6px 6px 2px 6px
+    font-size: 24px
+    color: #0e86d9
+    text-decoration: none
+    border-bottom: 1px solid #0e86d9
 
 .geography
   padding: 20px 0 80px
@@ -307,10 +421,6 @@
   .canvas
     margin-left: auto
 
-.projects
-  background-color: #113f8b
-  &__wrapper
-    display: flex
 .inner_img
   position: relative
   z-index: 30
