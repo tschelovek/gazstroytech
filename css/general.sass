@@ -1,3 +1,7 @@
+html
+  --theme-blue: #0e86d9
+  --dark-blue: #123e7c
+
 *, *::before, *::after
   margin: 0
   box-sizing: border-box
@@ -12,7 +16,7 @@ main
   margin: 0 auto
   width: 100%
   &_1920
-    padding: 0 68px
+    padding-right: 68px
     max-width: 1920px
   &_1780
     padding: 0 68px
@@ -28,7 +32,7 @@ main
     margin: 0
     font-size: 120px
     font-family: "Bebas Neue", sans-serif
-    color: #123e7c
+    color: var(--dark-blue)
     text-transform: uppercase
 
 .video-slide__video-wrap

@@ -7,6 +7,7 @@
   background-size: cover
   background-position: top center
   z-index: 10
+  overflow: hidden
   &__content
     width: 48%
     display: flex
@@ -99,9 +100,10 @@
           aspect-ratio: 283/181
       &_3
         bottom: 0
-        top: 0
+        //top: 0
         right: 68px
-        height: 100%
+        //height: 100%
+        aspect-ratio: 962/652
         width: calc(50% - 68px)
         align-items: end
         z-index: 10
@@ -118,23 +120,24 @@
       border: none
       position: absolute
       &_1
-        top: 0
-        left: 14%
+        //top: 0
+        bottom: 49%
+        left: 13%
         clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56%)
         //opacity: 0.7
         //background-color: #1086e0
         //background-color: rgba(8, 39, 90, 0.6)
         background-color: rgba(17, 63, 169, 0.7)
-        width: 30%
+        width: 32%
         aspect-ratio: 310/540
         transition: translate 0.6s ease-in-out
       &_2
-        bottom: -180px
+        bottom: -27%
         right: 0
-        clip-path: polygon(0 0, 100% 33%, 100% 100%, 0 57%)
+        clip-path: polygon(0 0, 100% 42%, 100% 100%, 0 58%)
         opacity: 0.3
         background-color: #1086e0
-        width: 56%
+        width: 55%
         aspect-ratio: 460 / 840
         transition: translate 0.6s ease-in-out
       &_3
@@ -236,7 +239,6 @@
       background-color: #113f8b
       z-index: 5
 
-
 .services
   padding-top: 48px
   &__list
@@ -252,7 +254,7 @@
       width: 90%
       height: 100%
       clip-path: polygon(0 0, 38% 0, 100% 100%, 0% 100%)
-      background-color: #0087DD
+      background-color: var(--theme-blue)
       color: white
       z-index: 30
     &__number
@@ -308,22 +310,24 @@
     .text
       &_1
         margin-bottom: 20px
-        color: #0e86d9
+        color: var(--theme-blue)
         font-weight: 700
         max-width: 490px
       &_2
-        color: #123e7c
+        color: var(--dark-blue)
         max-width: 680px
   &__img
     &_1
-      width: 45%
+      width: 47%
     &_2
-      width: 25%
+      width: 23%
   &__static-bg
-    width: 80vw
+    //width: 80vw
     //height: 100vh
     aspect-ratio: 1405/1080
-    background: url("./images/background-dude.png") left top 10vh no-repeat
+    width: 77.5%
+    background: url("./images/background-dude.png") left top 10% no-repeat
+    //background: url("./images/background-dude.png") left top 10vh no-repeat
     background-size: contain
   &__statistics
     display: flex
@@ -340,7 +344,6 @@
       font-size: 1.5vw
       font-weight: 700
 
-
 .projects
   padding-top: 70px
   color: white
@@ -353,23 +356,43 @@
   &__left-block
     flex: 31
   &__right-block
+    padding-right: 48px
     flex: 1
     display: flex
     flex-flow: column
   &__top
-    margin-bottom: 110px
     &__list
+      padding-left: 68px
+      margin-bottom: 110px
       display: flex
-      img
-        max-height: 120px
+      gap: 60px
+    &__item
+      font-family: Roboto, sans-serif
+      font-weight: 300
+      font-size: 24px
+
+    img
+      max-height: 120px
   &__bottom
     &__list
       display: flex
     &__item
+      position: relative
       overflow: hidden
       aspect-ratio: 1
+      min-width: 220px
       img
         max-width: 100%
+        object-fit: cover
+      &__text
+        position: absolute
+        bottom: 20%
+        left: 68px
+        max-width: 210px
+        font-family: Roboto, sans-serif
+        font-weight: 700
+        font-size: 30px
+
   &__right
     &__bottom
       margin: auto 0 64px 0
@@ -385,9 +408,9 @@
   &__link
     padding: 6px 6px 2px 6px
     font-size: 24px
-    color: #0e86d9
+    color: var(--theme-blue)
     text-decoration: none
-    border-bottom: 1px solid #0e86d9
+    border-bottom: 1px solid var(--theme-blue)
 
 .geography
   padding: 20px 0 80px
@@ -421,8 +444,61 @@
   .canvas
     margin-left: auto
 
-.inner_img
-  position: relative
-  z-index: 30
-  background-color: white
 
+.partners
+  background-color: var(--theme-blue)
+  .container
+    display: flex
+    > div
+      flex: 1
+  &__image-wrapper
+    overflow: hidden
+    img
+      object-fit: cover
+  &__info
+    padding: 0 70px 0 150px
+  &__list
+    margin-top: 64px
+    display: grid
+    //grid-template-columns: repeat( auto-fit, minmax(150px, 220px))
+    grid-template-columns: repeat(3, 1fr)
+    gap: 60px 20px
+  &__item
+    overflow: hidden
+    +center()
+    img
+      max-inline-size: 100%
+      object-fit: contain
+    &:nth-child(3n + 1)
+      place-self: center start
+      img
+        margin-right: auto
+    &:nth-child(3n + 2)
+      place-self: center
+      img
+        margin: auto
+    &:nth-child(3n + 0)
+      place-self: center end
+      img
+        margin-left: auto
+    &_1
+      img
+        max-width: 75%
+    &_3
+      img
+        max-width: 60%
+    &_5
+      img
+        max-width: 45%
+    &_7
+      img
+        max-width: 66%
+    &_9
+      img
+        max-width: 60%
+    &_11
+      img
+        max-width: 50%
+    &_12
+      img
+        max-width: 95%
