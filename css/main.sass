@@ -71,10 +71,10 @@
       &_1
         bottom: 0
         //top: 0
-        right: 68px
+        right: 0
         max-height: 75%
         height: 100%
-        width: calc(50% - 68px)
+        width: 50%
         align-items: end
         z-index: 10
       &_2
@@ -83,7 +83,7 @@
         left: 0
         max-height: 80%
         height: 100%
-        width: 50%
+        width: calc(50% + 35px)
         align-items: end
         z-index: 10
         svg
@@ -101,10 +101,10 @@
       &_3
         bottom: 0
         //top: 0
-        right: 68px
+        right: 0
         //height: 100%
         aspect-ratio: 962/652
-        width: calc(50% - 68px)
+        width: calc(50% - 35px)
         align-items: end
         z-index: 10
       &.hide
@@ -121,9 +121,9 @@
       position: absolute
       &_1
         //top: 0
-        bottom: 49%
+        bottom: 48.5%
         left: 13%
-        clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56%)
+        clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
         //opacity: 0.7
         //background-color: #1086e0
         //background-color: rgba(8, 39, 90, 0.6)
@@ -211,11 +211,10 @@
     &.show
       fill: #1086E0
 
-
 .benefits
   position: relative
   z-index: 20
-  background-color: #051b3f
+  background-color: var(--dark-blue)
   &__list
     display: flex
   &__item
@@ -266,7 +265,7 @@
       font-family: Roboto, sans-serif
       font-size: 36px
       font-weight: 700
-      line-height: 1
+      line-height: 1.5
     &__text
       font-family: Roboto, sans-serif
       font-size: 16px
@@ -314,7 +313,7 @@
         font-weight: 700
         max-width: 490px
       &_2
-        color: var(--dark-blue)
+        color: var(--blue)
         max-width: 680px
   &__img
     &_1
@@ -333,7 +332,7 @@
     display: flex
     position: absolute
     top: 4%
-    right: 24%
+    right: 19%
     color: #d1ecff
     &__left, &__number
       font-family: "Bebas Neue", sans-serif
@@ -362,7 +361,7 @@
     flex-flow: column
   &__top
     &__list
-      padding-left: 68px
+      padding-left: 70px
       margin-bottom: 110px
       display: flex
       gap: 60px
@@ -370,9 +369,9 @@
       font-family: Roboto, sans-serif
       font-weight: 300
       font-size: 24px
-
-    img
-      max-height: 120px
+      img
+        margin-bottom: 44px
+        height: 114px
   &__bottom
     &__list
       display: flex
@@ -381,17 +380,71 @@
       overflow: hidden
       aspect-ratio: 1
       min-width: 220px
+      &:before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 20
+        translate: 0 100%
+        background: linear-gradient(rgba(14, 134, 217, 0.3), rgba(14, 134, 217, 0.9))
+        transition: translate 0.3s ease-in-out
+
       img
         max-width: 100%
         object-fit: cover
       &__text
         position: absolute
-        bottom: 20%
-        left: 68px
+        bottom: 16%
+        left: 70px
         max-width: 210px
         font-family: Roboto, sans-serif
         font-weight: 700
         font-size: 30px
+        transition: translate 0.3s ease-in-out
+        z-index: 30
+      &__link
+        margin-left: -8px
+        padding: 8px
+        position: absolute
+        bottom: 0
+        left: 70px
+        //translate: 0 40%
+        color: var(--dark-blue)
+        opacity: 0
+        visibility: hidden
+        transition: translate 0.3s ease-in-out, opacity 0.2s, bottom 0.3s ease-in-out, color 0.2s
+        &:after
+          margin-left: auto
+          content: ''
+          position: absolute
+          right: -170px
+          bottom: -14px
+          display: block
+          height: 120px
+          width: 80px
+          background: url("./images/arrow_white.png") no-repeat
+          background-size: contain
+          transition: translate 0.3s ease-in-out, opacity 0.2s
+        &:hover
+          color: white
+          &:after
+            translate: 16px
+
+      &:hover
+        &:before
+          translate: 0
+        .projects__bottom__item
+          &__text
+            translate: 0 -40px
+          &__link
+            //translate: 0
+            bottom: 16%
+            opacity: 1
+            visibility: unset
+            z-index: 30
 
   &__right
     &__bottom
@@ -403,7 +456,8 @@
       font-weight: bold
   &__counter
     font-family: 'Bebas Neue', sans-serif
-    font-size: 20vh
+    font-size: 220px
+    line-height: 0.9
     color: #1a8ada
   &__link
     padding: 6px 6px 2px 6px
@@ -413,7 +467,7 @@
     border-bottom: 1px solid var(--theme-blue)
 
 .geography
-  padding: 20px 0 80px
+  padding: 80px 0 8px
   position: relative
   z-index: 20
   background-color: #F6F6F6
@@ -424,39 +478,75 @@
     position: absolute
     top: 0
     left: 0
-    max-width: 520px
+    //max-width: 520px
+    display: flex
+    gap: 48px
     h2
       margin-bottom: 24px
-      color: #32333D
-      font-family: Raleway, sans-serif
-      font-size: 50px
-      font-weight: 600
-      line-height: 110%
+      color: var(--blue)
+      font-family: "Bebas Neue", sans-serif
+      font-size: 120px
+      font-weight: 400
+      line-height: 0.8
       span
-        color: #184EB8
+        display: block
+        &:first-child
+          padding-right: 0.65em
+        &.colored
+          color: var(--theme-blue)
+          justify-self: end
+          text-align: end
     p
-      font-family: Wix Madefor Display, sans-serif
-      color: #8C8C8D
-      font-size: 18px
-      font-weight: 500
-      line-height: 160%
-      max-width: 500px
+      font-family: Roboto, sans-serif
+      color: var(--blue)
+      font-size: 24px
+      font-weight: 300
+      line-height: calc(32/24)
+      max-width: 37%
   .canvas
     margin-left: auto
 
 
 .partners
   background-color: var(--theme-blue)
+  position: relative
+  z-index: 20
   .container
     display: flex
+    font-size: 0
     > div
-      flex: 1
+      //flex: 1
+      width: 50%
+  .title_h2
+    .colored
+      color: white
+  &__left
+    position: relative
   &__image-wrapper
     overflow: hidden
+    clip-path: polygon(32% 0, 100% 55%, 100% 100%, 0 100%, 0 0)
     img
       object-fit: cover
+      max-height: 920px
   &__info
-    padding: 0 70px 0 150px
+    padding: 60px 70px 0 150px
+    text-align: right
+    &__text
+      margin-top: 8px
+      color: white
+      font-size: 24px
+      font-weight: 700
+      font-family: Roboro, sans-serif
+
+  &__parallelogram
+    background-color: var(--blue)
+    clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+    position: absolute
+    top: 15%
+    right: -8%
+    width: 32.3%
+    aspect-ratio: 310/560
+    z-index: 30
   &__list
     margin-top: 64px
     display: grid
@@ -502,3 +592,96 @@
     &_12
       img
         max-width: 95%
+
+.blog
+  padding: 20px 0 80px
+  position: relative
+  z-index: 40
+  &__header
+    margin-bottom: 70px
+    display: flex
+    gap: 20px
+    &__link
+      color: var(--theme-blue)
+      font-size: 24px
+      font-weight: 700
+      display: flex
+      flex-flow: column
+  &__content
+    display: flex
+    gap: 70px
+  &__item
+    padding: 32px 40px
+    display: flex
+    gap: 30px
+    background-color: white
+    border: 1px solid #dadada
+    &:not(:last-child)
+      margin-bottom: 16px
+    &__image-wrapper
+      width: 132px
+      height: 132px
+      flex-shrink: 0
+      overflow: hidden
+    &__body
+      display: flex
+      flex-flow: column
+      gap: 12px
+    &__header
+      margin-right: 100px
+      display: flex
+      justify-content: space-between
+    &__published
+      color: #c4c3c3
+      font-weight: 700
+      font-size: 18px
+    &__descr
+      margin-right: 200px
+      font-weight: 300
+      font-size: 18px
+    &__link
+      color: var(--theme-blue)
+      font-weight: 700
+      font-size: 18px
+    &_big
+      padding: 0
+      flex-flow: column
+      border: none
+      .blog__item
+        &__image-wrapper
+          width: auto
+          height: unset
+          flex-shrink: 0
+          overflow: hidden
+        &__header
+          margin-right: 120px
+        &__descr
+          margin-right: 120px
+
+
+  .col
+    width: 50%
+    &_2
+      padding-right: 70px
+  .title
+    &_h2
+      color: white
+      line-height: 0.9
+    &_h3
+      color: var(--blue)
+
+.pattern
+  &__wrapper_partners
+    position: relative
+    .pattern_1
+      position: absolute
+      top: 0
+      left: -20px
+      right: 0
+      bottom: 0
+      background: url("./images/background-partners.png") left bottom no-repeat
+      background-size: contain
+      z-index: 30
+      pointer-events: none
+
+
