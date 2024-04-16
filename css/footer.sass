@@ -1,0 +1,116 @@
+.footer
+  padding: 68px 70px 0 0
+  background-color: var(--blue)
+  color: white
+  font-family: Roboto, sans-serif
+  &__top
+    margin-bottom: 60px
+    display: flex
+    gap: 40px
+    justify-content: space-between
+  &__contacts
+    display: flex
+    flex-flow: column
+    gap: 24px
+    &__links
+      margin-bottom: 20px
+      display: flex
+      flex-flow: column
+    &__address
+      font-size: 18px
+      line-height: 1.33
+      div
+        font-weight: 300
+  &__logo__link
+    margin-bottom: 20px
+    font-size: 0
+    img
+      width: 236px
+  &__block
+    &_3
+      width: 50%
+  &__nav
+    &__item:not(:last-child)
+      margin-bottom: 32px
+    &__link
+      padding: 8px
+      font-family: Roboto, sans-serif
+      font-size: 24px
+      font-weight: 300
+      color: white
+      text-decoration: none
+  &__callback
+    &__title
+      margin-bottom: 20px
+      font-size: 36px
+      font-weight: 700
+    &__intro
+      margin-bottom: 20px
+      font-size: 18px
+      font-weight: 300
+    label
+      visibility: hidden
+    .form
+      &__fields
+        &-wrapper
+          display: flex
+          flex-flow: column
+          gap: 20px
+        &__row
+          width: 100%
+          display: flex
+          gap: 20px
+          input
+            height: 48px
+          textarea
+            height: 154px
+      &__field
+        padding: 8px
+        background-color: var(--blue)
+        width: 100%
+        border: 1px solid #0e81d3
+        &::placeholder
+          font-family: Roboto, sans-serif
+          font-size: 18px
+          font-weight: 300
+          color: white
+        &__half
+          flex: 1
+      &__wrapper_submit
+        margin-top: 20px
+        display: flex
+        align-items: center
+        gap: 20px
+        p
+          max-width: 264px
+          font-size: 14px
+          font-weight: 300
+          line-height: 24px
+
+  &__bottom
+    padding: 40px 0
+    +space()
+    &__privacy
+      font-size: 18px
+      font-weight: 300
+      color: white
+    &__copyright
+      font-size: 18px
+      font-weight: 300
+      color: var(--theme-blue)
+  &__phone
+    margin-bottom: 8px
+    font-family: Roboto, sans-serif
+    font-size: 36px
+    font-weight: 700
+    color: var(--theme-blue)
+    text-decoration: none
+  &__email
+    font-family: Roboto, sans-serif
+    font-size: 24px
+    font-weight: 700
+    color: white
+    text-decoration: none
+
+
+

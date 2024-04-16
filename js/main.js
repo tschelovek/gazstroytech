@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /**
+     *
+     * Бургер меню
+     *
+     */
+    document.getElementById('burgerButton')?.addEventListener('click', e => {
+        e.preventDefault();
+        e.currentTarget.classList.toggle('active');
+        document.querySelector('.header__menu')?.classList.toggle('active');
+    })
+
+    // document.querySelectorAll('.nav_header .header__link')
+    //     .forEach(link => link.addEventListener('click', () => {
+    //             document.querySelector('.nav_header').classList.remove('active');
+    //             document.getElementById('burgerButton').classList.remove('active');
+    //         }
+    //     ))
+
+
+    /**
      * Анимации в разделе section.hero
      */
 
@@ -25,23 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         () => parallelogramsContainer.classList.remove('hide'),
         startTime + 3000
     );
-
-    /**
-     * Скукоживатель шапки при прокрутке
-     */
-    window.addEventListener('scroll', () => {
-        const header = document.body.querySelector('header');
-        if(window.scrollY > 0) {
-            !header.classList.contains('shrink') ? header.classList.add('shrink') : null;
-            parallelogramsContainer.classList.add('hide');
-        } else {
-            header.classList.remove('shrink');
-            parallelogramsContainer.classList.remove('hide')
-        }
-    })
-    //*На случай перезагрузки страницы проверяем положение и если надо вешаем скукоживатель на шапку
-    if (window.scrollY > 0) document.body.querySelector('header')?.classList.add('shrink')
-
     /**
      * Scroll
      */
@@ -53,16 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
     new ResizeObserver(() => locoScroll.update()).observe(
         document.querySelector("[data-scroll-container]")
     );
-    // window.addEventListener('resize', resetLocomotive)
-    //
-    // function resetLocomotive() {
-    //     setTimeout(() => {
-    //         scroll.scrollTo('top');
-    //         scroll.update();
-    //         scroll.init();
-    //     },
-    //         0)
-    // }
+    const header = document.getElementById('header');
+
+
+    locoScroll.on('scroll', (args) => {
+        // Get all current elements : args.currentElements
+        if(typeof args.currentElements['hero'] === 'object') {
+            !header.classList.contains('transparent')
+                ? header.classList.add('transparent')
+                : null
+        } else {
+            header.classList.remove('transparent')
+        }
+    });
+
+    /**
+     * Скукоживатель шапки при прокрутке
+     */
+    // window.addEventListener('scroll', () => {
+    //     console.log('test')
+    //     const header = document.body.querySelector('header');
+    //     if(window.scrollY > 0) {
+    //         !header.classList.contains('shrink') ? header.classList.add('shrink') : null;
+    //         parallelogramsContainer.classList.add('hide');
+    //     } else {
+    //         header.classList.remove('shrink');
+    //         parallelogramsContainer.classList.remove('hide')
+    //     }
+    // })
+
+
+
 
     /**
      * Карта проектов

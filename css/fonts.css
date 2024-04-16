@@ -26,3 +26,10 @@
     src: url('../fonts/Roboto-Regular.ttf') format("truetype");
 }
 
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/Roboto-Light.ttf') format("truetype");
+}
+
