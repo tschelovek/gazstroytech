@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     locoScroll.on('scroll', (args) => {
-        // Get all current elements : args.currentElements
         if(typeof args.currentElements['hero'] === 'object') {
             !header.classList.contains('transparent')
                 ? header.classList.add('transparent')
@@ -68,23 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('transparent')
         }
     });
-
-    /**
-     * Скукоживатель шапки при прокрутке
-     */
-    // window.addEventListener('scroll', () => {
-    //     console.log('test')
-    //     const header = document.body.querySelector('header');
-    //     if(window.scrollY > 0) {
-    //         !header.classList.contains('shrink') ? header.classList.add('shrink') : null;
-    //         parallelogramsContainer.classList.add('hide');
-    //     } else {
-    //         header.classList.remove('shrink');
-    //         parallelogramsContainer.classList.remove('hide')
-    //     }
-    // })
-
-
 
 
     /**

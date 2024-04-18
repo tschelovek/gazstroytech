@@ -1,0 +1,357 @@
+@media only screen and (max-width: 1500px)
+  .partners
+    &__image-wrapper
+      clip-path: unset
+    &__parallelogram
+      top: 0
+    &__info
+      padding: 60px 20px 0 48px
+
+  .blog .title_h2
+    position: relative
+    &::before
+      content: ''
+      background-color: var(--blue)
+      clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+      position: absolute
+      top: -162px
+      right: -8%
+      width: 230px
+      aspect-ratio: 310 / 560
+      z-index: -1
+
+
+@media only screen and (max-width: 1366px)
+  .container_body
+    margin-right: 48px
+  .header
+    height: 48px
+    &__btn_burger
+      width: 48px
+      height: 48px
+      span
+        width: 30px
+        &::before, &::after
+          width: 30px
+          height: 2.23px
+        &::before
+          top: -10px
+        &::after
+          top: 10px
+    &__aside
+      padding-top: 40px
+      top: 48px
+      width: 48px
+      height: calc(100vh - 48px)
+      gap: 32px
+    &__menu
+      &__wrapper
+        flex-flow: wrap
+      &__col
+        &_2
+        &_3
+  .nav_header
+    .nav__list
+      margin-left: 40px
+      justify-content: space-between
+      gap: 12px
+
+  .career
+    &__text-block
+      position: static
+      width: 100%
+      &-wrapper
+        align-items: unset
+
+
+@media only screen and (max-width: 1280px)
+  .container
+    &_body
+      margin-right: 0
+    &_1780
+      padding: 0 20px
+
+  .nav__link
+    font-size: 14px
+
+  .header
+    &__nav
+      margin-right: 200px
+      .nav__list
+        margin-left: 40px
+        justify-content: space-between
+        gap: 2px 8px
+    &__aside
+      padding: 0 8px
+      top: 0
+      right: 48px
+      height: 48px
+      width: 200px
+      flex-flow: row
+      justify-content: space-between
+      gap: 12px
+      background-color: transparent
+
+  .hero
+    min-height: 80vh
+    &__content
+      margin-left: 8%
+    .years
+      display: flex
+      gap: 12px
+      align-items: baseline
+    .hed
+      display: block
+      font-size: 20vh
+    #svg_bg10
+      .el_10, .el_gt
+        display: none
+
+  .projects
+    &__top
+      padding-right: 0
+      flex-flow: column-reverse
+      &__right
+        padding-left: 20px
+      &__list
+        padding: 0 24px
+    &__bottom
+      padding-right: 0
+      flex-flow: column-reverse
+      &__description
+        margin: 0 24px
+        display: flex
+        gap: 40px
+        justify-content: center
+        width: auto
+      &__item__link:after
+        height: 26px
+        right: -90px
+        bottom: 4px
+    &__description__text
+      max-width: 240px
+      text-align: center
+    &__link
+      margin: auto 0 62px
+      height: fit-content
+
+  .blog
+    &__content
+      margin: 0 auto
+      flex-flow: column
+      max-width: 980px
+    .col
+      width: unset
+
+  .footer
+    padding: 70px 0
+
+@media only screen and (max-width: 1148px)
+  .header
+    &__nav
+      display: none
+      //margin-right: 200px
+      //.nav__list
+        //margin-left: 40px
+        //justify-content: space-between
+        //gap: 2px 12px
+        //display: grid
+        //grid-template-rows: 1fr 1fr
+        //grid-template-columns: repeat(2, 2fr) 1.5fr 1fr
+
+  .career
+    .container
+      flex-flow: wrap
+      padding: 0
+    &__text-block
+      &-wrapper
+        padding: 20px
+        width: 100%
+      .text_1, .text_1
+        max-width: unset
+    &__img
+      &_1
+        width: 65%
+      &_2
+        width: 35%
+    &__statistics
+      top: calc(200px + 15%)
+      right: calc(80px + 23%)
+      &__number, &__left
+        font-size: 140px
+      &__text
+        margin-left: 1.2em
+        font-size: 22px
+
+  .services__list
+    grid-template-columns: 1fr
+
+@media only screen and (max-width: 1024px)
+  .title_h2
+    font-size: 100px
+
+@media only screen and (max-width: 960px)
+  .benefits__list
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+  .services
+    &__list
+      gap: 8px
+    &__item
+      &:nth-child(2n)
+        display: flex
+        flex-flow: row-reverse
+        img
+          right: unset
+          left: 0
+      &__info
+        padding: 20px 40px
+        width: 70%
+        clip-path: unset
+      &__number
+        line-height: 1
+
+  .career__static-bg
+    display: none
+
+  .projects
+    &__top
+      &__list
+        flex-flow: column
+      &__item
+        display: flex
+        gap: 20px
+        align-items: center
+        img
+          width: 20%
+          height: unset
+    &__bottom
+      &__description
+        margin: 0 auto
+        gap: 12px
+        flex-flow: column
+        width: unset
+
+
+  .geography
+    padding: 16px 0 40px
+    min-height: 75vh
+    &__text
+      flex-flow: column
+      position: relative
+      z-index: 30
+      p
+        max-width: unset
+    .canvas
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 15
+      opacity: 0.5
+      #canvas_svg
+        height: auto
+        pointer-events: none
+
+  .partners
+    padding-bottom: 60px
+    &__left
+      display: none
+    .container > div
+      width: 100%
+
+  .footer
+    &__top
+      flex-flow: wrap
+    &__block
+      &_2
+        text-align: right
+      &_3
+        width: 100%
+    &__callback
+      &__title, &__intro
+        text-align: center
+
+@media only screen and (max-width: 864px)
+  .header__menu__wrapper
+    flex-flow: column
+
+@media only screen and (max-width: 768px)
+  .career
+    &__text-block
+      text-align: center
+      p
+        text-wrap: balance
+    &__img
+      &_1, &_2
+        display: none
+    &__statistics
+      margin: 20px auto 40px
+      position: static
+
+
+  .footer
+    &__top
+      flex-flow: column
+    &__block
+      &_1, &_2
+        text-align: center
+
+@media only screen and (max-width: 640px)
+  .container_1780
+    padding: 0 12px
+
+  .title_h2
+    font-size: 80px
+
+  .hero .years
+    flex-flow: column
+
+  .services
+    &__item__info
+      width: 100%
+      img
+        display: none
+
+  .projects__top__item
+    font-size: 18px
+
+@media only screen and (max-width: 560px)
+  .header
+    &__logo
+      width: 40%
+    &__menu__nav
+      .nav
+        &__list
+          gap: 24px
+        &__link
+          font-size: 24px
+          text-align: center
+
+  .benefits
+    &__list
+      display: block
+    &__item__text
+      text-align: center
+
+  .geography
+    min-height: unset
+
+
+@media only screen and (max-width: 480px)
+  .header__aside
+    width: auto
+    &__item
+      &_email, &_geo
+        display: none
+
+  .services__item__info
+    padding: 20px 12px
+
+@media only screen and (max-width: 360px)
+  .services__item
+    margin: 0 -12px
+  .projects__top__list
+    margin: 0 -16px

@@ -9,7 +9,8 @@
   z-index: 10
   overflow: hidden
   &__content
-    width: 48%
+    margin-left: 31%
+    //width: 48%
     display: flex
     align-items: center
     justify-content: flex-end
@@ -34,6 +35,8 @@
         left: -182px
         height: 320px
         z-index: 10
+    .hed
+      display: none
     .blue
       position: relative
       z-index: 30
@@ -157,7 +160,7 @@
     right: 0
     bottom: 0
     overflow: hidden
-
+    &__static
   video
     position: absolute
     top: 0
@@ -179,25 +182,6 @@
     right: 0
     bottom: 0
     z-index: 2
-
-.c-fixed
-  background-position: 50%
-  background-size: cover
-  height: 100%
-  width: 100vw
-  mix-blend-mode: multiply
-  opacity: .75
-  left: 0
-  position: absolute
-  right: 0
-  top: -100vh
-  &_target
-    left: 0
-    position: absolute
-    right: 0
-    top: -100vh
-    bottom: -100vh
-    width: 100vw
 
 #svg_bg10
   //.fil1
@@ -323,6 +307,7 @@
   &__static-bg
     //width: 80vw
     //height: 100vh
+    margin-bottom: -45vh
     aspect-ratio: 1405/1080
     width: 77.5%
     background: url("./images/background-dude.png") left top 10% no-repeat
@@ -349,6 +334,7 @@
   background-color: #113f8b
   .title_h2
     color: white
+    line-height: 0.8
   &__wrapper
     display: flex
     gap: 40px
@@ -360,6 +346,11 @@
     display: flex
     flex-flow: column
   &__top
+    padding-right: 70px
+    display: flex
+    gap: 40px
+    &__right
+      width: 325px
     &__list
       padding-left: 70px
       margin-bottom: 110px
@@ -373,6 +364,9 @@
         margin-bottom: 44px
         height: 114px
   &__bottom
+    padding-right: 70px
+    display: flex
+    gap: 50px
     &__list
       display: flex
     &__item
@@ -445,6 +439,8 @@
             opacity: 1
             visibility: unset
             z-index: 30
+    &__description
+      width: 325px
 
   &__right
     &__bottom
@@ -485,7 +481,6 @@
       margin-bottom: 24px
       color: var(--blue)
       font-family: "Bebas Neue", sans-serif
-      font-size: 120px
       font-weight: 400
       line-height: 0.8
       span
@@ -506,7 +501,6 @@
   .canvas
     margin-left: auto
 
-
 .partners
   background-color: var(--theme-blue)
   position: relative
@@ -518,6 +512,7 @@
       //flex: 1
       width: 50%
   .title_h2
+    line-height: 1
     .colored
       color: white
   &__left
