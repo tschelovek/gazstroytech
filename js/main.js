@@ -68,6 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    document.querySelectorAll('a[data-target-to-scroll]')
+        .forEach(link => link.addEventListener('click', handlerAnchorLick))
+
+    function handlerAnchorLick(e) {
+        e.preventDefault()
+        locoScroll.scrollTo(e.currentTarget.dataset.targetToScroll)
+    }
 
     /**
      * Карта проектов

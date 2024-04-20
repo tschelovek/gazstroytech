@@ -369,11 +369,14 @@
     gap: 50px
     &__list
       display: flex
+      flex: 3
     &__item
       position: relative
       overflow: hidden
       aspect-ratio: 1
       min-width: 220px
+      min-height: 220px
+      flex: 1
       &:before
         content: ''
         position: absolute
@@ -387,12 +390,18 @@
         transition: translate 0.3s ease-in-out
 
       img
-        max-width: 100%
-        object-fit: cover
+        position: absolute
+        top: 0
+        bottom: 0
+        min-height: 100%
+        min-width: 100%
+
+        //max-width: 100%
+        //object-fit: cover
       &__text
         position: absolute
         bottom: 16%
-        left: 70px
+        left: 16px
         max-width: 210px
         font-family: Roboto, sans-serif
         font-weight: 700
@@ -404,7 +413,7 @@
         padding: 8px
         position: absolute
         bottom: 0
-        left: 70px
+        left: 16px
         //translate: 0 40%
         color: var(--dark-blue)
         opacity: 0
@@ -414,11 +423,11 @@
           margin-left: auto
           content: ''
           position: absolute
-          right: -170px
+          right: -100px
           bottom: -14px
           display: block
-          height: 120px
-          width: 80px
+          height: 80px
+          width: 64px
           background: url("./images/arrow_white.png") no-repeat
           background-size: contain
           transition: translate 0.3s ease-in-out, opacity 0.2s
@@ -551,6 +560,8 @@
   &__item
     overflow: hidden
     +center()
+    &_1
+      translate: 0 -30%
     img
       max-inline-size: 100%
       object-fit: contain
@@ -611,6 +622,7 @@
     gap: 30px
     background-color: white
     border: 1px solid #dadada
+    container-type: inline-size
     &:not(:last-child)
       margin-bottom: 16px
     &__image-wrapper
@@ -618,8 +630,11 @@
       height: 132px
       flex-shrink: 0
       overflow: hidden
+      img
+        min-width: 100%
     &__body
       display: flex
+      position: relative
       flex-flow: column
       gap: 12px
     &__header
@@ -631,13 +646,21 @@
       font-weight: 700
       font-size: 18px
     &__descr
-      margin-right: 200px
+      margin-right: 100px
       font-weight: 300
       font-size: 18px
     &__link
       color: var(--theme-blue)
       font-weight: 700
       font-size: 18px
+      &::after
+        content: ''
+        position: absolute
+        bottom: 16px
+        right: 0
+        width: 70px
+        height: 108px
+        background: url("./images/arrow_grey.png") no-repeat
     &_big
       padding: 0
       flex-flow: column
@@ -653,15 +676,25 @@
         &__descr
           margin-right: 120px
 
-
   .col
     width: 50%
     &_2
       padding-right: 70px
   .title
     &_h2
+      position: relative
       color: white
       line-height: 0.9
+      &::before
+        content: ''
+        background-color: var(--blue)
+        clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+        position: absolute
+        top: -162px
+        right: -8%
+        width: 230px
+        aspect-ratio: 310 / 560
+        z-index: -1
     &_h3
       color: var(--blue)
 

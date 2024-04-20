@@ -7,20 +7,6 @@
     &__info
       padding: 60px 20px 0 48px
 
-  .blog .title_h2
-    position: relative
-    &::before
-      content: ''
-      background-color: var(--blue)
-      clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
-      position: absolute
-      top: -162px
-      right: -8%
-      width: 230px
-      aspect-ratio: 310 / 560
-      z-index: -1
-
-
 @media only screen and (max-width: 1366px)
   .container_body
     margin-right: 48px
@@ -142,6 +128,8 @@
       max-width: 980px
     .col
       width: unset
+      &_2
+        padding: 0
 
   .footer
     padding: 70px 0
@@ -227,6 +215,9 @@
           width: 20%
           height: unset
     &__bottom
+      &__item img
+        top: -10%
+        left: -10%
       &__description
         margin: 0 auto
         gap: 12px
@@ -315,8 +306,22 @@
       img
         display: none
 
-  .projects__top__item
-    font-size: 18px
+  .projects
+    &__top__item
+      font-size: 18px
+    &__bottom__list
+      margin: 0 auto
+      flex-flow: column
+      max-width: 400px
+      width: 100%
+
+  .blog__item
+    padding: 16px
+    &__link::after
+      content: unset
+    &__descr
+      margin-right: unset
+
 
 @media only screen and (max-width: 560px)
   .header
@@ -355,3 +360,25 @@
     margin: 0 -12px
   .projects__top__list
     margin: 0 -16px
+
+@media only screen and (min-width: 1648px)
+  .projects__bottom__item
+    &__text
+      left: 70px
+    &__link
+      left: 70px
+      &:after
+        right: -170px
+        height: 120px
+        width: 80px
+@media only screen and (min-width: 1900px)
+  .blog__item__descr
+    margin-right: 200px
+
+@container (max-width: 700px)
+  .blog__item
+    padding: 16px
+    &__link::after
+      content: unset
+    &__descr
+      margin-right: unset
