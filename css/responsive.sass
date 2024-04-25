@@ -42,6 +42,15 @@
       justify-content: space-between
       gap: 12px
 
+
+  .hero
+    &__content
+      margin-left: calc(30% + 80px)
+    &__img-wrapper_2
+      //width: calc(58% + 35px)
+      //width: 62%
+      width: calc(63% + 80px)
+
   .career
     &__text-block
       position: static
@@ -78,21 +87,9 @@
       gap: 12px
       background-color: transparent
 
-  .hero
-    min-height: 80vh
-    &__content
-      margin-left: 8%
-    .years
-      display: flex
-      gap: 12px
-      align-items: baseline
-    .hed
-      display: block
-      font-size: 20vh
-    #svg_bg10
-      .el_10, .el_gt
-        display: none
 
+  //.hero__img-wrapper_2
+  //  width: calc(65% - 35px)
   .projects
     &__top
       padding-right: 0
@@ -172,13 +169,46 @@
         font-size: 22px
 
   .services__list
-    grid-template-columns: 1fr
+    grid-template-columns: minmax(auto, 900px)
+    justify-content: center
 
 @media only screen and (max-width: 1024px)
   .title_h2
     font-size: 100px
 
+  .hero
+    min-height: 80vh
+    &__content
+      margin-left: 38%
+    //&__img-wrapper_2
+    //  left: -10%
+    //  width: calc(70% + 120px)
+
+
+  //.hero
+  //  min-height: 80vh
+  //  &__content
+  //    margin-left: 8%
+  //  .years
+  //    display: flex
+  //    gap: 12px
+  //    align-items: baseline
+  //  .hed
+  //    display: block
+  //    font-size: 20vh
+  //  #svg_bg10
+  //    .el_10, .el_gt
+  //      display: none
+
+
 @media only screen and (max-width: 960px)
+  .hero__img-wrapper
+    &_2
+      width: calc(67% + 120px)
+    &_3
+      display: none
+
+
   .benefits__list
     display: grid
     grid-template-columns: 1fr 1fr
@@ -205,15 +235,8 @@
 
   .projects
     &__top
-      &__list
-        flex-flow: column
       &__item
-        display: flex
-        gap: 20px
-        align-items: center
-        img
-          width: 20%
-          height: unset
+        font-size: 20px
     &__bottom
       &__item img
         top: -10%
@@ -223,7 +246,9 @@
         gap: 12px
         flex-flow: column
         width: unset
-
+        align-items: center
+    &__description__text
+      margin: 16px 0
 
   .geography
     padding: 16px 0 40px
@@ -250,6 +275,8 @@
     padding-bottom: 60px
     &__left
       display: none
+    &__info
+      padding: 60px 12px 32px
     .container > div
       width: 100%
 
@@ -270,6 +297,13 @@
     flex-flow: column
 
 @media only screen and (max-width: 768px)
+  .hero
+    &__content
+      margin: 64px 20px 64px auto
+    &__img-wrapper_2
+      width: 100%
+      left: -25%
+
   .career
     &__text-block
       text-align: center
@@ -282,6 +316,27 @@
       margin: 20px auto 40px
       position: static
 
+  //.projects
+  //  &__top
+  //    &__list
+  //      flex-flow: column
+  //    &__item
+  //      display: flex
+  //      gap: 20px
+  //      align-items: center
+  //      img
+  //        width: 20%
+  //        height: unset
+
+  .projects__top
+    &__list
+      gap: 36px
+    &__item
+      font-size: 18px
+      text-wrap: balance
+      text-align: center
+      img
+        height: 80px
 
   .footer
     &__top
@@ -301,19 +356,36 @@
     flex-flow: column
 
   .services
-    &__item__info
-      width: 100%
+    &__list
+      gap: 16px
+    &__item
+      padding-bottom: 280px
+      &__info
+        width: 100%
+        height: unset
       img
-        display: none
+        height: unset
+        width: 100%
+        object-fit: contain
+        bottom: 0
+        left: 0
+        top: unset
 
   .projects
-    &__top__item
-      font-size: 18px
+    &__top
+      &__list
+        margin-bottom: 48px
+      &__item
+        font-size: 18px
     &__bottom__list
       margin: 0 auto
       flex-flow: column
       max-width: 400px
       width: 100%
+
+
+  .partners__list
+    gap: 60px 8px
 
   .blog__item
     padding: 16px
@@ -321,19 +393,40 @@
       content: unset
     &__descr
       margin-right: unset
+    &_big
+     .blog__item
+        &__image-wrapper
+          max-height: 90vh
+          width: 100%
 
 
 @media only screen and (max-width: 560px)
   .header
     &__logo
       width: 40%
-    &__menu__nav
-      .nav
-        &__list
-          gap: 24px
-        &__link
-          font-size: 24px
-          text-align: center
+    &__menu
+      padding: 10vh 48px
+      &__nav
+        .nav
+          &__list
+            gap: 24px
+          &__link
+            font-size: 24px
+            text-align: center
+      &__col_1
+        margin: 0 auto
+        width: 200px
+        height: 200px
+
+  .hero
+    max-height: 768px
+    min-height: 536px
+    &__content
+      margin: auto 20px 64px auto
+      .blue
+        font-size: 72px
+    .title_h1
+      font-size: 30px
 
   .benefits
     &__list
@@ -341,9 +434,15 @@
     &__item__text
       text-align: center
 
+  .projects__top
+    &__list
+      padding: 0 10px
+      gap: 16px
+    &__item
+      font-size: 15px
+
   .geography
     min-height: unset
-
 
 @media only screen and (max-width: 480px)
   .header__aside
@@ -352,14 +451,117 @@
       &_email, &_geo
         display: none
 
-  .services__item__info
-    padding: 20px 12px
+  .hero
+    &__content
+      margin: auto auto 32px
+      .blue
+        margin-left: 16px
+        font-size: 60px
+        text-align: left
+        text-shadow: 1px 1px 1px #666
+        &.show
+          translate: 0
+    &__img-wrapper_2
+      width: calc(90% + 200px)
+      left: calc(-5% - 80px)
+      right: 0
+      //align-items: start
+    .title_h1
+      margin-left: 16px
+      font-size: 24px
+      text-align: left
 
-@media only screen and (max-width: 360px)
+  .benefits
+    display: none
+
+  .projects__top
+    &__list
+      padding: 0 4px
+      gap: 8px
+    &__item
+      font-size: 14px
+      img
+        height: 64px
+
+
+  .services__item
+    padding-bottom: 200px
+    &__info
+      padding: 20px 12px
+
+  .blog__item
+    padding: 12px
+    flex-flow: column
+    &__image-wrapper
+      margin: 0 auto
+    &__descr
+      font-size: 16px
+    &__published
+      font-size: 14px
+    &_big
+      padding: 8px 4px
+      .blog__item
+        &__image-wrapper
+          max-height: 100vw
+
+@media only screen and (max-width: 375px)
+  .hero
+    min-height: 440px
+    &__content
+      margin: auto auto 16px
+    &__img-wrapper_2
+      width: calc(90% + 260px)
+
   .services__item
     margin: 0 -12px
-  .projects__top__list
-    margin: 0 -16px
+
+  .projects__top__item
+    font-size: 13px
+
+
+  .blog__item
+    &_big
+     .blog__item
+      &__image-wrapper
+        max-height: 290px
+
+
+@media only screen and (max-width: 1024px) and (max-height: 500px)
+  .hero
+    min-height: 300px
+    height: 100vh
+    &__content
+      margin: 8px 220px 8px auto
+    &__img-wrapper_2
+      left: 0
+      svg
+        width: unset
+        height: 100%
+
+@media only screen and (max-width: 700px) and (max-height: 500px)
+  .hero
+    &__content
+      margin: 8px 48px 8px auto
+    &__img-wrapper_2
+      left: 0
+
+@media (max-width: 800px) and (orientation: landscape)
+  .hero
+    min-height: 300px
+    height: 100vh
+    &__content
+      margin: 8px 48px 8px auto
+    &__img-wrapper_2
+      left: 0
+
+@media (min-width: 800px) and (orientation: landscape)
+  .hero
+    min-height: 300px
+    height: 100vh
+    &__content
+      margin: 8px 200px 8px auto
+    &__img-wrapper_2
+      left: 0
 
 @media only screen and (min-width: 1648px)
   .projects__bottom__item
