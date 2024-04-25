@@ -30,20 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const textEl2 = heroText.querySelector('.el_2');
     const startTime = 400;
 
-    gsap.registerPlugin(TextPlugin);
-
     setTimeout(() => heroBgSvg.querySelector('.el_l3').classList.add('show'), startTime);
     setTimeout(() => heroBgSvg.querySelector('.el_l2').classList.add('show'), startTime + 300);
     setTimeout(() => heroBgSvg.querySelector('.el_l1').classList.add('show'), startTime + 700);
     setTimeout(() => heroBgSvg.querySelector('.el_10').classList.add('show'), startTime + 1100);
     setTimeout(() => heroBgSvg.querySelector('.el_gt').classList.add('show'), startTime + 1300);
     setTimeout(() => heroText.querySelector('.years').classList.add('show'), startTime + 1200);
-    setTimeout(() => gsap.to(textEl1, {duration: 1.5, text: "строим и развиваем"}), startTime + 1300);
-    setTimeout(() => gsap.to(textEl2, {duration: 1, text: "вместе с Вами!"}), startTime + 2300);
+
+    if(gsap) {
+        gsap.registerPlugin(TextPlugin);
+
+        setTimeout(() => gsap.to(textEl1, {duration: 1.5, text: "строим и развиваем"}), startTime + 1300);
+        setTimeout(() => gsap.to(textEl2, {duration: 1, text: "вместе с Вами!"}), startTime + 2300);
+    }
+
     setTimeout(
         () => parallelogramsContainer.classList.remove('hide'),
         startTime + 3000
     );
+
     /**
      * Scroll
      */
