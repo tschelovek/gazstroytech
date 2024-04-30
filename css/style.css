@@ -100,6 +100,8 @@ input:focus, textarea:focus {
   max-width: 1920px;
 }
 .container_1780 {
+  margin: 0 auto;
+  width: 100%;
   padding-left: 70px;
   max-width: 1850px;
 }
@@ -114,6 +116,7 @@ input:focus, textarea:focus {
   font-family: "Bebas Neue", sans-serif;
   color: var(--blue);
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .video-slide__video-wrap {
@@ -147,12 +150,38 @@ input:focus, textarea:focus {
   width: 100vw;
 }
 
+.link_blue {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--theme-blue);
+}
+
+.parallelogram {
+  background-color: var(--blue);
+  clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%);
+  width: 32.3%;
+  aspect-ratio: 310/560;
+}
+
+.accordion_hrz {
+  display: flex;
+}
+.accordion_hrz .accordion-item {
+  display: flex;
+}
+.accordion_hrz .accordion-item__tab__vertical {
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+  text-align: end;
+}
+
 .header {
   position: fixed;
   top: 0;
   left: 0;
   height: 70px;
-  width: 100vw;
+  width: 100%;
   z-index: 50;
   transition: background-color 0.3s ease-in-out;
 }
@@ -271,6 +300,7 @@ input:focus, textarea:focus {
   width: 38px;
   height: 2px;
   background-color: white;
+  transition: transform 0.3s ease-in-out;
   right: 0;
 }
 .header__btn_burger span::before {
@@ -279,8 +309,25 @@ input:focus, textarea:focus {
 .header__btn_burger span::after {
   top: 12px;
 }
+.header__btn_burger.active span {
+  background-color: transparent;
+}
+.header__btn_burger.active span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+.header__btn_burger.active span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
 .header.transparent .header__top {
   background-color: transparent;
+}
+.header_white.header .header__top {
+  background-color: transparent;
+}
+.header_white .nav__link {
+  color: var(--blue);
 }
 
 .nav__list {
@@ -627,7 +674,7 @@ input:focus, textarea:focus {
   margin-bottom: -45vh;
   aspect-ratio: 1405/1080;
   width: 77.5%;
-  background: url("./images/background-dude.png") left top 10% no-repeat;
+  background: url("../images/background-dude.png") left top 10% no-repeat;
   background-size: contain;
 }
 .career__statistics {
@@ -760,7 +807,7 @@ input:focus, textarea:focus {
   display: block;
   height: 80px;
   width: 64px;
-  background: url("./images/arrow_white.png") no-repeat;
+  background: url("../images/arrow_white.png") no-repeat;
   background-size: contain;
   transition: translate 0.3s ease-in-out, opacity 0.2s;
 }
@@ -1035,7 +1082,7 @@ input:focus, textarea:focus {
   right: 0;
   width: 70px;
   height: 108px;
-  background: url("./images/arrow_grey.png") no-repeat;
+  background: url("../images/arrow_grey.png") no-repeat;
 }
 .blog__item_big {
   padding: 0;
@@ -1083,7 +1130,7 @@ input:focus, textarea:focus {
   left: -20px;
   right: 0;
   bottom: 0;
-  background: url("./images/background-partners.png") left bottom no-repeat;
+  background: url("../images/background-partners.png") left bottom no-repeat;
   background-size: contain;
   z-index: 30;
   pointer-events: none;

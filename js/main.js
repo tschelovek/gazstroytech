@@ -24,30 +24,33 @@ document.addEventListener('DOMContentLoaded', () => {
      */
 
     const heroBgSvg = document.getElementById('svg_bg10');
-    const heroText = document.getElementById('hero_content');
-    const parallelogramsContainer = document.querySelector('.hero__img-wrapper_3');
-    const textEl1 = heroText.querySelector('.el_1');
-    const textEl2 = heroText.querySelector('.el_2');
-    const startTime = 400;
 
-    setTimeout(() => heroBgSvg.querySelector('.el_l3').classList.add('show'), startTime);
-    setTimeout(() => heroBgSvg.querySelector('.el_l2').classList.add('show'), startTime + 300);
-    setTimeout(() => heroBgSvg.querySelector('.el_l1').classList.add('show'), startTime + 700);
-    setTimeout(() => heroBgSvg.querySelector('.el_10').classList.add('show'), startTime + 1100);
-    setTimeout(() => heroBgSvg.querySelector('.el_gt').classList.add('show'), startTime + 1300);
-    setTimeout(() => heroText.querySelector('.years').classList.add('show'), startTime + 1200);
+    if (heroBgSvg) {
+        const heroText = document.getElementById('hero_content');
+        const parallelogramsContainer = document.querySelector('.hero__img-wrapper_3');
+        const textEl1 = heroText.querySelector('.el_1');
+        const textEl2 = heroText.querySelector('.el_2');
+        const startTime = 400;
 
-    if(gsap) {
-        gsap.registerPlugin(TextPlugin);
+        setTimeout(() => heroBgSvg.querySelector('.el_l3').classList.add('show'), startTime);
+        setTimeout(() => heroBgSvg.querySelector('.el_l2').classList.add('show'), startTime + 300);
+        setTimeout(() => heroBgSvg.querySelector('.el_l1').classList.add('show'), startTime + 700);
+        setTimeout(() => heroBgSvg.querySelector('.el_10').classList.add('show'), startTime + 1100);
+        setTimeout(() => heroBgSvg.querySelector('.el_gt').classList.add('show'), startTime + 1300);
+        setTimeout(() => heroText.querySelector('.years').classList.add('show'), startTime + 1200);
 
-        setTimeout(() => gsap.to(textEl1, {duration: 1.5, text: "строим и развиваем"}), startTime + 1300);
-        setTimeout(() => gsap.to(textEl2, {duration: 1, text: "вместе с Вами!"}), startTime + 2300);
+        if (gsap) {
+            gsap.registerPlugin(TextPlugin);
+
+            setTimeout(() => gsap.to(textEl1, {duration: 1.5, text: "строим и развиваем"}), startTime + 1300);
+            setTimeout(() => gsap.to(textEl2, {duration: 1, text: "вместе с Вами!"}), startTime + 2300);
+        }
+
+        setTimeout(
+            () => parallelogramsContainer?.classList.remove('hide'),
+            startTime + 3000
+        );
     }
-
-    setTimeout(
-        () => parallelogramsContainer.classList.remove('hide'),
-        startTime + 3000
-    );
 
     /**
      * Scroll
@@ -62,16 +65,18 @@ document.addEventListener('DOMContentLoaded', () => {
     );
     const header = document.getElementById('header');
 
-
-    locoScroll.on('scroll', (args) => {
-        if(typeof args.currentElements['hero'] === 'object') {
-            !header.classList.contains('transparent')
-                ? header.classList.add('transparent')
-                : null
-        } else {
-            header.classList.remove('transparent')
-        }
-    });
+    // Для главной страницы меняем бэкграунд хэдера после .hero секции
+    if (document.getElementById('hero_content')){
+        locoScroll.on('scroll', (args) => {
+            if (typeof args.currentElements['hero'] === 'object') {
+                !header.classList.contains('transparent')
+                    ? header.classList.add('transparent')
+                    : null
+            } else {
+                header.classList.remove('transparent')
+            }
+        });
+    }
 
     document.querySelectorAll('a[data-target-to-scroll]')
         .forEach(link => link.addEventListener('click', handlerAnchorLick))
@@ -81,13 +86,28 @@ document.addEventListener('DOMContentLoaded', () => {
         locoScroll.scrollTo(e.currentTarget.dataset.targetToScroll)
     }
 
+    // Меняем хэдер с прозрачного на белый
+
+    const pageAboutHero = document.getElementById('hero_about');
+    if (pageAboutHero) {
+        const header = document.querySelector('header');
+
+        locoScroll.on('scroll', (args) => {
+            if (args.scroll.y > 0) {
+                header.style["backgroundColor"] = 'white'
+            } else {
+                header.style["backgroundColor"] = 'transparent'
+            }
+        })
+    }
+
     /**
      * Карта проектов
      *
      * @type {HTMLElement}
      */
     const canvasSvg = document.getElementById("canvas_svg");
-    if(canvasSvg) {
+    if (canvasSvg) {
         const dataContainer = document.querySelector('.canvas__data-container');
         const regions = Array.from(canvasSvg.querySelectorAll('path[data-region-id]'));
 
@@ -103,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 left: x,
             });
         }
+
         const virtualElement = {
             getBoundingClientRect: generateGetBoundingClientRect(),
         };
@@ -123,10 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.addEventListener('mousemove', handlerMouseMove);
                 event.currentTarget.addEventListener('mouseout', handlerMouseOut, {once: true});
 
-                function handlerMouseMove({ clientX: x, clientY: y }) {
+                function handlerMouseMove({clientX: x, clientY: y}) {
                     virtualElement.getBoundingClientRect = generateGetBoundingClientRect(x, y);
                     instance.update();
                 }
+
                 function handlerMouseOut() {
                     document.removeEventListener('mousemove', handlerMouseMove);
                     innerPopup.style.display = 'none';
@@ -141,4 +163,32 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
     }
+
+    /**
+     * Аккордеон
+     */
+
+    const accordion = document.getElementById('strategy_accordion');
+
+    if (accordion) {
+        const accItems = accordion.querySelectorAll('.accordion-item');
+
+        accordion.querySelectorAll('.accordion-item__tab')
+            .forEach( tab => tab.addEventListener('click', handlerAccordionTab)
+        )
+
+        function handlerAccordionTab(e) {
+            const parent = e.currentTarget.parentNode;
+
+            if (parent.classList.contains('accordion-item_active')) {
+                return;
+            }
+
+            accItems.forEach(item => item.classList.remove('accordion-item_active'));
+
+            parent.classList.toggle('accordion-item_active')
+
+        }
+    }
+
 })

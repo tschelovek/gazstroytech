@@ -3,7 +3,7 @@
   top: 0
   left: 0
   height: 70px
-  width: 100vw
+  width: 100%
   z-index: 50
   transition: background-color 0.3s ease-in-out
   &__top
@@ -103,14 +103,34 @@
         width: 38px
         height: 2px
         background-color: white
+        transition: transform 0.3s ease-in-out
         right: 0
       &::before
         top: -12px
       &::after
         top: 12px
+    &.active span
+      background-color: transparent
+
+    &.active span::before
+      transform: rotate(45deg)
+      top: 0
+
+    &.active span::after
+      transform: rotate(-45deg)
+      top: 0
+
   &.transparent
     .header__top
       background-color: transparent
+  &_white
+    &.header .header__top
+      background-color: transparent
+    .nav
+      &__link
+        color: var(--blue)
+      //  height: 70px
+      //  background-color: white
 
 .nav
   &__list
