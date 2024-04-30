@@ -1,0 +1,492 @@
+img
+  object-fit: cover
+  max-width: 100%
+
+.hero_about
+  padding: 120px 0
+  position: relative
+  min-height: 350px
+  aspect-ratio: 1780/840
+  //background: url("../../images/page_about/hero_10.png") right 80% bottom 0 no-repeat
+  //background-size: contain
+  &__text
+    max-width: 36%
+    font-size: 24px
+    line-height: 1.33
+    &__intro
+      margin-bottom: 40px
+      max-width: 500px
+      color: var(--theme-blue)
+      font-weight: 700
+      //text-wrap: balance
+    &_common
+      font-weight: 300
+  &__bg-image
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    height: 100%
+    z-index: 50
+  .parallelogram
+    position: absolute
+    right: 0
+    top: -200px
+    width: 24.5%
+    aspect-ratio: 21/37
+    background-color: var(--blue)
+
+.strategy
+  .container_1780
+    position: relative
+    padding-left: 0
+    .title_h2
+      position: absolute
+      left: 70px
+      top: -102px
+      color: var(--theme-blue)
+  &__accordion
+    background-color: var(--blue)
+    .accordion
+      &-item
+        flex-grow: 0
+        &__tab
+          padding: 44px 4px 60px
+          display: flex
+          flex-flow: column
+          align-items: center
+          width: 190px
+          flex-shrink: 0
+          font-size: 30px
+          font-weight: 300
+          line-height: 1
+          color: var(--theme-blue)
+          border-left: 1px solid var(--theme-blue)
+          cursor: pointer
+          position: relative
+          transition: color 0.15s
+          z-index: 20
+          &__title
+            font-size: 100px
+            font-family: Bebas Neue, sans-serif
+            font-weight: 700
+            line-height: 0.8
+            text-transform: uppercase
+          &__number
+            font-size: 120px
+            font-family: Bebas Neue, sans-serif
+            font-weight: 700
+            text-align: center
+        &__content
+          padding: 60px 160px 50px 60px
+          overflow: hidden
+          width: 0
+          color: white
+          position: relative
+          z-index: 15
+          display: none
+          &-wrapper
+            position: absolute
+            top: 0
+            bottom: 0
+            right: 0
+            left: 0
+            z-index: 5
+          &__title
+            font-size: 36px
+            font-weight: 700
+          &__bg-number
+            color: #15488f
+            font-size: 600px
+            font-family: Bebas Neue, sans-serif
+            position: absolute
+            bottom: -74px
+            right: -22px
+            line-height: 0.85
+            z-index: -1
+        &_active
+          flex-grow: 5
+          .accordion-item
+            &__tab
+              border-right: 1px solid var(--theme-blue)
+              color: white
+            &__content
+              display: block
+              translate: 0
+              width: auto
+              p.accordion-item__text
+                margin-top: 40px
+                font-size: 24px
+                font-weight: 300
+
+.advantages
+  .container_1780
+    display: flex
+  .title_h2
+    margin-top: 64px
+  &__wrapper
+    margin-left: auto
+    max-width: 1060px
+    display: block
+    padding-bottom: 90px
+    //flex-flow: column
+    //gap: 24px
+  &__intro
+    margin-bottom: 40px
+    font-size: 24px
+    line-height: 1.33
+    color: var(--theme-blue)
+    font-weight: 700
+  &__list
+    //padding-left: 40px
+  &__item
+    margin-bottom: 24px
+    padding-left: 42px
+    position: relative
+    font-size: 24px
+    font-weight: 300
+    color: var(--blue)
+    &::before
+      position: absolute
+      top: 0
+      left: 0
+      content: ''
+      //content: url("../images/check.png")
+      width: 36px
+      height: 36px
+      background: url("../images/check3.png") center no-repeat
+      background-size: contain
+
+  .parallelogram
+    margin-left: 70px
+    width: 33%
+    float: right
+    position: static
+  &__pattern
+    width: 36%
+    position: relative
+    flex-shrink: 0
+    &__parallelogram
+      clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+      width: calc(100% + 70px)
+      aspect-ratio: 310/560
+      background-color: var(--theme-blue)
+      position: absolute
+      bottom: 0
+      right: 0
+      z-index: -1
+    .line
+      height: 2px
+      background-color: var(--theme-blue)
+      width: 200%
+      position: absolute
+      right: -1px
+      -webkit-transform-origin: top right
+      -moz-transform-origin: top right
+      -ms-transform-origin: top right
+      -o-transform-origin: top right
+      transform-origin: top right
+      rotate: 38deg
+      &_1
+        bottom: -150px
+      &_2
+        bottom: -300px
+
+.achievements
+  .container_1780
+    display: flex
+  &__intro
+    width: 36%
+    color: var(--blue)
+    &__highlighted
+      margin: 60px -210px 0 0
+      font-size: 30px
+      font-weight: 700
+    &__list
+      li
+        font-size: 24px
+        margin-top: 24px
+        max-width: 480px
+    &__link
+      margin-top: 24px
+      display: block
+      font-size: 24px
+      color: var(--theme-blue)
+    .title_h4
+      font-size: 36px
+      font-weight: 800
+      line-height: 1
+      color: var(--blue)
+  &__middle
+    position: relative
+    width: 47%
+    font-size: 0
+    clip-path: polygon(0 0, 52% 0, 100% 34%, 100% 100%, 48% 100%, 0 66%)
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      opacity: 0.8
+      background: linear-gradient(to bottom, rgba(204, 243, 255, 0.6), #0e86d9)
+    img
+      min-width: 100%
+      min-height: 100%
+    &__text
+      position: absolute
+      bottom: 24px
+      right: 16px
+  &__projects-list
+    display: flex
+    flex-flow: column
+    width: 17%
+  &__counter
+    font-size: 218px
+    color: white
+    font-family: "Bebas Neue", sans-serif
+    line-height: 0.9
+  &__description__text
+    margin-left: 6px
+    font-size: 30px
+    font-weight: 700
+    color: var(--blue)
+  .title_h2
+    color: var(--theme-blue)
+
+.business
+  padding-right: 70px
+  position: relative
+  &__pattern
+    position: absolute
+    top: 300px
+    bottom: 0
+    left: 0
+    right: 0
+    background: url("../../images/page_about/pattern_busines.png") left top no-repeat
+    background-size: cover
+    pointer-events: none
+    z-index: -1
+
+.bosses
+  padding: 40px 0
+  .title_h2
+    text-align: right
+  &__list
+    display: flex
+    gap: 80px
+  &__item
+    flex: 1
+    &__image-wrapper
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 34% 100%, 0 73%)
+      font-size: 0
+      overflow: hidden
+    &__name
+      font-size: 30px
+      font-weight: 700
+      color: var(--blue)
+      line-height: 1.2
+    &__occupation
+      font-size: 24px
+      line-height: 1.2
+      color: var(--theme-blue)
+    &:first-child
+      position: relative
+      &::before
+        content: ''
+        background-color: var(--blue)
+        clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+        position: absolute
+        top: 210px
+        left: -70px
+        width: calc(100% + 70px)
+        aspect-ratio: 310 / 560
+        z-index: -1
+      .bosses__item__name
+        color: white
+        text-shadow: 0 0 6px var(--blue)
+
+.affiliated
+  padding: 70px 0 50px
+  //&__grid
+  //  display: flex
+  //  gap: 60px
+  .container_1780
+    position: relative
+    &::before
+      //content: ''
+      background-color: var(--blue)
+      clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+      position: absolute
+      top: -124px
+      left: 0
+      width: calc(100% / 3 - 6px)
+      aspect-ratio: 310 / 560
+      z-index: -1
+  &__pattern
+    background-color: var(--blue)
+    clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+    position: absolute
+    top: -124px
+    left: 0
+    width: calc(100% / 3 - 6px)
+    aspect-ratio: 310 / 560
+    z-index: -1
+    .line
+      height: 2px
+      background-color: var(--theme-blue)
+      width: 200%
+      position: absolute
+      right: -1px
+      -webkit-transform-origin: top right
+      -moz-transform-origin: top right
+      -ms-transform-origin: top right
+      -o-transform-origin: top right
+      transform-origin: top right
+      rotate: 38deg
+      &_1
+        bottom: -150px
+      &_2
+        bottom: -300px
+
+  .title_h2
+    line-height: 1
+    color: white
+    width: 30%
+  &__wrapper
+    display: flex
+    gap: 32px
+    justify-content: space-between
+    align-items: end
+  &__img-wrapper
+    &_1
+      width: 23.6%
+    &_2
+      width: 35%
+  img
+    max-width: 100%
+
+.partners_about
+  padding: 50px 0
+  .title_h2
+    color: var(--theme-blue)
+    width: 30%
+    white-space: nowrap
+  &__list
+    display: flex
+    gap: 40px
+    align-items: center
+    justify-content: space-between
+  &__item
+    &_1
+      max-width: 256px
+    &_2
+      max-width: 256px
+    &_3
+      max-width: 300px
+
+.license
+  padding: 100px 0 120px
+  &__header
+    margin: 0 0 40px auto
+    max-width: 1110px
+    display: flex
+    gap: 40px
+    align-items: flex-end
+  &__list
+    display: flex
+    gap: 80px
+    align-items: center
+    justify-content: space-between
+  .title_h2
+    line-height: 1
+    text-shadow: 0 0 8px white
+  .link_blue
+    margin-bottom: 20px
+    font-size: 30px
+
+
+.header
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    width: 600px
+    background-color: white
+    z-index: -1
+
+@media only screen and (max-width: 1860px)
+  .bosses__item:first-child::before
+    top: 100px
+
+@media only screen and (max-width: 1650px)
+  .hero_about
+    aspect-ratio: unset
+
+  .strategy__accordion .accordion-item
+    &__content
+      padding: 60px 48px 50px
+
+  .advantages
+    &__pattern
+      display: none
+    &__wrapper
+      max-width: unset
+
+  .achievements
+    .container_1780
+      flex-flow: wrap
+    &__intro
+      width: 42%
+      &__highlighted
+        margin-right: -120px
+        font-size: 24px
+      .title_h4
+        font-size: 28px
+    &__middle
+      width: 58%
+    &__projects-list
+      width: 100%
+      flex-flow: row
+
+@media only screen and (max-width: 1500px)
+  .hero_about
+    &__text
+      max-width: 50%
+    &__bg-image
+      left: 22%
+      max-height: 100%
+
+  .strategy__accordion .accordion-item
+    &__tab
+      width: 160px
+@media only screen and (max-width: 1366px)
+  .strategy__accordion .accordion-item
+    &__tab
+      width: 140px
+
+  .achievements
+    padding-top: 48px
+    .title_h2
+      font-size: 90px
+    &__intro__list li
+      font-size: 22px
+      margin-top: 12px
+
+@media only screen and (max-width: 1280px)
+  .strategy
+    .container_1780
+      padding: 0
+    &__accordion .accordion-item__tab
+      font-size: 24px
+      &__title
+        font-size: 80px
+
+  .achievements
+    &__intro__highlighted
+      font-size: 22px
+    &__middle__text
+      bottom: 80px

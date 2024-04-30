@@ -54,6 +54,8 @@ input:focus, textarea:focus
   &_1920
     max-width: 1920px
   &_1780
+    margin: 0 auto
+    width: 100%
     padding-left: 70px
     max-width: 1850px
   &_body
@@ -67,6 +69,7 @@ input:focus, textarea:focus
     font-family: "Bebas Neue", sans-serif
     color: var(--blue)
     text-transform: uppercase
+    line-height: 1.1
 
 .video-slide__video-wrap
   position: absolute
@@ -96,4 +99,25 @@ input:focus, textarea:focus
     bottom: -100vh
     width: 100vw
 
+.link_blue
+  display: block
+  font-size: 24px
+  font-weight: 700
+  color: var(--theme-blue)
 
+.parallelogram
+  background-color: var(--blue)
+  clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+  width: 32.3%
+  aspect-ratio: 310/560
+
+
+.accordion_hrz
+  display: flex
+  .accordion
+    &-item
+      display: flex
+      &__tab__vertical
+        writing-mode: vertical-rl
+        rotate: 180deg
+        text-align: end
