@@ -55,51 +55,59 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
      * Scroll
      */
-    const locoScroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
-    });
-    // Обновляем скролл в случае ресайза
-    new ResizeObserver(() => locoScroll.update()).observe(
-        document.querySelector("[data-scroll-container]")
-    );
-    const header = document.getElementById('header');
 
-    // Для главной страницы меняем бэкграунд хэдера после .hero секции
-    if (document.getElementById('hero_content')){
-        locoScroll.on('scroll', (args) => {
-            if (typeof args.currentElements['hero'] === 'object') {
-                !header.classList.contains('transparent')
-                    ? header.classList.add('transparent')
-                    : null
-            } else {
-                header.classList.remove('transparent')
-            }
+    // const scrollContainer = document.querySelector('[data-scroll-container]');
+
+    const scrollContainer = undefined
+
+    if (scrollContainer) {
+        const locoScroll = new LocomotiveScroll({
+            el: scrollContainer,
+            smooth: true
         });
+        // Обновляем скролл в случае ресайза
+        new ResizeObserver(() => locoScroll.update()).observe(scrollContainer);
+        const header = document.getElementById('header');
+
+        // Для главной страницы меняем бэкграунд хэдера после .hero секции
+        if (document.getElementById('hero_content')){
+            locoScroll.on('scroll', (args) => {
+                if (typeof args.currentElements['hero'] === 'object') {
+                    !header.classList.contains('transparent')
+                        ? header.classList.add('transparent')
+                        : null
+                } else {
+                    header.classList.remove('transparent')
+                }
+            });
+        }
+
+        // Якорные ссылки
+        document.querySelectorAll('a[data-target-to-scroll]')
+            .forEach(link => link.addEventListener('click', handlerAnchorLick))
+        function handlerAnchorLick(e) {
+            e.preventDefault()
+            locoScroll.scrollTo(e.currentTarget.dataset.targetToScroll)
+        }
+
+        // Меняем хэдер с прозрачного на белый
+        // const pageAboutHero = document.getElementById('hero_about');
+        // if (pageAboutHero) {
+        //     const header = document.querySelector('header');
+        //
+        //     locoScroll.on('scroll', (args) => {
+        //         if (args.scroll.y > 0) {
+        //             header.style["backgroundColor"] = 'white'
+        //         } else {
+        //             header.style["backgroundColor"] = 'transparent'
+        //         }
+        //     })
+        // }
     }
 
-    document.querySelectorAll('a[data-target-to-scroll]')
-        .forEach(link => link.addEventListener('click', handlerAnchorLick))
-
-    function handlerAnchorLick(e) {
-        e.preventDefault()
-        locoScroll.scrollTo(e.currentTarget.dataset.targetToScroll)
-    }
-
-    // Меняем хэдер с прозрачного на белый
-
-    const pageAboutHero = document.getElementById('hero_about');
-    if (pageAboutHero) {
-        const header = document.querySelector('header');
-
-        locoScroll.on('scroll', (args) => {
-            if (args.scroll.y > 0) {
-                header.style["backgroundColor"] = 'white'
-            } else {
-                header.style["backgroundColor"] = 'transparent'
-            }
-        })
-    }
+    // if (document.querySelector('body[data-page="about"]')) {
+    // }
+    const locomotiveScroll = new LocomotiveScroll();
 
     /**
      * Карта проектов

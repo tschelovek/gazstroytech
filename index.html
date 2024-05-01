@@ -6,13 +6,14 @@
     <!--    <link rel="icon" href="./favicon.ico">-->
     <meta name="theme-color" content="#E6E8EC">
     <title>Газстройтех</title>
-    <link rel="stylesheet" href="./css/libs/locomotive-scroll.min.css">
-    <!--    <link rel="stylesheet" href="./css/libs/locomotive-scroll_v5.css">-->
+<!--    <link rel="stylesheet" href="./css/libs/locomotive-scroll.min.css">-->
+        <link rel="stylesheet" href="./css/libs/locomotive-scroll_v5.css">
     <link rel="stylesheet" href="./css/style.css">
     <!--    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="js/libs/TextPlugin.min.js"></script>
-    <script src="js/libs/locomotive-scroll.min.js"></script>
+<!--    <script src="js/libs/locomotive-scroll.min.js"></script>-->
+    <script src="js/libs/locomotive-scroll_5.beta.min.js"></script>
     <!--    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>-->
     <script defer src="js/libs/popper_2.11.8.js"></script>
     <script defer src="./js/main.js"></script>
@@ -39,10 +40,11 @@
                             <a href="#s_functions" class="nav__link header__link">О компании</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#s_functions" class="nav__link header__link">Проекты</a>
+                            <a href="#s_projects" data-scroll-to class="nav__link header__link">Проекты</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#s_functions" class="nav__link header__link">Услуги</a>
+                            <a href="./about.html#s_achievements"
+                               class="nav__link header__link">Услуги</a>
                         </li>
                         <li class="nav__item">
                             <a href="#s_partners"
@@ -378,17 +380,16 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <div class="scroll-wrapper_1"
-             data-scroll-section
-        >
+        <div class="scroll-wrapper_1">
             <div id="stick">
                 <div class="container_1920 container">
                     <div class="career__static-bg"
-                         data-scroll data-scroll-sticky
-                         data-scroll-target="#stick"></div>
+                         data-scroll-repeat></div>
+<!--                    <div class="career__static-bg"-->
+<!--                         data-scroll data-scroll-sticky-->
+<!--                         data-scroll-target="#stick"></div>-->
                 </div>
 
                 <section class="services" data-scroll data-scroll-offset="100,50%">
@@ -474,7 +475,7 @@
             </div>
         </div>
         <!--    <div class="container container_1920">-->
-        <section class="projects" data-scroll-section>
+        <section class="projects" data-scroll-section id="s_projects">
             <div class="container container_1920">
                 <div class="projects__top">
                     <div class="projects__top__list">
