@@ -176,6 +176,14 @@ input:focus, textarea:focus {
   text-align: end;
 }
 
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -1906,6 +1914,12 @@ input:focus, textarea:focus {
   }
   .hero__img-wrapper_2 {
     left: 0;
+  }
+}
+@media (min-width: 1024px) and (orientation: landscape) {
+  .hero__content {
+    margin: unset;
+    margin-left: 31%;
   }
 }
 @media only screen and (min-width: 1648px) {
