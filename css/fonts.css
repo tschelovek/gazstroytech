@@ -3,6 +3,7 @@
     font-style: normal;
     font-weight: 700;
     src: url('../fonts/BebasNeue-Bold.ttf') format("truetype");
+    font-display: optional;
 }
 
 @font-face {
