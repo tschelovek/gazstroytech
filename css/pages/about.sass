@@ -1,3 +1,4 @@
+@import "../prefixes"
 img
   object-fit: cover
   max-width: 100%
@@ -13,6 +14,8 @@ img
     max-width: 36%
     font-size: 24px
     line-height: 1.33
+    position: relative
+    z-index: 50
     &__intro
       margin-bottom: 40px
       max-width: 500px
@@ -21,6 +24,7 @@ img
       //text-wrap: balance
     &_common
       font-weight: 300
+      text-shadow: 0 0 3px white
   &__bg-image
     position: absolute
     right: 0
@@ -29,6 +33,29 @@ img
     height: 100%
     z-index: 45
     pointer-events: none
+    font-size: 0
+    img
+      max-width: 100%
+      max-height: 100%
+  &__title
+    position: absolute
+    bottom: 15%
+    right: 5%
+    display: flex
+    flex-flow: column
+    aspect-ratio: 3412 / 1996
+    font-size: 130px
+    font-family: Bebas Neue, sans-serif
+    font-weight: 700
+    line-height: 0.8
+    text-transform: uppercase
+    text-shadow: 0 0 12px white
+    .sp
+      &_1
+        color: var(--blue)
+      &_2
+        color: var(--theme-blue)
+
   .parallelogram
     position: absolute
     right: 0
@@ -38,15 +65,16 @@ img
     background-color: var(--blue)
 
 .strategy
+  background-color: var(--blue)
   .container_1780
     padding-left: 0
     position: relative
     z-index: 30
-    .title_h2
-      position: absolute
-      left: 70px
-      top: -102px
-      color: var(--theme-blue)
+  .title_h2
+    position: absolute
+    left: 70px
+    top: -102px
+    color: var(--theme-blue)
   &__accordion
     background-color: var(--blue)
     .accordion
@@ -66,7 +94,7 @@ img
           border-left: 1px solid var(--theme-blue)
           cursor: pointer
           position: relative
-          transition: color 0.15s
+          transition: color 0.4s ease-in-out
           z-index: 20
           &__title
             font-size: 100px
@@ -87,6 +115,7 @@ img
           position: relative
           z-index: 15
           display: none
+          animation: fadeEffect 0.5s ease-in-out
           &-wrapper
             position: absolute
             top: 0
@@ -106,6 +135,10 @@ img
             right: -22px
             line-height: 0.85
             z-index: -1
+          p.accordion-item__text
+            margin-top: 40px
+            font-size: 24px
+            font-weight: 300
         &_active
           flex-grow: 5
           .accordion-item
@@ -116,10 +149,6 @@ img
               display: block
               translate: 0
               width: auto
-              p.accordion-item__text
-                margin-top: 40px
-                font-size: 24px
-                font-weight: 300
 
 .advantages
   .container_1780
@@ -204,6 +233,8 @@ img
       margin: 60px -210px 0 0
       font-size: 30px
       font-weight: 700
+      position: relative
+      z-index: 20
     &__list
       li
         font-size: 24px
@@ -244,6 +275,7 @@ img
     display: flex
     flex-flow: column
     width: 17%
+
   &__counter
     font-size: 218px
     color: white
@@ -256,6 +288,8 @@ img
     color: var(--blue)
   .title_h2
     color: var(--theme-blue)
+    position: relative
+    z-index: 30
 
 .business
   padding-right: 70px
@@ -357,36 +391,70 @@ img
     color: white
     width: 30%
   &__wrapper
-    display: flex
+    display: grid
+    grid-template-columns: 4fr 2fr 3fr 2fr
+    //display: flex
     gap: 32px
     justify-content: space-between
     align-items: end
   &__img-wrapper
-    &_1
-      width: 23.6%
-    &_2
-      width: 35%
+    //&_1
+    //  width: 23.6%
+    //&_2
+    //  width: 35%
   img
     max-width: 100%
+  &__item__title
+    padding: 0 20px
+    font-size: 40px
+    font-family: Bebas Neue, sans-serif
+    font-weight: 700
+    line-height: 1
+    color: var(--theme-blue)
+    max-width: 200px
 
 .partners_about
   padding: 50px 0
+  &__wrapper
+    display: flex
+    gap: 24px
   .title_h2
     color: var(--theme-blue)
-    width: 30%
     white-space: nowrap
+    width: 31%
   &__list
-    display: flex
-    gap: 40px
-    align-items: center
+    display: grid
+    grid-gap: 40px
     justify-content: space-between
+    grid-template-columns: repeat(3, 1fr)
+    width: 69%
   &__item
+    padding: 4px
+    +center
     &_1
-      max-width: 256px
+      img
+        max-width: 256px
+        width: 60%
     &_2
-      max-width: 256px
+      img
+        max-width: 256px
+        width: 60%
     &_3
-      max-width: 300px
+      img
+        max-width: 300px
+        width: 95%
+    &_4
+      img
+        max-width: 220px
+        width: 45%
+    &_5
+      img
+        max-width: 300px
+        width: 95%
+    &_6
+      img
+        max-width: 300px
+        width: 95%
 
 .license
   padding: 100px 0 120px
@@ -423,10 +491,22 @@ img
 @media only screen and (max-width: 1860px)
   .bosses__item:first-child::before
     top: 100px
+    clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 100%)
+  .affiliated__pattern
+    display: none
 
 @media only screen and (max-width: 1650px)
+  .title_h2
+    font-size: 100px
+  .strategy .title_h2
+    top: -86px
   .hero_about
     aspect-ratio: unset
+    &__text
+      font-size: 22px
+      max-width: 50%
+    &__bg-image
+      left: 22%
 
   .strategy__accordion .accordion-item
     &__content
@@ -454,17 +534,45 @@ img
       width: 100%
       flex-flow: row
 
+  .bosses
+    &__list
+      gap: 40px
+  .partners_about__list
+    //display: grid
+    //grid-template-columns: 2fr 1fr 1fr 1fr
+
 @media only screen and (max-width: 1500px)
+  .title_h2
+    font-size: 80px
+  .strategy .title_h2
+    top: -68px
+
   .hero_about
     &__text
       max-width: 50%
     &__bg-image
-      left: 22%
+      //left: 24%
       max-height: 100%
+      img
+        max-width: unset
 
   .strategy__accordion .accordion-item
     &__tab
       width: 160px
+
+  .affiliated
+    .title_h2
+      color: var(--theme-blue)
+      width: 100%
+    //&__wrapper
+    //  display: grid
+    //  grid-template-columns: 4fr 2fr 3fr
+    &__img-wrapper
+      &_1
+        width: 100%
+      &_2
+        width: 100%
+
 @media only screen and (max-width: 1366px)
   .strategy__accordion .accordion-item
     &__tab
@@ -479,16 +587,372 @@ img
       margin-top: 12px
 
 @media only screen and (max-width: 1280px)
+  .hero_about
+    &__text
+      font-size: 20px
+    &__bg-image
+      left: 18%
+
+
   .strategy
     .container_1780
       padding: 0
-    &__accordion .accordion-item__tab
-      font-size: 24px
-      &__title
-        font-size: 80px
+    .title_h2
+      left: 16px
+    &__accordion .accordion-item
+      &__tab
+        font-size: 24px
+        &__title
+          font-size: 80px
+      &__content
+        padding: 60px 28px 50px
+        &__title
+          font-size: 28px
+        p.accordion-item__text
+          font-size: 20px
+
+  .advantages
+    &__intro
+      font-size: 22px
+    &__item
+      font-size: 20px
+    .parallelogram
+      margin-left: 20px
+      width: 25%
 
   .achievements
+    .container_1780
+      padding-right: 0
     &__intro__highlighted
       font-size: 22px
     &__middle__text
       bottom: 80px
+
+  .business
+    padding-right: 0
+
+  .bosses
+    &__item
+      &__name
+        font-size: 24px
+      &__occupation
+        font-size: 20px
+
+@media only screen and (max-width: 1148px)
+  .header::after
+    content: unset
+
+  .hero_about
+    &__text
+      font-size: 18px
+
+  .affiliated
+    &__wrapper
+      grid-template-columns: 1fr 1fr 1fr
+      .title_h2
+        grid-column: 1/ span 3
+    &__img-wrapper_1
+      width: 70%
+
+  .bosses__item:first-child::before
+    clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+    top: 64px
+  .partners_about
+    &__wrapper
+      flex-flow: column
+    .title_h2
+      width: 100%
+    &__list
+      width: 100%
+
+@media only screen and (max-width: 1024px)
+  .title_h2
+    font-size: 64px
+  .hero_about
+    padding: 0 0 80px
+    .container_1780
+      display: flex
+      flex-flow: column-reverse
+      gap: 40px
+    &__text
+      font-size: 18px
+    &__item
+      font-size: 20px
+    &__bg-image
+      margin: 0 -20px
+      position: relative
+      left: 0
+      //border-bottom: 2px solid var(--theme-blue)
+      img
+        max-width: 100%
+        -webkit-transform: translateX(-9%)
+        -moz-transform: translateX(-9%)
+        -ms-transform: translateX(-9%)
+        -o-transform: translateX(-9%)
+        transform: translateX(-9%)
+    &__title
+      bottom: -14px
+      right: 20px
+    .parallelogram
+      width: 33%
+
+  .strategy
+    .title_h2
+      top: -56px
+    &__accordion .accordion-item
+      &__tab
+        padding: 24px 4px 32px
+        width: 100px
+        font-size: 20px
+        &__title
+          font-size: 56px
+        &__number
+          font-size: 80px
+      &__content
+        padding: 40px 16px
+        &__title
+          font-size: 24px
+        p.accordion-item__text
+          font-size: 18px
+
+  .advantages
+    &__intro
+      font-size: 18px
+
+  .achievements
+    .title_h2
+      font-size: 80px
+    &__intro
+      width: 55%
+      .title_h4
+        font-size: 24px
+      &__list li
+        font-size: 18px
+      &__link
+        font-size: 18px
+      &__highlighted
+        margin: 20px -120px 20px 0
+        font-size: 18px
+    &__middle
+      width: 45%
+    &__counter
+      font-size: 160px
+    &__description__text
+      text-align: right
+
+  .license__list
+    gap: 24px
+
+@media only screen and (max-width: 960px)
+  .hero_about
+    &__text
+      max-width: unset
+      position: relative
+      z-index: 60
+
+  .achievements
+    .projects__bottom__item img
+      top: 0
+      left: 0
+
+@media only screen and (max-width: 864px)
+  //.hero_about
+  //  &__bg-image
+  //    left: 0
+  //    opacity: 0.15
+  .affiliated__img-wrapper
+    &_1
+      grid-column: 1 / span 2
+    &_2
+      grid-column: 1 / span 2
+      grid-row: 2
+
+  .partners_about
+    padding-top: 0
+    &__list
+      grid-template-columns: 1fr 1fr
+      .title_h2
+        grid-column: 1/ span end
+
+@media only screen and (max-width: 768px)
+  .hero_about
+    &__title
+      font-size: 100px
+
+  .strategy__accordion
+    .accordion-item
+      flex-flow: column
+      border-bottom: 1px solid var(--theme-blue)
+      &__tab
+        padding: 12px 40px
+        width: 100%
+        gap: 24px
+        flex-flow: row
+        &__number
+          font-size: 56px
+        &__title
+          font-size: 40px
+      &_active .accordion-item__tab
+        border-bottom: 1px solid var(--theme-blue)
+      &__content
+        padding: 12px 40px
+        p.accordion-item__text
+          margin-top: 16px
+        &__bg-number
+          font-size: 220px
+          bottom: -26px
+          right: -6px
+
+  .accordion_hrz
+    flex-flow: column
+    .accordion-item__tab__vertical
+      writing-mode: unset
+      rotate: unset
+      text-align: unset
+
+  .advantages__item
+    padding-left: 32px
+    font-size: 16px
+    &::before
+      width: 24px
+      height: 24px
+      top: -2px
+
+  .achievements
+    &__description__text
+      font-size: 22px
+
+  .bosses
+    &__list
+      flex-flow: column
+    &__item
+      display: flex
+      gap: 20px
+      align-items: end
+      &:first-child
+        &::before
+          width: 320px
+          max-width: 60%
+          clip-path: polygon(0 0, 100% 44%, 100% 100%, 0 56.3%)
+        .bosses__item__name
+          color: var(--blue)
+          text-shadow: unset
+      &__image-wrapper
+        max-width: 50%
+      &__name
+        font-size: 20px
+      &__occupation
+        font-size: 16px
+
+@media only screen and (max-width: 640px)
+
+  .advantages .parallelogram
+    display: none
+
+  .achievements
+    &__counter
+      font-size: 100px
+    &__middle__text
+      bottom: 35%
+    .container_1780
+      justify-content: center
+  .affiliated
+    &__wrapper
+      grid-template-columns: 1fr
+      grid-gap: 32px
+      .title_h2
+        grid-column: unset
+    &__img-wrapper
+      display: flex
+      justify-content: center
+      width: 100%
+      &_1
+        img
+          max-width: 60%
+      &_2
+        img
+          max-width: 80%
+
+@media only screen and (max-width: 480px)
+  .title_h2
+    font-size: 52px
+
+  .hero_about__title
+    font-size: 80px
+  //.hero_about__bg-image img
+  //  position: absolute
+  //  top: 0
+  //  left: -46%
+  //  right: 0
+  //  height: 80%
+
+  .strategy__accordion
+    .accordion-item
+      &__tab
+        padding: 12px 24px
+      &__content
+        padding: 12px 24px
+
+  .strategy .title_h2
+    top: -44px
+
+  .advantages .title_h2, .achievements .title_h2
+    font-size: 56px
+
+  .achievements
+    &__intro__list li
+      font-size: 16px
+    &__counter
+      font-size: 80px
+      text-align: right
+    &__middle__text
+      right: 8px
+    &__projects-list
+      flex-flow: column
+      max-width: 300px
+    &__description__text
+      font-size: 18px
+
+
+  .partners_about
+    &__list
+      grid-template-columns: 1fr
+      .title_h2
+        grid-column: unset
+    &__item
+      display: flex
+      justify-content: center
+      width: 100%
+      img
+        max-width: 70%
+      &_1, &_2, &_3
+        max-width: unset
+
+  .license
+    &__header
+      flex-flow: column
+      align-items: flex-start
+    &__list
+      flex-flow: column
+    .link_blue
+      font-size: 18px
+
+@media only screen and (max-width: 375px)
+  .title_h2
+    font-size: 40px
+
+  .hero_about__title
+    font-size: 64px
+
+  .strategy__accordion
+    .accordion-item
+      &__tab
+        padding: 12px 16px
+        &__number
+          font-size: 48px
+        &__title
+          font-size: 36px
+      &__content
+        padding: 12px 16px
+        p.accordion-item__text
+          margin-top: 12px

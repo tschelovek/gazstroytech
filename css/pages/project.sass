@@ -1,0 +1,82 @@
+main
+  font-size: 24px
+  color: var(--blue)
+.page_project
+  padding-top: 70px
+  font-family: Roboto, sans-serif
+  img
+    max-width: 100%
+
+.hero_project
+  padding: 90px 0 100px
+  .container_1780
+    display: flex
+    position: relative
+  &__title_h1
+    color: var(--blue)
+    font-weight: 700
+    display: flex
+    flex-flow: column
+    &__intro
+      font-size: 36px
+      font-family: Roboto, sans-serif
+    &__main
+      font-size: 170px
+      font-family: "Bebas Neue", sans-serif
+  &__block
+    &_text, &_image
+      flex: 1
+  &__intro-text
+    font-size: 24px
+    font-weight: 700
+    color: var(--theme-blue)
+    line-height: 1.3333
+    max-width: 500px
+  &__location
+    margin-top: 48px
+  .parallelogram
+    position: absolute
+    right: 0
+    top: -70%
+    width: 23.6%
+    background: linear-gradient(to bottom, rgb(10, 53, 174) 45%, rgba(10, 53, 174, 0.5))
+    //opacity: 0.6
+
+.about_project
+  margin-bottom: 100px
+  .container_1780
+    display: flex
+  .title_h2
+    color: var(--theme-blue)
+  &__block
+    &_text, &_video
+      flex: 1
+    &_text
+      padding: 0 80px
+      line-height: 1.333
+  &__list
+    margin: 0 0 40px 24px
+    list-style: "— "
+    &__title
+      font-weight: 700
+
+.location
+  &__item
+    padding-left: 80px
+    position: relative
+    display: flex
+    flex-flow: column
+    color: var(--blue)
+    font-size: 24px
+    font-weight: 300
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 60px
+      height: 88px
+      background: url("../images/marker_location.png") no-repeat
+      background-size: contain
+    &__title
+      font-weight: 700

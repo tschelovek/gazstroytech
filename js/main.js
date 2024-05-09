@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
      */
 
     // const scrollContainer = document.querySelector('[data-scroll-container]');
-
     const scrollContainer = undefined
 
     if (scrollContainer) {
@@ -108,6 +107,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // if (document.querySelector('body[data-page="about"]')) {
     // }
     const locomotiveScroll = new LocomotiveScroll();
+
+
+    const path = new URL(window.location).pathname;
+    if (path === '/' || path === '') {
+        window.addEventListener('scroll', () => {
+            const header = document.body.querySelector('header');
+            if(window.scrollY > 0) {
+                header.classList.contains('transparent') ? header.classList.remove('transparent') : null;
+            } else {
+                header.classList.add('transparent');
+            }
+        })
+        //*На случай перезагрузки страницы проверяем положение и если надо вешаем скукоживатель на шапку
+        if (window.scrollY > 0) document.body.querySelector('header')?.classList.add('transparent');
+    }
+
 
     /**
      * Карта проектов
