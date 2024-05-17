@@ -3,6 +3,7 @@
   font-style: normal;
   font-weight: 700;
   src: url("../fonts/BebasNeue-Bold.ttf") format("truetype");
+  font-display: optional;
 }
 @font-face {
   font-family: "Roboto";
@@ -1016,6 +1017,24 @@ input:focus, textarea:focus {
 }
 .partners__item_12 img {
   max-width: 95%;
+}
+.partners__slider {
+  margin: 60px 40px;
+}
+.partners__slide {
+  height: auto;
+}
+.partners__slide__inner {
+  display: flex;
+  flex-flow: column;
+  gap: 120px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.partners__slide__item img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .blog {

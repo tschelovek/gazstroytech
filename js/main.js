@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const swiper2 = new Swiper('#slider_partners', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 80,
+        // autoplay: {
+        //     delay: 2000,
+        // },
+        speed: 1000,
+        breakpoints: {
+            480: {
+                // navigation: {
+                //     nextEl: '.swiper-button-next',
+                //     prevEl: '.swiper-button-prev',
+                // },
+                slidesPerView: 2,
+            },
+            1650: {
+                slidesPerView: 3,
+            },
+        }
+    })
+
 
     /**
      *

@@ -7,15 +7,17 @@
     <meta name="theme-color" content="#E6E8EC">
     <title>Газстройтех</title>
 <!--    <link rel="stylesheet" href="./css/libs/locomotive-scroll.min.css">-->
-        <link rel="stylesheet" href="./css/libs/locomotive-scroll_v5.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/libs/locomotive-scroll_v5.css">
+    <link rel="stylesheet" href="./css/libs/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
     <!--    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="js/libs/TextPlugin.min.js"></script>
 <!--    <script src="js/libs/locomotive-scroll.min.js"></script>-->
-    <script src="js/libs/locomotive-scroll_5.beta.min.js"></script>
+    <script src="./js/libs/swiper-bundle.min.js"></script>
+    <script src="./js/libs/locomotive-scroll_5.beta.min.js"></script>
     <!--    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>-->
-    <script defer src="js/libs/popper_2.11.8.js"></script>
+    <script defer src="./js/libs/popper_2.11.8.js"></script>
     <script defer src="./js/main.js"></script>
 </head>
 <body>
@@ -1689,10 +1691,10 @@
 <!--                                <img src="./images/partners/gsp-komplektacia.png" alt="">-->
 <!--                            </div>-->
 <!--                        </div>-->
-                        <div class="partners__slider swiper">
+                        <div class="partners__slider swiper" id="slider_partners">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="partners__slide">
+                                <div class="swiper-slide partners__slide">
+                                    <div class="partners__slide__inner">
                                         <div class="partners__slide__item">
                                             <img src="./images/partners/rostech.png" alt="">
                                         </div>
@@ -1704,8 +1706,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="partners__slide">
+                                <div class="swiper-slide partners__slide">
+                                    <div class="partners__slide__inner">
                                         <div class="partners__slide__item">
                                             <img src="./images/partners/specgazstroy.png" alt="">
                                         </div>
@@ -1717,8 +1719,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="partners__slide">
+                                <div class="swiper-slide partners__slide">
+                                    <div class="partners__slide__inner">
                                         <div class="partners__slide__item">
                                             <img src="./images/partners/stroyinvest.png" alt="">
                                         </div>
@@ -1730,8 +1732,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
-                                    <div class="partners__slide">
+                                <div class="swiper-slide partners__slide">
+                                    <div class="partners__slide__inner">
                                         <div class="partners__slide__item">
                                             <img src="./images/partners/podvodgasenergoservis.png" alt="">
                                         </div>
@@ -1744,10 +1746,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-pagination"></div>
-
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+<!--                            <div class="swiper-button-prev"></div>-->
+<!--                            <div class="swiper-button-next"></div>-->
                         </div>
                     </div>
                 </div>
