@@ -1,10 +1,23 @@
 .footer
-  padding: 70px 70px 70px 0
+  padding: 70px 70px 40px 0
   background-color: var(--blue)
   color: white
   font-family: Roboto, sans-serif
+  .container
+    position: relative
+    z-index: 5
+  &::after
+    content: ''
+    background: url("./images/footer_bg_compr.png") no-repeat
+    background-size: contain
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 515px
+    height: 494px
+    z-index: 2
   hr
-    margin: 40px 0
+    margin: 40px 0 36px
   &__top
     margin-bottom: 60px
     display: flex

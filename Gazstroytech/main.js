@@ -1,18 +1,28 @@
+import LocomotiveScroll from "locomotive-scroll";
+import Swiper from "swiper";
+import { gsap } from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
+import { createPopper } from '@popperjs/core';
+
 document.addEventListener('DOMContentLoaded', () => {
-    const swiper2 = new Swiper('#slider_partners', {
+    /**
+     *
+     * Слайдеры
+     */
+    const swiper = new Swiper('#slider_partners', {
         loop: true,
         slidesPerView: 1,
         spaceBetween: 80,
-        // autoplay: {
-        //     delay: 2000,
-        // },
+        autoplay: {
+            delay: 2000,
+        },
         speed: 1000,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         breakpoints: {
             480: {
-                // navigation: {
-                //     nextEl: '.swiper-button-next',
-                //     prevEl: '.swiper-button-prev',
-                // },
                 slidesPerView: 2,
             },
             1650: {
@@ -21,24 +31,53 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-
     /**
      *
-     * Бургер меню
+     * Бургер меню и навигация
      *
      */
-    document.getElementById('burgerButton')?.addEventListener('click', e => {
-        e.preventDefault();
-        e.currentTarget.classList.toggle('active');
-        document.querySelector('.header__menu')?.classList.toggle('active');
-    })
-
-    // document.querySelectorAll('.nav_header .header__link')
+    // const headerMenu = document.querySelector('.header__menu');
+    //
+    // document.getElementById('burgerButton')?.addEventListener('click', e => {
+    //     e.preventDefault();
+    //     e.currentTarget.classList.toggle('active');
+    //     headerMenu?.classList.toggle('active');
+    // })
+    //
+    // headerMenu.querySelectorAll('.header__link')
     //     .forEach(link => link.addEventListener('click', () => {
     //             document.querySelector('.nav_header').classList.remove('active');
     //             document.getElementById('burgerButton').classList.remove('active');
     //         }
     //     ))
+    const navMenu = document.querySelector('.header__menu');
+    const menuBtn = document.getElementById('burgerButton')
+
+    menuBtn.addEventListener('click', e => {
+        e.preventDefault();
+        e.currentTarget.classList.toggle('active');
+        navMenu.classList.toggle('active');
+
+        if (navMenu.classList.contains('active')) {
+            setTimeout(() => document.addEventListener('click', outClickHandler), 10)
+        } else {
+            document.removeEventListener('click', outClickHandler)
+        }
+    })
+
+    navMenu.querySelectorAll('.nav__link')
+        .forEach(link => link.addEventListener('click', () => closeMenu()))
+
+    function outClickHandler(e) {
+        if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+            closeMenu()
+        }
+    }
+
+    function closeMenu() {
+        menuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 
 
     /**
@@ -61,12 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => heroBgSvg.querySelector('.el_gt').classList.add('show'), startTime + 1300);
         setTimeout(() => heroText.querySelector('.years').classList.add('show'), startTime + 1200);
 
-        if (gsap) {
-            gsap.registerPlugin(TextPlugin);
+        gsap.registerPlugin(TextPlugin);
 
-            setTimeout(() => gsap.to(textEl1, {duration: 1.5, text: "строим и развиваем"}), startTime + 1300);
-            setTimeout(() => gsap.to(textEl2, {duration: 1, text: "вместе с Вами!"}), startTime + 2300);
-        }
+        setTimeout(() => gsap.to(textEl1, {duration: 1.5, text: "строим и развиваем"}), startTime + 1300);
+        setTimeout(() => gsap.to(textEl2, {duration: 1, text: "вместе с Вами!"}), startTime + 2300);
 
         setTimeout(
             () => parallelogramsContainer?.classList.remove('hide'),
@@ -78,57 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
      * Scroll
      */
 
-    // const scrollContainer = document.querySelector('[data-scroll-container]');
-    const scrollContainer = undefined
+    const scrollContainer = document.querySelector('[data-scroll-container]');
 
     if (scrollContainer) {
-        const locoScroll = new LocomotiveScroll({
-            el: scrollContainer,
-            smooth: true
-        });
-        // Обновляем скролл в случае ресайза
-        new ResizeObserver(() => locoScroll.update()).observe(scrollContainer);
-        const header = document.getElementById('header');
-
-        // Для главной страницы меняем бэкграунд хэдера после .hero секции
-        if (document.getElementById('hero_content')){
-            locoScroll.on('scroll', (args) => {
-                if (typeof args.currentElements['hero'] === 'object') {
-                    !header.classList.contains('transparent')
-                        ? header.classList.add('transparent')
-                        : null
-                } else {
-                    header.classList.remove('transparent')
-                }
-            });
-        }
-
-        // Якорные ссылки
-        document.querySelectorAll('a[data-target-to-scroll]')
-            .forEach(link => link.addEventListener('click', handlerAnchorLick))
-        function handlerAnchorLick(e) {
-            e.preventDefault()
-            locoScroll.scrollTo(e.currentTarget.dataset.targetToScroll)
-        }
-
-        // Меняем хэдер с прозрачного на белый
-        // const pageAboutHero = document.getElementById('hero_about');
-        // if (pageAboutHero) {
-        //     const header = document.querySelector('header');
-        //
-        //     locoScroll.on('scroll', (args) => {
-        //         if (args.scroll.y > 0) {
-        //             header.style["backgroundColor"] = 'white'
-        //         } else {
-        //             header.style["backgroundColor"] = 'transparent'
-        //         }
-        //     })
-        // }
+        const locomotiveScroll = new LocomotiveScroll();
     }
-
-    // if (document.querySelector('body[data-page="about"]')) {
-    // }
-    const locomotiveScroll = new LocomotiveScroll();
 
 
     const path = new URL(window.location).pathname;
@@ -181,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             path.classList.add('highlighted');
 
             if (innerPopup) {
-                const instance = Popper.createPopper(virtualElement, innerPopup, {
+                const instance = createPopper(virtualElement, innerPopup, {
                     placement: 'right-end'
                 });
                 innerPopup.style.display = 'block';
