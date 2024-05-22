@@ -16,8 +16,8 @@
     <script defer src="./js/assets/index.js"></script>
 </head>
 <body>
-<div  class="container_body">
-    <header class="header transparent" id="header">
+<div data-scroll-container class="container_body">
+    <header class="header" id="header">
         <div class="header__top">
             <div class="container container_1780">
                 <div class="header__logo logo logo_header">
@@ -34,7 +34,7 @@
                             <a href="/" class="nav__link header__link">Главная</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#s_functions" class="nav__link header__link">О компании</a>
+                            <a href="#" class="nav__link header__link">О компании</a>
                         </li>
                         <li class="nav__item">
                             <a href="#s_projects" data-scroll-to class="nav__link header__link">Проекты</a>
@@ -52,7 +52,7 @@
                             <a href="#s_blog" class="nav__link header__link">Новости</a>
                         </li>
                         <li class="nav__item">
-                            <a href="#s_contacts" class="nav__link header__link">Контакты</a>
+                            <a href="#" class="nav__link header__link">Контакты</a>
                         </li>
                     </ul>
                 </nav>
@@ -62,7 +62,7 @@
             </button>
         </div>
         <div class="header__menu">
-            <div class="container container_1780">
+            <div class="container container_1780" data-lenis-prevent>
                 <div class="header__menu__wrapper">
                     <div class="header__menu__col_1">
                         <svg width="307" height="301" viewBox="0 0 307 301" fill="none"
@@ -112,7 +112,7 @@
                                     <a href="/" class="nav__link header__link">Главная</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="/about.html" class="nav__link header__link">О компании</a>
+                                    <a href="#" class="nav__link header__link">О компании</a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="#s_projects" class="nav__link header__link">Проекты</a>
@@ -121,13 +121,13 @@
                                     <a href="#s_services" class="nav__link header__link">Услуги</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#s_dignity" class="nav__link header__link">Наши клиенты</a>
+                                    <a href="#" class="nav__link header__link">Наши клиенты</a>
                                 </li>
                                 <li class="nav__item">
                                     <a href="#s_blog" class="nav__link header__link">Новости</a>
                                 </li>
                                 <li class="nav__item">
-                                    <a href="#s_contacts" class="nav__link header__link">Контакты</a>
+                                    <a href="#" class="nav__link header__link">Контакты</a>
                                 </li>
                             </ul>
                         </nav>
@@ -300,7 +300,6 @@
 <!--                            <source src="./over.mp4" type="video/mp4">-->
 <!--                        </video>-->
                     </div>
-                    <!--        <img src="/images/poster.jpg">-->
                 </div>
                 <div class="hero__content" >
 
@@ -353,7 +352,7 @@
                 </div>
                 <div class="hero__img-wrapper hero__img-wrapper_3 hide">
                     <div class="hero__img__pattern hero__img__pattern_1"></div>
-                    <div class="hero__img__pattern hero__img__pattern_2">
+                    <div class="hero__img__pattern hero__img__pattern_2" data-scroll data-scroll-speed="-0.1">
                     </div>
                     <!--                    <div class="hero__img__pattern hero__img__pattern_3"></div>-->
                     <img src="./images/hero_bg_1.png" alt="">
@@ -379,11 +378,9 @@
             </div>
         </div>
 
-<!--        <div class="scroll-wrapper_1">-->
             <div id="stick">
                 <div class="container_1920 container">
-                    <div class="career__static-bg"
-                         data-scroll-repeat></div>
+                    <div class="career__static-bg"></div>
 <!--                    <div class="career__static-bg"-->
 <!--                         data-scroll data-scroll-sticky-->
 <!--                         data-scroll-target="#stick"></div>-->
@@ -470,8 +467,6 @@
                     </div>
                 </section>
             </div>
-<!--        </div>-->
-        <!--    <div class="container container_1920">-->
         <section class="projects" data-scroll-section id="s_projects">
             <div class="container container_1920">
                 <div class="projects__top">
@@ -1629,7 +1624,6 @@
                 </div>
             </div>
         </section>
-        <!--    </div>-->
 
         <div class="pattern__wrapper_partners">
             <div class="pattern_1" data-scroll-section></div>

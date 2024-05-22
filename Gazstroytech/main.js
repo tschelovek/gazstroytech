@@ -49,24 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('active');
 
         if (navMenu.classList.contains('active')) {
-            setTimeout(() => document.addEventListener('click', outClickHandler), 10)
-            if (locomotiveScroll) {
-                // locomotiveScroll.stop()
-                // console.log('tetst')
-                locomotiveScroll.addScrollElements(document.querySelector('.header__menu'))
-            }
+            setTimeout(() => document.addEventListener('click', outClickHandler), 10);
         } else {
-            document.removeEventListener('click', outClickHandler)
-            if (locomotiveScroll) {
-                // locomotiveScroll.start()
-                locomotiveScroll.removeScrollElements(document.querySelector('.header__menu'))
-
-            }
+            document.removeEventListener('click', outClickHandler);
         }
     })
 
     navMenu.querySelectorAll('.nav__link')
-        .forEach(link => link.addEventListener('click', () => closeMenu()))
+        .forEach(link => link.addEventListener('click', () => {
+            closeMenu();
+            document.removeEventListener('click', outClickHandler);
+        }))
 
     function outClickHandler(e) {
         if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -128,13 +121,13 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             const header = document.body.querySelector('header');
             if(window.scrollY > 0) {
-                header.classList.contains('transparent') ? header.classList.remove('transparent') : null;
+                header.classList.contains('top-position') ? header.classList.remove('top-position') : null;
             } else {
-                header.classList.add('transparent');
+                header.classList.add('top-position');
             }
         })
         //*На случай перезагрузки страницы проверяем положение и если надо вешаем скукоживатель на шапку
-        if (window.scrollY > 0) document.body.querySelector('header')?.classList.add('transparent');
+        if (window.scrollY > 0) document.body.querySelector('header')?.classList.add('top-position');
     // }
 
 
