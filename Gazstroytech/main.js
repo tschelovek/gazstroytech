@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper('#slider_partners', {
         loop: true,
         slidesPerView: 1,
-        spaceBetween: 80,
+        spaceBetween: 40,
         autoplay: {
             delay: 2000,
         },
@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
             480: {
                 slidesPerView: 2,
             },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 80,
+            },
             1650: {
                 slidesPerView: 3,
             },
@@ -36,20 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * Бургер меню и навигация
      *
      */
-    // const headerMenu = document.querySelector('.header__menu');
-    //
-    // document.getElementById('burgerButton')?.addEventListener('click', e => {
-    //     e.preventDefault();
-    //     e.currentTarget.classList.toggle('active');
-    //     headerMenu?.classList.toggle('active');
-    // })
-    //
-    // headerMenu.querySelectorAll('.header__link')
-    //     .forEach(link => link.addEventListener('click', () => {
-    //             document.querySelector('.nav_header').classList.remove('active');
-    //             document.getElementById('burgerButton').classList.remove('active');
-    //         }
-    //     ))
     const navMenu = document.querySelector('.header__menu');
     const menuBtn = document.getElementById('burgerButton')
 
@@ -60,8 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (navMenu.classList.contains('active')) {
             setTimeout(() => document.addEventListener('click', outClickHandler), 10)
+            if (locomotiveScroll) {
+                // locomotiveScroll.stop()
+                // console.log('tetst')
+                locomotiveScroll.addScrollElements(document.querySelector('.header__menu'))
+            }
         } else {
             document.removeEventListener('click', outClickHandler)
+            if (locomotiveScroll) {
+                // locomotiveScroll.start()
+                locomotiveScroll.removeScrollElements(document.querySelector('.header__menu'))
+
+            }
         }
     })
 
@@ -116,14 +116,15 @@ document.addEventListener('DOMContentLoaded', () => {
      */
 
     const scrollContainer = document.querySelector('[data-scroll-container]');
+    let locomotiveScroll = undefined;
 
     if (scrollContainer) {
-        const locomotiveScroll = new LocomotiveScroll();
+        locomotiveScroll = new LocomotiveScroll();
     }
 
 
-    const path = new URL(window.location).pathname;
-    if (path === '/' || path === '') {
+    // const path = new URL(window.location).pathname;
+    // if (path === '/' || path === '') {
         window.addEventListener('scroll', () => {
             const header = document.body.querySelector('header');
             if(window.scrollY > 0) {
@@ -134,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         //*На случай перезагрузки страницы проверяем положение и если надо вешаем скукоживатель на шапку
         if (window.scrollY > 0) document.body.querySelector('header')?.classList.add('transparent');
-    }
+    // }
 
 
     /**
