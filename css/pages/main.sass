@@ -1,3 +1,6 @@
+main
+  margin-top: 70px
+
 .hero
   display: flex
   //flex-flow: column-reverse
@@ -307,12 +310,15 @@
   &__static-bg
     //width: 80vw
     //height: 100vh
-    margin-bottom: -45vh
+    //margin-bottom: -45vh
     aspect-ratio: 1405/1080
     width: 77.5%
     background: url("../images/background-dude.png") left top 10% no-repeat
     //background: url("./images/background-dude.png") left top 10vh no-repeat
     background-size: contain
+    position: absolute
+    bottom: 0
+    left: 0
   &__statistics
     display: flex
     position: absolute
@@ -396,8 +402,6 @@
         min-height: 100%
         min-width: 100%
 
-        //max-width: 100%
-        //object-fit: cover
       &__text
         position: absolute
         bottom: 16%
@@ -535,6 +539,8 @@
   &__info
     padding: 60px 70px 0 150px
     text-align: right
+    display: flex
+    flex-flow: column
     &__text
       margin-top: 8px
       color: white
@@ -598,6 +604,32 @@
     &_12
       img
         max-width: 95%
+  &__slider
+    padding: 60px 40px 16px
+    height: 100%
+    max-width: 100%
+    .swiper-button-prev
+      left: 0
+      color: white
+    .swiper-button-next
+      right: 0
+      color: white
+  &__slide
+    height: auto
+    &__inner
+      display: flex
+      flex-flow: column
+      gap: 60px
+      justify-content: space-between
+      align-items: center
+      height: 100%
+    &__item
+      height: 100px
+      display: flex
+      align-items: center
+      img
+        max-width: 100%
+        max-height: 80px
 
 .blog
   padding: 20px 0 80px
@@ -706,3 +738,5 @@
       z-index: 30
       pointer-events: none
 
+#stick
+  position: relative
