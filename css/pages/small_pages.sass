@@ -1,0 +1,141 @@
+.vacancy
+  .career__static-bg__wrapper
+    position: relative
+
+.career__static-bg
+  aspect-ratio: 1833/1497
+  width: 100%
+  background: url(../images/background-dude_big.png) left top no-repeat
+  background-size: cover
+  position: absolute
+  top: -3.3%
+  //bottom: 0
+  left: 0
+
+.contacts
+  &__item
+    padding-left: 120px
+    position: relative
+    &:not(:last-child)
+      margin-bottom: 100px
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      bottom: 0
+      width: 100px
+    &_email::before
+      background: no-repeat url("../images/email.png") top left / contain
+    &_hh::before
+      background: no-repeat url("../images/hh.png") top left / contain
+    &__title
+      font-size: 24px
+      font-weight: 700
+      color: var(--theme-blue)
+    &__link
+      font-size: 40px
+      font-weight: 400
+      color: var(--blue)
+      text-decoration: none
+  &_vacancy
+    padding: 140px 0 120px
+    position: relative
+    &__pattern
+      position: absolute
+      right: 0
+      top: -1px
+      bottom: 0
+      width: 45.7%
+      //background: no-repeat url("../images/lines.png") top left / cover
+      &__par
+        &_1
+          width: 38%
+          aspect-ratio: 323/570
+          position: absolute
+          top: -27%
+          right: 10.3%
+          z-index: 35
+        &_2
+          aspect-ratio: 323/570
+          position: absolute
+          top: -65%
+          right: 30%
+          background-color: var(--theme-blue)
+          opacity: 0.8
+          width: 70%
+          z-index: 30
+
+  &_page
+    &__intro
+      .container
+        display: flex
+    &__info
+      flex: 1
+    &__images
+      padding-left: 80px
+      flex: 1
+      position: relative
+      .parallelogram
+        width: 100%
+        background: no-repeat url("../images/contacts_image.jpg") top center / cover
+        position: relative
+        z-index: 20
+      &__marker
+        background: no-repeat url("../images/mark_geo.svg") top center / contain
+        height: 484px
+        width: 372px
+        position: absolute
+        bottom: 0
+        left: 80px
+        z-index: 15
+
+
+@media only screen and (max-width: 1650px)
+  .career__text-block
+    position: static
+    width: 100%
+@media only screen and (max-width: 1366px)
+  .vacancy .career__static-bg
+    display: none
+  .contacts_vacancy__pattern
+    display: none
+
+//@media only screen and (max-width: 1280px)
+//  .contacts_vacancy
+//    &__pattern
+//      &__par
+//        &_1
+//          top: -7%
+//          right: 14.3%
+//        &_2
+//          top: -17%
+//          right: 25%
+
+@media only screen and (max-width: 768px)
+  .contacts_vacancy
+    &__item
+      padding-left: 100px
+      &__title
+        font-size: 20px
+      &__link
+        font-size: 28px
+
+@media only screen and (max-width: 640px)
+  .contacts_vacancy__item
+    &__title
+      font-size: 18px
+    &__link
+      font-size: 24px
+
+@media only screen and (max-width: 480px)
+  .contacts_vacancy
+    &__item
+      padding-left: 80px
+      &::before
+        height: 40px
+      &__title
+        font-size: 18px
+      &__link
+        padding: 8px 0
+        font-size: 20px
