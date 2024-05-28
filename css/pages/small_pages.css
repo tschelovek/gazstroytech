@@ -33,6 +33,23 @@
 .contacts__item_hh::before {
   background: no-repeat url("../images/hh.png") top left/contain;
 }
+.contacts__item_phone::before {
+  background: no-repeat url("../images/phone.png") top left/contain;
+}
+.contacts__item_geo {
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contacts__item_geo svg {
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.contacts__item_geo::before {
+  content: unset;
+}
 .contacts__item__title {
   font-size: 24px;
   font-weight: 700;
@@ -43,6 +60,7 @@
   font-weight: 400;
   color: var(--blue);
   text-decoration: none;
+  white-space: nowrap;
 }
 .contacts_vacancy {
   padding: 140px 0 120px;
@@ -73,21 +91,38 @@
   width: 70%;
   z-index: 30;
 }
+.contacts_page__intro {
+  margin-bottom: 100px;
+}
 .contacts_page__intro .container {
   display: flex;
 }
 .contacts_page__info {
-  flex: 1;
+  padding-top: 120px;
+  width: calc((100% + 44px) / 2);
+}
+.contacts_page__info__divider {
+  margin: 100px 0 80px;
+  height: 2px;
+  background-color: var(--theme-blue);
+}
+.contacts_page__list {
+  margin-top: 80px;
 }
 .contacts_page__images {
-  padding-left: 80px;
-  flex: 1;
+  margin-left: 80px;
+  width: calc((100% - 44px) / 2);
   position: relative;
+  max-width: 900px;
 }
 .contacts_page__images .parallelogram {
+  aspect-ratio: 800/1464;
   width: 100%;
-  background: no-repeat url("../images/contacts_image.jpg") top center/cover;
-  position: relative;
+  background: no-repeat url("../images/contacts_image.jpg") top right 24%/cover;
+  background-size: 150%;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
   z-index: 20;
 }
 .contacts_page__images__marker {
@@ -95,15 +130,89 @@
   height: 484px;
   width: 372px;
   position: absolute;
-  bottom: 0;
-  left: 80px;
+  bottom: 80px;
+  left: 0;
   z-index: 15;
+}
+.contacts_page__form .title_h3 {
+  margin-bottom: 40px;
+  font-size: 48px;
+  color: var(--blue);
+}
+.contacts_page__form .form__fields-wrapper {
+  font-size: 0;
+}
+.contacts_page__form .form__fields__row {
+  margin-bottom: 30px;
+}
+.contacts_page__form .form__fields__row:last-child {
+  margin-bottom: 0;
+}
+.contacts_page__form .form__field {
+  padding: 8px 30px;
+  width: 100%;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+}
+.contacts_page__form .form__field::placeholder {
+  color: var(--blue);
+  font-size: 24px;
+  font-family: Roboto, sans-serif;
+}
+.contacts_page__form .form__input {
+  height: 80px;
+}
+.contacts_page__form .form__textarea {
+  height: 200px;
+}
+.contacts_page__pattern {
+  background: no-repeat url("../images/background-contacts_full_compr.png") top center/contain;
+  position: absolute;
+  bottom: 80px;
+  top: -70px;
+  right: -70px;
+  width: 87%;
+  z-index: 30;
+  pointer-events: none;
+}
+.contacts_page__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 210px;
+  text-align: left;
+  background-color: white;
+  border: 1px solid #888888;
+}
+.contacts_page__tab.active {
+  border: 1px solid var(--theme-blue);
+}
+.contacts_page__tab:not(.active) .contacts__item__title, .contacts_page__tab:not(.active) .contacts__item__link {
+  color: #888888;
+}
+.contacts_page__tab:not(.active) svg path {
+  fill: #888888;
+  stroke: #888888;
+}
+.contacts_page__tab svg path {
+  stroke-width: 4px;
+}
+.contacts_page__tab-list {
+  font-size: 0;
+  display: flex;
+  flex-flow: wrap;
 }
 
 @media only screen and (max-width: 1650px) {
   .career__text-block {
     position: static;
     width: 100%;
+  }
+  .contacts__item__link {
+    font-size: 28px;
   }
 }
 @media only screen and (max-width: 1366px) {
@@ -113,38 +222,135 @@
   .contacts_vacancy__pattern {
     display: none;
   }
+  .contacts_page__pattern {
+    right: 0;
+  }
+  .contacts_page__images .parallelogram {
+    top: 18%;
+    bottom: unset;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .contacts_page__intro .container_1780 {
+    padding-right: 0;
+    position: relative;
+  }
+  .contacts_page .title_h1 {
+    font-size: 120px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .contacts_page__info {
+    padding-top: 32px;
+  }
+  .contacts_page__info .contacts__item__link {
+    font-size: 32px;
+  }
+  .contacts_page__images .parallelogram {
+    top: 8%;
+  }
+  .contacts_page__pattern {
+    display: none;
+  }
+}
+@media only screen and (max-width: 960px) {
+  .contacts_page__tab {
+    padding: 20px 40px;
+    justify-content: flex-start;
+    min-height: unset;
+  }
 }
 @media only screen and (max-width: 768px) {
-  .contacts_vacancy__item {
+  .vacancy .career__statistics {
+    margin: 40px auto 20px;
+  }
+  .contacts__item:not(.contacts__item_geo) {
     padding-left: 100px;
   }
-  .contacts_vacancy__item__title {
+  .contacts__item__title {
     font-size: 20px;
   }
-  .contacts_vacancy__item__link {
+  .contacts__item__link {
     font-size: 28px;
+  }
+  .contacts__item:not(:last-child) {
+    margin-bottom: 13vh;
+  }
+  .contacts_vacancy {
+    padding: 60px 0 100px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .contacts_vacancy__item__title {
+  .contacts__item__title {
     font-size: 18px;
   }
-  .contacts_vacancy__item__link {
+  .contacts__item__link {
     font-size: 24px;
+  }
+  .contacts_page__images {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+  }
+  .contacts_page__images .parallelogram {
+    top: 0;
+  }
+  .contacts_page__images__marker {
+    bottom: 240px;
+  }
+  .contacts_page .title_h1 {
+    font-size: 80px;
+  }
+  .contacts_page__list {
+    margin-top: 40px;
+  }
+  .contacts_page__list .contacts__item:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+  .contacts_page__info {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .contacts_page__tab {
+    padding: 20px;
+  }
+  .contacts__item_geo svg {
+    width: 64px;
   }
 }
 @media only screen and (max-width: 480px) {
-  .contacts_vacancy__item {
+  .contacts__item:not(.contacts__item_geo) {
     padding-left: 80px;
   }
-  .contacts_vacancy__item::before {
+  .contacts__item_geo .contacts__item__link {
+    white-space: normal;
+  }
+  .contacts__item::before {
     height: 40px;
   }
-  .contacts_vacancy__item__title {
+  .contacts__item__title {
     font-size: 18px;
   }
-  .contacts_vacancy__item__link {
+  .contacts_page__tab {
+    padding: 8px;
+  }
+  .contacts_page__tab-list {
+    flex-flow: column;
+  }
+  .contacts_page__info .contacts__item__link {
     padding: 8px 0;
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .contacts_page__info .contacts__item__link {
     font-size: 20px;
   }
 }
