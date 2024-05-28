@@ -2,7 +2,7 @@ main
   font-size: 24px
   color: var(--blue)
 .page_project
-  padding-top: 70px
+  //padding-top: 70px
   font-family: Roboto, sans-serif
   img
     max-width: 100%
@@ -80,3 +80,61 @@ main
       background-size: contain
     &__title
       font-weight: 700
+
+@media only screen and (max-width: 1650px)
+  .hero_project__title_h1__main
+    font-size: 120px
+@media only screen and (max-width: 1148px)
+  .hero_project
+    &__title_h1
+      &__intro
+        font-size: 28px
+      &__main
+        font-size: 100px
+@media only screen and (max-width: 1024px)
+  .hero_project
+    .container_1780
+      flex-flow: column
+    &__intro-text
+      max-width: unset
+    &__block_image
+      margin: 64px -20px 0
+      display: flex
+      justify-content: center
+    .parallelogram
+      top: unset
+      bottom: 20%
+@media only screen and (max-width: 1024px)
+  .hero_project
+    padding: 40px 0 80px
+  .about_project
+    .container_1780
+      flex-flow: column-reverse
+    &__block_text
+      margin-bottom: 40px
+      padding: 0
+      font-size: 20px
+
+@media only screen and (max-width: 560px)
+  .hero_project
+    &__title_h1
+      &__intro
+        font-size: 24px
+      &__main
+        margin-top: 16px
+        font-size: 80px
+    &__intro-text
+      font-size: 18px
+    .location__item
+      padding-left: 40px
+      font-size: 20px
+      &::before
+        width: 32px
+        height: 50px
+        top: 8px
+
+@media only screen and (max-width: 375px)
+  .hero_project
+    &__title_h1
+      &__main
+        font-size: 64px

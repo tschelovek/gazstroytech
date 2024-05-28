@@ -114,6 +114,14 @@ input:focus, textarea:focus {
   position: relative;
 }
 
+.title_h1 {
+  margin: 0;
+  font-size: 170px;
+  font-family: "Bebas Neue", sans-serif;
+  color: var(--blue);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
 .title_h2 {
   margin: 0;
   font-size: 120px;
@@ -1697,9 +1705,6 @@ main {
   }
   .career__text-block p {
     text-wrap: balance;
-  }
-  .career__img_1, .career__img_2 {
-    display: none;
   }
   .career__statistics {
     margin: 20px auto 40px;

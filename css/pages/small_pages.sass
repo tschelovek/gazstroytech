@@ -29,6 +29,21 @@
       background: no-repeat url("../images/email.png") top left / contain
     &_hh::before
       background: no-repeat url("../images/hh.png") top left / contain
+    &_phone::before
+      background: no-repeat url("../images/phone.png") top left / contain
+    &_geo
+      padding-left: 0
+      display: flex
+      align-items: center
+      gap: 20px
+      svg
+        //position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+      &::before
+        content: unset
+
     &__title
       font-size: 24px
       font-weight: 700
@@ -38,6 +53,7 @@
       font-weight: 400
       color: var(--blue)
       text-decoration: none
+      white-space: nowrap
   &_vacancy
     padding: 140px 0 120px
     position: relative
@@ -68,74 +84,233 @@
 
   &_page
     &__intro
+      margin-bottom: 100px
       .container
         display: flex
     &__info
-      flex: 1
+      padding-top: 120px
+      //flex: 1
+      width: calc((100% + 44px) / 2)
+      &__divider
+        margin: 100px 0 80px
+        height: 2px
+        background-color: var(--theme-blue)
+    &__list
+      margin-top: 80px
     &__images
-      padding-left: 80px
-      flex: 1
+      margin-left: 80px
+      //flex: 1
+      width: calc((100% - 44px) / 2)
       position: relative
+      max-width: 900px
       .parallelogram
+        aspect-ratio: 800 / 1464
         width: 100%
-        background: no-repeat url("../images/contacts_image.jpg") top center / cover
-        position: relative
+        background: no-repeat url("../images/contacts_image.jpg") top right 24% / cover
+        background-size: 150%
+        position: absolute
+        bottom: 80px
+        //top: 0
+        right: 0
+        //left: 80px
         z-index: 20
       &__marker
         background: no-repeat url("../images/mark_geo.svg") top center / contain
         height: 484px
         width: 372px
         position: absolute
-        bottom: 0
-        left: 80px
+        bottom: 80px
+        left: 0
         z-index: 15
+    &__form
+      .title_h3
+        margin-bottom: 40px
+        font-size: 48px
+        color: var(--blue)
 
+      .form
+        &__fields-wrapper
+          font-size: 0
+        &__fields__row
+          margin-bottom: 30px
+          &:last-child
+            margin-bottom: 0
+        &__field
+          padding: 8px 30px
+          width: 100%
+          border: 1px solid var(--blue)
+          color: var(--blue)
+          font-size: 24px
+          font-family: Roboto, sans-serif
+          &::placeholder
+            color: var(--blue)
+            font-size: 24px
+            font-family: Roboto, sans-serif
+        &__input
+          height: 80px
+        &__textarea
+          height: 200px
+    &__pattern
+      background: no-repeat url("../images/background-contacts_full_compr.png") top center / contain
+      position: absolute
+      bottom: 80px
+      top: -70px
+      right: -70px
+      width: 87%
+      z-index: 30
+      pointer-events: none
+    &__tab
+      display: flex
+      align-items: center
+      justify-content: center
+      flex: 1
+      min-height: 210px
+      text-align: left
+      background-color: white
+      border: 1px solid #888888
+      &.active
+        border: 1px solid var(--theme-blue)
+      &:not(.active)
+        .contacts__item
+          &__title, &__link
+            color: #888888
+        svg
+          path
+            fill: #888888
+            stroke: #888888
+      svg path
+        stroke-width: 4px
+      &-list
+        font-size: 0
+        display: flex
+        flex-flow: wrap
 
 @media only screen and (max-width: 1650px)
   .career__text-block
     position: static
     width: 100%
+  .contacts__item__link
+    font-size: 28px
+
 @media only screen and (max-width: 1366px)
   .vacancy .career__static-bg
     display: none
-  .contacts_vacancy__pattern
-    display: none
+  .contacts
+    &_vacancy__pattern
+      display: none
+    &_page
+      &__pattern
+        right: 0
+      &__images .parallelogram
+        top: 18%
+        bottom: unset
 
-//@media only screen and (max-width: 1280px)
-//  .contacts_vacancy
-//    &__pattern
-//      &__par
-//        &_1
-//          top: -7%
-//          right: 14.3%
-//        &_2
-//          top: -17%
-//          right: 25%
+@media only screen and (max-width: 1280px)
+  .contacts
+    &_page
+      &__intro .container_1780
+        padding-right: 0
+        position: relative
+      .title_h1
+        font-size: 120px
+
+
+@media only screen and (max-width: 1024px)
+  .contacts
+    &_page
+      &__info
+        padding-top: 32px
+        .contacts__item__link
+          font-size: 32px
+      &__images .parallelogram
+        top: 8%
+      &__pattern
+        display: none
+
+@media only screen and (max-width: 960px)
+  .contacts_page__tab
+    padding: 20px 40px
+    justify-content: flex-start
+    min-height: unset
 
 @media only screen and (max-width: 768px)
-  .contacts_vacancy
+  .vacancy
+    .career__statistics
+      margin: 40px auto 20px
+
+  .contacts
     &__item
-      padding-left: 100px
+      &:not(.contacts__item_geo)
+        padding-left: 100px
       &__title
         font-size: 20px
       &__link
         font-size: 28px
+      &:not(:last-child)
+        margin-bottom: 13vh
+    &_vacancy
+      padding: 60px 0 100px
 
 @media only screen and (max-width: 640px)
-  .contacts_vacancy__item
-    &__title
-      font-size: 18px
-    &__link
-      font-size: 24px
+  .contacts
+    &__item
+      &__title
+        font-size: 18px
+      &__link
+        font-size: 24px
+    &_page
+      &__images
+        position: absolute
+        width: 100%
+        z-index: -1
+        opacity: 0.2
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        margin: 0
+        .parallelogram
+          top: 0
+        &__marker
+          bottom: 240px
+      .title_h1
+        font-size: 80px
+      &__list
+        margin-top: 40px
+        .contacts__item:not(:last-child)
+          margin-bottom: 4rem
+      &__info
+        width: 100%
+
+@media only screen and (max-width: 576px)
+  .contacts
+    &_page__tab
+      padding: 20px
+    &__item_geo svg
+      width: 64px
 
 @media only screen and (max-width: 480px)
-  .contacts_vacancy
+  .contacts
     &__item
-      padding-left: 80px
+      &:not(.contacts__item_geo)
+        padding-left: 80px
+      &_geo
+        .contacts__item__link
+          white-space: normal
       &::before
         height: 40px
       &__title
         font-size: 18px
-      &__link
+    &_page
+      &__tab
+        padding: 8px
+      &__tab-list
+        flex-flow: column
+      &__info .contacts__item__link
         padding: 8px 0
-        font-size: 20px
+        font-size: 28px
+
+@media only screen and (max-width: 375px)
+  .contacts_page__info .contacts__item__link
+    font-size: 20px
+
