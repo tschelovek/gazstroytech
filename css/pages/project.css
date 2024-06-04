@@ -100,6 +100,81 @@ main {
   font-weight: 700;
 }
 
+.facts {
+  padding: 110px 70px 110px 0;
+  background-color: var(--blue);
+  color: var(--theme-blue);
+}
+.facts .container_1780 {
+  display: flex;
+  flex-flow: row-reverse;
+}
+.facts .title_h2 {
+  color: var(--theme-blue);
+  font-size: 170px;
+  line-height: 1;
+  text-align: right;
+  flex: 1;
+}
+.facts .title_h2 span {
+  white-space: nowrap;
+}
+.facts__list {
+  margin-top: 20px;
+  flex: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 80px;
+}
+.facts__item__main {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 0.8;
+  color: white;
+}
+.facts__item__descr {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  max-width: 300px;
+}
+
+.objects .accordion-item_active .accordion-item__tab {
+  border: 2px solid var(--theme-blue);
+  border-bottom: none;
+}
+.objects .accordion-item_active .accordion-item__content {
+  display: block;
+}
+.objects .accordion-item:first-child .accordion-item__tab {
+  border-top: 2px solid var(--blue);
+}
+.objects .accordion-item:first-child.accordion-item_active .accordion-item__tab {
+  border-top: 2px solid var(--theme-blue);
+}
+.objects .accordion-item__tab {
+  padding: 60px 70px;
+  border: 2px solid var(--blue);
+  border-top: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.objects .accordion-item__tab:hover {
+  background-color: var(--theme-blue);
+}
+.objects .accordion-item__tab__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--blue);
+}
+.objects .accordion-item__content {
+  display: none;
+  padding: 40px 70px;
+  border: 2px solid var(--theme-blue);
+  animation: fadeEffect 0.5s;
+}
+
 @media only screen and (max-width: 1650px) {
   .hero_project__title_h1__main {
     font-size: 120px;

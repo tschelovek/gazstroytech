@@ -81,6 +81,79 @@ main
     &__title
       font-weight: 700
 
+
+.facts
+  padding: 110px 70px 110px 0
+  background-color: var(--blue)
+  color: var(--theme-blue)
+  .container_1780
+    display: flex
+    flex-flow: row-reverse
+  .title_h2
+    color: var(--theme-blue)
+    font-size: 170px
+    line-height: 1
+    text-align: right
+    flex: 1
+    span
+      white-space: nowrap
+  &__list
+    margin-top: 20px
+    flex: 3
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    gap: 20px 80px
+  &__item
+    &__main
+      font-family: "Bebas Neue", sans-serif
+      font-size: 80px
+      font-weight: 700
+      line-height: 0.8
+      color: white
+    &__descr
+      font-size: 24px
+      font-weight: 700
+      line-height: 1.15
+      max-width: 300px
+
+.objects
+  .accordion
+    &-item
+      &_active
+        .accordion-item
+          &__tab
+            border: 2px solid var(--theme-blue)
+            border-bottom: none
+          &__content
+            display: block
+      &:first-child
+        .accordion-item__tab
+          border-top: 2px solid var(--blue)
+        &.accordion-item_active
+          .accordion-item__tab
+            border-top: 2px solid var(--theme-blue)
+
+      &__tab
+        padding: 60px 70px
+        border: 2px solid var(--blue)
+        border-top: none
+        cursor: pointer
+        transition: background-color 0.3s
+        &:hover
+          background-color: var(--theme-blue)
+        &__title
+          font-size: 36px
+          font-weight: 700
+          color: var(--blue)
+      &__content
+        display: none
+        padding: 40px 70px
+        //border-left: 2px solid var(--theme-blue)
+        //border-right: 2px solid var(--theme-blue)
+        //border-top: 2px solid var(--theme-blue)
+        border: 2px solid var(--theme-blue)
+        animation: fadeEffect 0.5s
+
 @media only screen and (max-width: 1650px)
   .hero_project__title_h1__main
     font-size: 120px
