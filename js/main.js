@@ -211,13 +211,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const parent = e.currentTarget.parentNode;
 
             if (parent.classList.contains('accordion-item_active')) {
+                parent.classList.remove('accordion-item_active');
                 return;
             }
 
             accItems.forEach(item => item.classList.remove('accordion-item_active'));
 
-            parent.classList.toggle('accordion-item_active')
-
+            parent.classList.toggle('accordion-item_active');
         }
 
     }
