@@ -191,27 +191,35 @@ document.addEventListener('DOMContentLoaded', () => {
      * Аккордеон
      */
 
-    const accordion = document.getElementById('strategy_accordion');
+    const strategyAccordion = document.getElementById('strategy_accordion');
+    const objectsAccordion = document.getElementById('objects_accordion');
 
-    if (accordion) {
-        const accItems = accordion.querySelectorAll('.accordion-item');
+    initAccordion(strategyAccordion);
+    initAccordion(objectsAccordion);
 
-        accordion.querySelectorAll('.accordion-item__tab')
-            .forEach( tab => tab.addEventListener('click', handlerAccordionTab)
-        )
+    function initAccordion(accordionContainer) {
+        if(!accordionContainer) {
+            return;
+        }
+
+        const accItems = accordionContainer.querySelectorAll('.accordion-item');
+
+        accordionContainer.querySelectorAll('.accordion-item__tab')
+            .forEach( tab => tab.addEventListener('click', handlerAccordionTab))
 
         function handlerAccordionTab(e) {
             const parent = e.currentTarget.parentNode;
 
             if (parent.classList.contains('accordion-item_active')) {
+                parent.classList.remove('accordion-item_active');
                 return;
             }
 
             accItems.forEach(item => item.classList.remove('accordion-item_active'));
 
-            parent.classList.toggle('accordion-item_active')
-
+            parent.classList.toggle('accordion-item_active');
         }
+
     }
 
 })

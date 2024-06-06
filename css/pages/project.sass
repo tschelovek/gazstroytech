@@ -1,6 +1,10 @@
 main
   font-size: 24px
   color: var(--blue)
+
+.title_h2
+  font-size: 170px
+
 .page_project
   //padding-top: 70px
   font-family: Roboto, sans-serif
@@ -43,7 +47,7 @@ main
     //opacity: 0.6
 
 .about_project
-  margin-bottom: 100px
+  //margin-bottom: 100px
   .container_1780
     display: flex
   .title_h2
@@ -81,9 +85,170 @@ main
     &__title
       font-weight: 700
 
+.task
+  padding: 130px 70px 100px 0
+  .container
+    position: relative
+    .pattern_task
+      position: absolute
+      top: -300px
+      left: 0
+      right: -116px
+      aspect-ratio: 1920 / 2224
+      background: url("../images/background-project_cut.png") left top no-repeat
+      background-size: contain
+      z-index: -1
+      pointer-events: none
+  &__top
+    display: flex
+    align-items: center
+    .title_h2
+      flex: 2
+      line-height: 1
+      span
+        display: block
+        color: white
+        text-shadow: 0 0 4px #0087de
+
+  &__list
+    &_top
+      flex: 3
+      counter-reset: task_counter
+      list-style: none
+    &_bottom
+      display: flex
+      gap: 40px
+  &__item
+    margin-bottom: 36px
+    display: flex
+    font-weight: 300
+    counter-increment: task_counter
+    &::before
+      content: counter(task_counter)
+      width: 100px
+      flex-shrink: 0
+      font-family: "Bebas Neue", sans-serif
+      font-size: 170px
+      font-weight: 700
+      line-height: 0.8
+      color: var(--theme-blue)
+    ul
+      margin: 0 0 40px 24px
+      list-style: "— "
+
+.facts
+  padding: 110px 70px 110px 0
+  background-color: var(--blue)
+  color: var(--theme-blue)
+  .container_1780
+    display: flex
+    flex-flow: row-reverse
+  .title_h2
+    color: var(--theme-blue)
+    line-height: 1
+    text-align: right
+    flex: 1
+    span
+      white-space: nowrap
+  &__list
+    margin-top: 20px
+    flex: 3
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    gap: 20px 80px
+  &__item
+    &__main
+      font-family: "Bebas Neue", sans-serif
+      font-size: 80px
+      font-weight: 700
+      line-height: 0.8
+      color: white
+      white-space: nowrap
+    &__descr
+      font-size: 24px
+      font-weight: 700
+      line-height: 1.15
+      text-wrap: balance
+
+.objects
+  padding: 140px 70px 130px 0
+  .accordion
+    &-item
+      &_active
+        .accordion-item
+          &__tab
+            border: 2px solid var(--theme-blue)
+            border-bottom: none
+            &::after
+              background: url("../images/arrow_object_active.png") no-repeat
+              background-size: contain
+            &__title
+              color: var(--theme-blue)
+          &__content
+            display: block
+      &:first-child
+        .accordion-item__tab
+          border-top: 2px solid var(--blue)
+        &.accordion-item_active
+          .accordion-item__tab
+            border-top: 2px solid var(--theme-blue)
+
+      &__tab
+        padding: 60px 70px
+        position: relative
+        border: 2px solid var(--blue)
+        border-top: none
+        cursor: pointer
+        transition: background-color 0.3s
+        //&:hover
+        //  background-color: var(--theme-blue)
+        &::after
+          content: ''
+          position: absolute
+          right: 60px
+          top: 66px
+          width: 72px
+          height: 48px
+          background: url("../images/arrow_object.png") no-repeat
+          background-size: contain
+
+        &__title
+          font-size: 36px
+          font-weight: 700
+          color: var(--blue)
+      &__content
+        display: none
+        padding: 40px 70px
+        //border-left: 2px solid var(--theme-blue)
+        //border-right: 2px solid var(--theme-blue)
+        //border-top: 2px solid var(--theme-blue)
+        border: 2px solid var(--theme-blue)
+        animation: fadeEffect 0.5s
+
 @media only screen and (max-width: 1650px)
+  .title_h2
+    font-size: 120px
   .hero_project__title_h1__main
     font-size: 120px
+@media only screen and (max-width: 1500px)
+  .facts
+    .container_1780
+      flex-flow: column
+      gap: 32px
+    .title_h2
+      text-align: unset
+  .objects .accordion-item__tab
+    padding: 40px 120px 40px 40px
+    &::after
+      top: 40px
+    &__title
+      font-size: 28px
+@media only screen and (max-width: 1366px)
+  .task__top
+    align-items: normal
+@media only screen and (max-width: 1280px)
+  .objects
+    padding-right: 0
 @media only screen and (max-width: 1148px)
   .hero_project
     &__title_h1
@@ -91,7 +256,11 @@ main
         font-size: 28px
       &__main
         font-size: 100px
+  .facts
+    padding-right: 0
 @media only screen and (max-width: 1024px)
+  main
+    font-size: 20px
   .hero_project
     .container_1780
       flex-flow: column
@@ -104,7 +273,14 @@ main
     .parallelogram
       top: unset
       bottom: 20%
-@media only screen and (max-width: 1024px)
+  .task__top
+    flex-flow: column
+    gap: 40px
+  .objects .accordion-item__content
+    padding: 20px
+@media only screen and (max-width: 960px)
+  .title_h2
+    font-size: 80px
   .hero_project
     padding: 40px 0 80px
   .about_project
@@ -114,8 +290,60 @@ main
       margin-bottom: 40px
       padding: 0
       font-size: 20px
-
+  .facts
+    &__list
+      grid-template-columns: 1fr 1fr
+      gap: 60px
+    &__item
+      display: flex
+      flex-flow: column
+      align-items: center
+      text-align: center
+  .task
+    padding-right: 0
+    &__list
+      &_top
+        padding: 0
+      &_bottom
+        flex-flow: column
+        align-items: center
+@media only screen and (max-width: 640px)
+  .task
+    &__top .title_h2 span
+      color: var(--blue)
+      text-shadow: unset
+    &__item
+      font-size: 20px
+      &::before
+        font-size: 120px
+        width: 64px
+  .facts
+    .title_h2
+      text-align: center
+    &__list
+      grid-template-columns: 1fr
+    &__item
+      &__main
+        font-size: 48px
+      &__descr
+        font-size: 18px
+  .objects
+    padding: 80px 0
+    .accordion-item
+      &__tab
+        padding: 32px 64px 32px 20px
+        &::after
+          right: 16px
+          width: 36px
+          height: 24px
+        &__title
+          font-size: 24px
+      &__content
+        padding: 20px 8px
+        font-size: 16px
 @media only screen and (max-width: 560px)
+  .title_h2
+    font-size: 56px
   .hero_project
     &__title_h1
       &__intro
@@ -133,7 +361,13 @@ main
         height: 50px
         top: 8px
 
+@media only screen and (max-width: 480px)
+  .objects .accordion-item__tab__title
+    font-size: 20px
 @media only screen and (max-width: 375px)
+  .title_h2
+    font-size: 48px
+
   .hero_project
     &__title_h1
       &__main

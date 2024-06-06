@@ -4,6 +4,10 @@ main {
   color: var(--blue);
 }
 
+.title_h2 {
+  font-size: 170px;
+}
+
 .page_project {
   font-family: Roboto, sans-serif;
 }
@@ -53,9 +57,6 @@ main {
   background: linear-gradient(to bottom, rgb(10, 53, 174) 45%, rgba(10, 53, 174, 0.5));
 }
 
-.about_project {
-  margin-bottom: 100px;
-}
 .about_project .container_1780 {
   display: flex;
 }
@@ -100,9 +101,193 @@ main {
   font-weight: 700;
 }
 
+.task {
+  padding: 130px 70px 100px 0;
+}
+.task .container {
+  position: relative;
+}
+.task .container .pattern_task {
+  position: absolute;
+  top: -300px;
+  left: 0;
+  right: -116px;
+  aspect-ratio: 1920/2224;
+  background: url("../images/background-project_cut.png") left top no-repeat;
+  background-size: contain;
+  z-index: -1;
+  pointer-events: none;
+}
+.task__top {
+  display: flex;
+  align-items: center;
+}
+.task__top .title_h2 {
+  flex: 2;
+  line-height: 1;
+}
+.task__top .title_h2 span {
+  display: block;
+  color: white;
+  text-shadow: 0 0 4px #0087de;
+}
+.task__list_top {
+  flex: 3;
+  counter-reset: task_counter;
+  list-style: none;
+}
+.task__list_bottom {
+  display: flex;
+  gap: 40px;
+}
+.task__item {
+  margin-bottom: 36px;
+  display: flex;
+  font-weight: 300;
+  counter-increment: task_counter;
+}
+.task__item::before {
+  content: counter(task_counter);
+  width: 100px;
+  flex-shrink: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 170px;
+  font-weight: 700;
+  line-height: 0.8;
+  color: var(--theme-blue);
+}
+.task__item ul {
+  margin: 0 0 40px 24px;
+  list-style: "— ";
+}
+
+.facts {
+  padding: 110px 70px 110px 0;
+  background-color: var(--blue);
+  color: var(--theme-blue);
+}
+.facts .container_1780 {
+  display: flex;
+  flex-flow: row-reverse;
+}
+.facts .title_h2 {
+  color: var(--theme-blue);
+  line-height: 1;
+  text-align: right;
+  flex: 1;
+}
+.facts .title_h2 span {
+  white-space: nowrap;
+}
+.facts__list {
+  margin-top: 20px;
+  flex: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 80px;
+}
+.facts__item__main {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 0.8;
+  color: white;
+  white-space: nowrap;
+}
+.facts__item__descr {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.objects {
+  padding: 140px 70px 130px 0;
+}
+.objects .accordion-item_active .accordion-item__tab {
+  border: 2px solid var(--theme-blue);
+  border-bottom: none;
+}
+.objects .accordion-item_active .accordion-item__tab::after {
+  background: url("../images/arrow_object_active.png") no-repeat;
+  background-size: contain;
+}
+.objects .accordion-item_active .accordion-item__tab__title {
+  color: var(--theme-blue);
+}
+.objects .accordion-item_active .accordion-item__content {
+  display: block;
+}
+.objects .accordion-item:first-child .accordion-item__tab {
+  border-top: 2px solid var(--blue);
+}
+.objects .accordion-item:first-child.accordion-item_active .accordion-item__tab {
+  border-top: 2px solid var(--theme-blue);
+}
+.objects .accordion-item__tab {
+  padding: 60px 70px;
+  position: relative;
+  border: 2px solid var(--blue);
+  border-top: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.objects .accordion-item__tab::after {
+  content: "";
+  position: absolute;
+  right: 60px;
+  top: 66px;
+  width: 72px;
+  height: 48px;
+  background: url("../images/arrow_object.png") no-repeat;
+  background-size: contain;
+}
+.objects .accordion-item__tab__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--blue);
+}
+.objects .accordion-item__content {
+  display: none;
+  padding: 40px 70px;
+  border: 2px solid var(--theme-blue);
+  animation: fadeEffect 0.5s;
+}
+
 @media only screen and (max-width: 1650px) {
+  .title_h2 {
+    font-size: 120px;
+  }
   .hero_project__title_h1__main {
     font-size: 120px;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .facts .container_1780 {
+    flex-flow: column;
+    gap: 32px;
+  }
+  .facts .title_h2 {
+    text-align: unset;
+  }
+  .objects .accordion-item__tab {
+    padding: 40px 120px 40px 40px;
+  }
+  .objects .accordion-item__tab::after {
+    top: 40px;
+  }
+  .objects .accordion-item__tab__title {
+    font-size: 28px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  .task__top {
+    align-items: normal;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .objects {
+    padding-right: 0;
   }
 }
 @media only screen and (max-width: 1148px) {
@@ -112,8 +297,14 @@ main {
   .hero_project__title_h1__main {
     font-size: 100px;
   }
+  .facts {
+    padding-right: 0;
+  }
 }
 @media only screen and (max-width: 1024px) {
+  main {
+    font-size: 20px;
+  }
   .hero_project .container_1780 {
     flex-flow: column;
   }
@@ -129,8 +320,18 @@ main {
     top: unset;
     bottom: 20%;
   }
+  .task__top {
+    flex-flow: column;
+    gap: 40px;
+  }
+  .objects .accordion-item__content {
+    padding: 20px;
+  }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 960px) {
+  .title_h2 {
+    font-size: 80px;
+  }
   .hero_project {
     padding: 40px 0 80px;
   }
@@ -142,8 +343,74 @@ main {
     padding: 0;
     font-size: 20px;
   }
+  .facts__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .facts__item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+  }
+  .task {
+    padding-right: 0;
+  }
+  .task__list_top {
+    padding: 0;
+  }
+  .task__list_bottom {
+    flex-flow: column;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .task__top .title_h2 span {
+    color: var(--blue);
+    text-shadow: unset;
+  }
+  .task__item {
+    font-size: 20px;
+  }
+  .task__item::before {
+    font-size: 120px;
+    width: 64px;
+  }
+  .facts .title_h2 {
+    text-align: center;
+  }
+  .facts__list {
+    grid-template-columns: 1fr;
+  }
+  .facts__item__main {
+    font-size: 48px;
+  }
+  .facts__item__descr {
+    font-size: 18px;
+  }
+  .objects {
+    padding: 80px 0;
+  }
+  .objects .accordion-item__tab {
+    padding: 32px 64px 32px 20px;
+  }
+  .objects .accordion-item__tab::after {
+    right: 16px;
+    width: 36px;
+    height: 24px;
+  }
+  .objects .accordion-item__tab__title {
+    font-size: 24px;
+  }
+  .objects .accordion-item__content {
+    padding: 20px 8px;
+    font-size: 16px;
+  }
 }
 @media only screen and (max-width: 560px) {
+  .title_h2 {
+    font-size: 56px;
+  }
   .hero_project__title_h1__intro {
     font-size: 24px;
   }
@@ -164,7 +431,15 @@ main {
     top: 8px;
   }
 }
+@media only screen and (max-width: 480px) {
+  .objects .accordion-item__tab__title {
+    font-size: 20px;
+  }
+}
 @media only screen and (max-width: 375px) {
+  .title_h2 {
+    font-size: 48px;
+  }
   .hero_project__title_h1__main {
     font-size: 64px;
   }
